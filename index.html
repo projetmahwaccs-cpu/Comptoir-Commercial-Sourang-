@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCS - Comptoir Commercial Sourang | Import-Export &amp; Commerce Général</title>
+<meta name="description" content="CCS, Comptoir Commercial Sourang - Votre partenaire commercial de confiance en Import-Export et Commerce Général.">
+<link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+  :root{
+    --navy: #0d2a5c;
+    --navy-dark: #0a2149;
+    --blue: #1b6fd6;
+    --green: #1f9e5c;
+    --bg-light: #f4f7fb;
+    --text-dark: #14213d;
+    --text-muted: #4a5875;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--text-dark);
+    background: #fff;
+    line-height: 1.5;
+  }
+
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+
+  .container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* HEADER */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 18px 40px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .logo img{
+    height: 62px;
+    width:auto;
+  }
+
+  nav{
+    display:flex;
+    align-items:center;
+    gap: 34px;
+  }
+
+  nav a{
+    font-weight:600;
+    font-size:0.98rem;
+    color: var(--text-dark);
+    padding-bottom: 6px;
+    position:relative;
+    transition: color 0.2s;
+  }
+
+  nav a.active, nav a:hover{
+    color: var(--blue);
+  }
+
+  nav a.active::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:-6px;
+    height:3px;
+    background: var(--blue);
+    border-radius: 2px;
+  }
+
+  .btn-devis{
+    background: var(--navy);
+    color:#fff;
+    font-weight:600;
+    padding: 14px 26px;
+    border-radius: 10px;
+    white-space:nowrap;
+    transition: background 0.2s;
+  }
+  .btn-devis:hover{
+    background: var(--navy-dark);
+  }
+
+  /* HERO */
+  .hero{
+    position: relative;
+    display:flex;
+    align-items:center;
+    min-height: 620px;
+    padding: 30px 40px;
+    overflow: hidden;
+  }
+
+  .hero-video{
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-overlay{
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background: linear-gradient(100deg, rgba(244,247,251,0.95) 0%, rgba(244,247,251,0.85) 38%, rgba(13,42,92,0.35) 100%);
+    z-index: 1;
+  }
+
+  .hero-text{
+    position: relative;
+    z-index: 2;
+    flex: 1 1 480px;
+    min-width: 320px;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-text h1{
+    font-size: 3.1rem;
+    line-height: 1.15;
+    color: var(--navy);
+    font-weight: 800;
+    margin-bottom: 26px;
+  }
+
+  .hero-text p{
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 34px;
+    max-width: 480px;
+  }
+
+  .btn-services{
+    display:inline-flex;
+    align-items:center;
+    gap: 12px;
+    background: var(--navy);
+    color:#fff;
+    font-weight:600;
+    font-size: 1.05rem;
+    padding: 18px 30px;
+    border-radius: 10px;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-services:hover{
+    background: var(--navy-dark);
+    transform: translateX(2px);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px){
+    header{
+      flex-wrap:wrap;
+      gap: 16px;
+      padding: 16px 20px;
+    }
+    nav{
+      order: 3;
+      width:100%;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap: 18px;
+    }
+    .hero{
+      flex-direction:column;
+      min-height: 560px;
+      padding: 20px 20px 60px;
+      text-align:center;
+    }
+    .hero-overlay{
+      background: linear-gradient(180deg, rgba(244,247,251,0.9) 30%, rgba(13,42,92,0.55) 100%);
+    }
+    .hero-text{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .hero-text h1{
+      font-size: 2.3rem;
+    }
+    .hero-text p{
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 560px){
+    .logo img{height:52px;}
+    .btn-devis{
+      padding: 10px 18px;
+      font-size: 0.9rem;
+    }
+    nav a{font-size:0.88rem;}
+    .hero-text h1{font-size: 1.9rem;}
+  }
+
+  /* SECTION HEADINGS (shared) */
+  .section-tag{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 14px;
+    color: var(--blue);
+    font-weight:700;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform:uppercase;
+    margin-bottom: 14px;
+  }
+  .section-tag::before, .section-tag::after{
+    content:"";
+    width: 40px;
+    height: 2px;
+    background: var(--blue);
+    opacity: 0.5;
+  }
+  .section-title{
+    text-align:center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 50px;
+  }
+
+  section{
+    padding: 90px 40px;
+  }
+  section > .container{
+    max-width:1280px;
+    margin:0 auto;
+    padding:0;
+  }
+
+  /* SERVICES */
+  #services{
+    background: #fff;
+  }
+  .services-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .service-card{
+    background: var(--bg-light);
+    border-radius: 16px;
+    padding: 40px 32px;
+    text-align:center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(13,42,92,0.1);
+  }
+  .service-icon{
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #e3ecfb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin: 0 auto 22px;
+    font-size: 1.8rem;
+    color: var(--navy);
+  }
+  .service-card h3{
+    font-size: 1.25rem;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .service-card p{
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    margin-bottom: 18px;
+  }
+  .service-link{
+    color: var(--blue);
+    font-weight:700;
+    font-size: 0.95rem;
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+  }
+
+  /* ABOUT BAND */
+  #a-propos{
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color:#fff;
+    text-align:center;
+    padding: 90px 40px;
+  }
+  #a-propos .section-tag{
+    color: #9fc0f5;
+  }
+  #a-propos .section-tag::before, #a-propos .section-tag::after{
+    background: #9fc0f5;
+  }
+  #a-propos .section-title{
+    color:#fff;
+  }
+  #a-propos p{
+    max-width: 720px;
+    margin: 0 auto 36px;
+    color: #cfdcf2;
+    font-size: 1.08rem;
+  }
+  .btn-white{
+    display:inline-block;
+    background:#fff;
+    color: var(--navy);
+    font-weight:700;
+    padding: 16px 32px;
+    border-radius: 10px;
+    transition: background 0.2s;
+  }
+  .btn-white:hover{
+    background: #dfe9fa;
+  }
+
+  /* STATS */
+  .stats{
+    background: var(--bg-light);
+    padding: 60px 40px;
+  }
+  .stats-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align:center;
+  }
+  .stat-icon{
+    font-size: 2rem;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .stat-number{
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--navy);
+  }
+  .stat-label{
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  /* PRODUITS */
+  #produits{
+    background:#fff;
+  }
+  .products-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .product-card{
+    display:block;
+    border-radius: 16px;
+    overflow:hidden;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(13,42,92,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: inherit;
+  }
+  .product-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(13,42,92,0.14);
+  }
+  .product-thumb{
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+  }
+  .product-card-body{
+    padding: 26px 28px 30px;
+  }
+  .product-card-body h4{
+    color: var(--navy);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  .product-card-body p{
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    margin-bottom: 16px;
+  }
+
+  /* CTA BANNER */
+  .cta-banner{
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    border-radius: 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 24px;
+    padding: 40px 50px;
+    color:#fff;
+    flex-wrap:wrap;
+  }
+  .cta-left{
+    display:flex;
+    align-items:center;
+    gap: 22px;
+  }
+  .cta-icon{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 1.5rem;
+    flex-shrink:0;
+  }
+  .cta-left h3{
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+  }
+  .cta-left p{
+    color:#cfdcf2;
+    font-size: 0.96rem;
+  }
+  .btn-cta{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    background:#fff;
+    color: var(--navy);
+    font-weight:700;
+    padding: 15px 28px;
+    border-radius: 10px;
+    white-space:nowrap;
+    transition: background 0.2s;
+  }
+  .btn-cta:hover{
+    background: #dfe9fa;
+  }
+
+  /* FOOTER */
+  footer{
+    background: var(--navy-dark);
+    color: #cfdcf2;
+    padding: 70px 40px 30px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand img{
+    height: 56px;
+    margin-bottom: 16px;
+  }
+  .footer-brand p{
+    font-size: 0.92rem;
+    color: #a9bbe0;
+    margin-bottom: 20px;
+    max-width: 280px;
+  }
+  .social-icons{
+    display:flex;
+    gap: 12px;
+  }
+  .social-icons a{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition: background 0.2s;
+  }
+  .social-icons a:hover{
+    background: var(--blue);
+  }
+  footer h5{
+    color:#fff;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+  }
+  footer ul li{
+    margin-bottom: 12px;
+    font-size: 0.94rem;
+  }
+  footer ul li a:hover{
+    color:#fff;
+  }
+  .footer-contact li{
+    display:flex;
+    align-items:flex-start;
+    gap: 10px;
+  }
+  .footer-bottom{
+    text-align:center;
+    padding-top: 26px;
+    font-size: 0.85rem;
+    color: #8ba1cc;
+  }
+
+  /* PARTENAIRES - défilement */
+  #partenaires{
+    background: var(--bg-light);
+    padding: 80px 0;
+    overflow:hidden;
+  }
+  #partenaires .section-tag,
+  #partenaires .section-title{
+    padding: 0 40px;
+  }
+  .logos-marquee{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  }
+  .logos-track{
+    display:flex;
+    align-items:center;
+    gap: 70px;
+    width: max-content;
+    animation: scroll-logos 28s linear infinite;
+  }
+  .logos-marquee:hover .logos-track{
+    animation-play-state: paused;
+  }
+  .logos-track img{
+    height: 48px;
+    width:auto;
+    max-width: 160px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.65;
+    transition: filter 0.25s, opacity 0.25s;
+  }
+  .logos-track img:hover{
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  @keyframes scroll-logos{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+
+  /* CONTACT */
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items:stretch;
+  }
+  .contact-info{
+    display:flex;
+    flex-direction:column;
+    gap: 26px;
+  }
+  .contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap: 18px;
+  }
+  .contact-icon{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #e3ecfb;
+    color: var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 1.3rem;
+    flex-shrink:0;
+  }
+  .contact-item h4{
+    color: var(--navy);
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+  .contact-item p{
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    line-height:1.5;
+  }
+  .contact-item p a{
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+  .contact-item p a:hover{
+    color: var(--blue);
+  }
+  .contact-map{
+    border-radius: 16px;
+    overflow:hidden;
+    min-height: 340px;
+    box-shadow: 0 8px 24px rgba(13,42,92,0.1);
+  }
+  .contact-map iframe{
+    width:100%;
+    height:100%;
+    min-height: 340px;
+    display:block;
+  }
+
+  @media (max-width: 960px){
+    .services-grid{ grid-template-columns: 1fr; }
+    .stats-grid{ grid-template-columns: repeat(2,1fr); gap: 40px 20px; }
+    .products-grid{ grid-template-columns: 1fr; }
+    .footer-grid{ grid-template-columns: 1fr 1fr; }
+    .cta-banner{ justify-content:center; text-align:center; }
+    .cta-left{ flex-direction:column; }
+    .contact-grid{ grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px){
+    section{ padding: 60px 20px; }
+    .section-title{ font-size: 1.7rem; }
+    .products-grid{ grid-template-columns: 1fr; }
+    .footer-grid{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#accueil" class="logo">
+    <img src="assets/logo-ccs.png" alt="Logo CCS - Comptoir Commercial Sourang">
+  </a>
+
+  <nav>
+    <a href="#accueil" class="active">Accueil</a>
+    <a href="#a-propos">À propos</a>
+    <a href="#services">Nos services</a>
+    <a href="#produits">Nos produits</a>
+    <a href="#partenaires">Nos partenaires</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <a href="#contact" class="btn-devis">Demander un devis</a>
+</header>
+
+<section class="hero" id="accueil">
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-visual.png">
+    <source src="assets/hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <h1>Votre Partenaire Commercial de Confiance</h1>
+    <p>Import-Export &amp; Commerce Général au service de vos ambitions. Qualité, fiabilité et excellence.</p>
+    <a href="#services" class="btn-services">
+      Découvrir nos services
+      <i class="ti ti-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<!-- NOS SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-tag">Nos services</div>
+    <h2 class="section-title">Ce que nous faisons</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-anchor"></i></div>
+        <h3>Import-Export</h3>
+        <p>Nous facilitons le commerce international avec un réseau fiable de partenaires et des solutions adaptées.</p>
+        <a href="#a-propos" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-package"></i></div>
+        <h3>Commerce Général</h3>
+        <p>Fourniture de produits divers et services pour répondre à tous vos besoins professionnels.</p>
+        <a href="#produits" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-handshake"></i></div>
+        <h3>Accompagnement</h3>
+        <p>Un accompagnement personnalisé à chaque étape de vos projets commerciaux.</p>
+        <a href="#contact" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section id="a-propos">
+  <div class="section-tag">À propos de CCS</div>
+  <h2 class="section-title">Qui sommes-nous ?</h2>
+  <p>CCS est une entreprise spécialisée dans l'import-export et le commerce général. Notre mission est de connecter les marchés, fournir des produits de qualité et bâtir des partenariats durables.</p>
+  <a href="#contact" class="btn-white">En savoir plus sur nous</a>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat">
+      <div class="stat-icon"><i class="ti ti-medal"></i></div>
+      <div class="stat-number">+10</div>
+      <div class="stat-label">Années d'expérience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon"><i class="ti ti-users"></i></div>
+      <div class="stat-number">+200</div>
+      <div class="stat-label">Clients satisfaits</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon"><i class="ti ti-world"></i></div>
+      <div class="stat-number">+20</div>
+      <div class="stat-label">Pays partenaires</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon"><i class="ti ti-box"></i></div>
+      <div class="stat-number">+500</div>
+      <div class="stat-label">Produits disponibles</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUITS -->
+<section id="produits">
+  <div class="container">
+    <div class="section-tag">Nos produits</div>
+    <h2 class="section-title">Nos Catégories de Produits</h2>
+    <div class="products-grid">
+      <a href="produits-alimentaires.html" class="product-card">
+        <div class="product-thumb" style="background-image:url('assets/produits-alimentaires.jpg');"></div>
+        <div class="product-card-body">
+          <h4>Produits Alimentaires</h4>
+          <p>Nous exportons des produits alimentaires de qualité : épices, légumineuses, riz, huile, lait concentré et bien plus.</p>
+          <span class="service-link">Voir plus <i class="ti ti-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="produits-papier.html" class="product-card">
+        <div class="product-thumb" style="background-image:url('assets/produits-papier.jpg');"></div>
+        <div class="product-card-body">
+          <h4>Papier A4</h4>
+          <p>Nous sommes importateurs de papier A4 des marques Smart Copy, Capital et Double A.</p>
+          <span class="service-link">Voir plus <i class="ti ti-arrow-right"></i></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTENAIRES -->
+<section id="partenaires">
+  <div class="section-tag">Nos partenaires</div>
+  <h2 class="section-title">Ils nous font confiance</h2>
+  <div class="logos-marquee">
+    <div class="logos-track">
+      <img src="assets/partner-maersk.png" alt="Maersk">
+      <img src="assets/partner-hapag-lloyd.png" alt="Hapag-Lloyd">
+      <img src="assets/partner-cma-cgm.png" alt="CMA CGM">
+      <img src="assets/partner-msc.png" alt="MSC">
+      <img src="assets/partner-mahwa-trading.png" alt="Mahwa Trading SARL">
+      <img src="assets/partner-oocl.png" alt="OOCL">
+      <img src="assets/partner-sealead.png" alt="SeaLead">
+      <!-- duplication pour un défilement continu -->
+      <img src="assets/partner-maersk.png" alt="Maersk">
+      <img src="assets/partner-hapag-lloyd.png" alt="Hapag-Lloyd">
+      <img src="assets/partner-cma-cgm.png" alt="CMA CGM">
+      <img src="assets/partner-msc.png" alt="MSC">
+      <img src="assets/partner-mahwa-trading.png" alt="Mahwa Trading SARL">
+      <img src="assets/partner-oocl.png" alt="OOCL">
+      <img src="assets/partner-sealead.png" alt="SeaLead">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="cta-banner">
+      <div class="cta-left">
+        <div class="cta-icon"><i class="ti ti-headset"></i></div>
+        <div>
+          <h3>Besoin d'un partenaire fiable ?</h3>
+          <p>Contactez-nous dès aujourd'hui pour discuter de vos projets.</p>
+        </div>
+      </div>
+      <a href="#contact" class="btn-cta">Nous contacter <i class="ti ti-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background: var(--bg-light);">
+  <div class="container">
+    <div class="section-tag">Nous contacter</div>
+    <h2 class="section-title">Où nous trouver</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="ti ti-map-pin"></i></div>
+          <div>
+            <h4>Adresse</h4>
+            <p>Hann Mariste, SCAT Urbam, en face de Coris Banque, Dakar, Sénégal</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="ti ti-mail"></i></div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:comptoircommercialsourang@gmail.com">comptoircommercialsourang@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="ti ti-phone"></i></div>
+          <div>
+            <h4>Téléphone</h4>
+            <p><a href="tel:+221776990000">+221 77 699 00 00</a></p>
+            <p><a href="tel:+221336000000">+221 33 600 00 00</a></p>
+            <p><a href="tel:+221776220000">+221 77 622 00 00</a></p>
+          </div>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hann+Mariste+SCAT+Urbam+en+face+Coris+Banque+Dakar+Senegal" target="_blank" rel="noopener" class="btn-services" style="margin-top:10px;">
+          Voir sur la carte
+          <i class="ti ti-map-2"></i>
+        </a>
+      </div>
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=Hann+Mariste+SCAT+Urbam+en+face+Coris+Banque+Dakar+Senegal&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation CCS - Hann Mariste, Dakar">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo-ccs.png" alt="Logo CCS">
+      <p>Votre partenaire de confiance dans l'import-export et le commerce général.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        <a href="https://wa.me/221774976364" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
+      </div>
+    </div>
+    <div>
+      <h5>Liens rapides</h5>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#services">Nos services</a></li>
+        <li><a href="#produits">Nos produits</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Nos services</h5>
+      <ul>
+        <li><a href="#services">Import-Export</a></li>
+        <li><a href="#services">Commerce Général</a></li>
+        <li><a href="#services">Accompagnement</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul class="footer-contact">
+        <li><i class="ti ti-phone"></i> +221 77 699 00 00</li>
+        <li><i class="ti ti-phone"></i> +221 33 600 00 00</li>
+        <li><i class="ti ti-phone"></i> +221 77 622 00 00</li>
+        <li><i class="ti ti-mail"></i> comptoircommercialsourang@gmail.com</li>
+        <li><i class="ti ti-map-pin"></i> Hann Mariste, SCAT Urbam, en face de Coris Banque, Dakar</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 CCS - Comptoir Commercial Sourang. Tous droits réservés.
+  </div>
+</footer>
+
+</body>
+</html>

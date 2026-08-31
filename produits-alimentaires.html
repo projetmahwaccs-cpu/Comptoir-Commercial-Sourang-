@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produits Alimentaires - CCS Comptoir Commercial Sourang</title>
+<meta name="description" content="CCS exporte des produits alimentaires de qualité : épices, légumineuses, riz, huile, lait concentré et plus.">
+<link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+  :root{
+    --navy: #0d2a5c;
+    --navy-dark: #0a2149;
+    --blue: #1b6fd6;
+    --bg-light: #f4f7fb;
+    --text-dark: #14213d;
+    --text-muted: #4a5875;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI', Arial, sans-serif; color:var(--text-dark); line-height:1.6;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1100px;margin:0 auto;padding:0 40px;}
+
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 18px 40px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .logo img{
+    height: 58px;
+    width:auto;
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    gap: 34px;
+  }
+  nav a{
+    font-weight:600;
+    font-size:0.98rem;
+    color: var(--text-dark);
+    padding-bottom: 6px;
+    position:relative;
+    transition: color 0.2s;
+  }
+  nav a.active, nav a:hover{
+    color: var(--blue);
+  }
+  nav a.active::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:-6px;
+    height:3px;
+    background: var(--blue);
+    border-radius: 2px;
+  }
+  .btn-devis{
+    background: var(--navy);
+    color:#fff;
+    font-weight:600;
+    padding: 14px 26px;
+    border-radius: 10px;
+    white-space:nowrap;
+    transition: background 0.2s;
+  }
+  .btn-devis:hover{
+    background: var(--navy-dark);
+  }
+  @media (max-width: 960px){
+    header{
+      flex-wrap:wrap;
+      gap: 16px;
+      padding: 16px 20px;
+    }
+    nav{
+      order: 3;
+      width:100%;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap: 18px;
+    }
+  }
+  @media (max-width: 560px){
+    .logo img{height:48px;}
+    .btn-devis{
+      padding: 10px 18px;
+      font-size: 0.9rem;
+    }
+    nav a{font-size:0.88rem;}
+  }
+
+  .detail-hero{
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    position:relative;
+  }
+  .detail-hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background: linear-gradient(180deg, rgba(13,42,92,0.05) 0%, rgba(13,42,92,0.65) 100%);
+  }
+  .detail-hero-text{
+    position:absolute;
+    bottom: 36px; left:0; right:0;
+    z-index:2;
+    text-align:center;
+    color:#fff;
+  }
+  .detail-hero-text .tag{
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:0.85rem;
+    font-weight:700;
+    color:#bcd3f5;
+    margin-bottom:10px;
+  }
+  .detail-hero-text h1{
+    font-size:2.6rem;
+    font-weight:800;
+  }
+
+  .detail-body{
+    padding: 60px 40px 90px;
+  }
+  .detail-body p{
+    color: var(--text-muted);
+    font-size: 1.08rem;
+    margin-bottom: 22px;
+    max-width: 780px;
+  }
+
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 12px;
+    margin: 30px 0 40px;
+  }
+  .tag-pill{
+    background: var(--bg-light);
+    color: var(--navy);
+    font-weight:600;
+    font-size: 0.92rem;
+    padding: 10px 18px;
+    border-radius: 30px;
+  }
+
+  .cta-box{
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color:#fff;
+    border-radius: 18px;
+    padding: 36px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap: 20px;
+  }
+  .cta-box h3{ font-size:1.3rem; margin-bottom:6px; }
+  .cta-box p{ color:#cfdcf2; margin:0; }
+  .btn-white{
+    background:#fff;
+    color: var(--navy);
+    font-weight:700;
+    padding: 15px 28px;
+    border-radius: 10px;
+    white-space:nowrap;
+  }
+
+  footer{
+    background: var(--navy-dark);
+    color:#cfdcf2;
+    text-align:center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width:640px){
+    header{padding:16px 20px;}
+    .detail-hero{height:320px;}
+    .detail-hero-text h1{font-size:1.9rem;}
+    .detail-body{padding:40px 20px 70px;}
+    .cta-box{text-align:center;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html#accueil" class="logo">
+    <img src="assets/logo-ccs.png" alt="Logo CCS - Comptoir Commercial Sourang">
+  </a>
+
+  <nav>
+    <a href="index.html#accueil">Accueil</a>
+    <a href="index.html#a-propos">À propos</a>
+    <a href="index.html#services">Nos services</a>
+    <a href="index.html#produits" class="active">Nos produits</a>
+    <a href="index.html#partenaires">Nos partenaires</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <a href="index.html#contact" class="btn-devis">Demander un devis</a>
+</header>
+
+<div class="detail-hero" style="background-image:url('assets/produits-alimentaires.jpg');">
+  <div class="detail-hero-text">
+    <div class="tag">Nos produits</div>
+    <h1>Produits Alimentaires</h1>
+  </div>
+</div>
+
+<section class="detail-body">
+  <div class="container">
+    <p>CCS exporte une large gamme de produits alimentaires de qualité, sélectionnés avec exigence pour répondre aux besoins de nos clients et partenaires à l'international.</p>
+    <p>Notre offre couvre les épices, légumineuses, céréales et produits de base incontournables du commerce alimentaire.</p>
+
+    <div class="tags">
+      <span class="tag-pill">Poivre</span>
+      <span class="tag-pill">Piment</span>
+      <span class="tag-pill">Sucre</span>
+      <span class="tag-pill">Lentilles</span>
+      <span class="tag-pill">Petit Pois</span>
+      <span class="tag-pill">Clou de Girofle</span>
+      <span class="tag-pill">Tamarind</span>
+      <span class="tag-pill">Lait Concentré</span>
+      <span class="tag-pill">Huile Végétale</span>
+      <span class="tag-pill">Riz</span>
+    </div>
+
+    <div class="cta-box">
+      <div>
+        <h3>Intéressé par nos produits alimentaires ?</h3>
+        <p>Contactez-nous pour connaître nos disponibilités et conditions d'export.</p>
+      </div>
+      <a href="index.html#contact" class="btn-white">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 CCS - Comptoir Commercial Sourang. Tous droits réservés.
+</footer>
+
+</body>
+</html>
