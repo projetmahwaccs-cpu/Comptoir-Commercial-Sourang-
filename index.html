@@ -74,7 +74,7 @@
     gap:10px;
   }
   .logo img{
-    height: 62px;
+    height: 65px; /* Logo agrandi sur mobile */
     width:auto;
   }
 
@@ -242,6 +242,7 @@
 
   section{
     padding: 60px 20px;
+    position: relative;
   }
   section > .container{
     max-width:1280px;
@@ -249,11 +250,33 @@
     padding:0;
   }
 
+  /* SEPARATEUR VAGUE SVG */
+  .wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 10;
+  }
+  .wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+  }
+  .wave-divider.top {
+    top: 0;
+    bottom: auto;
+    transform: rotate(180deg);
+  }
+
   /* SERVICES SECTION */
   #services {
     position: relative;
     overflow: hidden;
-    padding: 60px 20px;
+    padding: 60px 20px 100px 20px;
   }
 
   .bg-video {
@@ -316,16 +339,27 @@
   }
 
   .service-icon{
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: #e3ecfb;
     display:flex;
     align-items:center;
     justify-content:center;
     margin: 0 auto 18px;
-    font-size: 1.5rem;
-    color: var(--navy);
+    overflow: hidden;
+    border: 2px solid rgba(27, 111, 214, 0.2);
+  }
+  
+  .service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover .service-icon img {
+    transform: scale(1.1);
   }
 
   .service-card h3{
@@ -352,6 +386,8 @@
   /* SECTION : CHAÎNE LOGISTIQUE (PROCESSUS) */
   #processus {
     background: var(--bg-light);
+    padding-top: 80px;
+    padding-bottom: 90px;
   }
   .process-grid {
     display: grid;
@@ -401,7 +437,7 @@
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
     color:#fff;
     text-align:center;
-    padding: 60px 20px;
+    padding: 80px 20px;
   }
   #a-propos .section-tag{
     color: #9fc0f5;
@@ -435,6 +471,7 @@
   /* PRODUITS */
   #produits{
     background:#fff;
+    padding-top: 80px;
   }
   .products-grid{
     display:grid;
@@ -480,6 +517,7 @@
   /* SECTION : ACTUALITÉS / INSIGHTS */
   #actualites {
     background: var(--bg-light);
+    padding-top: 80px;
   }
   .news-grid {
     display: grid;
@@ -520,6 +558,7 @@
   /* SECTION : GALERIE / OPÉRATIONS SUR LE TERRAIN */
   #galerie {
     background: #fff;
+    padding-top: 80px;
   }
   .gallery-grid {
     display: grid;
@@ -545,6 +584,7 @@
   /* SECTION : FAQ INTERACTIVE */
   #faq {
     background: var(--bg-light);
+    padding-top: 80px;
   }
   .faq-container {
     max-width: 800px;
@@ -587,7 +627,7 @@
   /* PARTENAIRES */
   #partenaires{
     background: var(--bg-light);
-    padding: 50px 0;
+    padding: 60px 0;
     overflow:hidden;
   }
   #partenaires .section-tag,
@@ -736,7 +776,7 @@
     border-bottom: 1px solid rgba(255,255,255,0.12);
   }
   .footer-brand img{
-    height: 48px;
+    height: 55px;
     margin-bottom: 12px;
   }
   .footer-brand p{
@@ -791,7 +831,7 @@
       padding: 18px 40px;
     }
     .logo img{
-      height: 62px;
+      height: 85px;
     }
     .menu-toggle {
       display: none;
@@ -859,7 +899,7 @@
       padding: 90px 40px;
     }
     #services {
-      padding: 90px 40px;
+      padding: 90px 40px 120px 40px;
     }
     .services-grid{
       grid-template-columns: repeat(3, 1fr);
@@ -870,9 +910,8 @@
       text-align: center;
     }
     .service-icon{
-      width: 72px;
-      height: 72px;
-      font-size: 1.8rem;
+      width: 90px;
+      height: 90px;
     }
     .section-tag{
       font-size: 0.85rem;
@@ -890,7 +929,7 @@
       gap: 25px;
     }
     #a-propos{
-      padding: 90px 40px;
+      padding: 100px 40px;
     }
     #a-propos p{
       max-width: 720px;
@@ -994,6 +1033,12 @@
       <i class="ti ti-arrow-right"></i>
     </a>
   </div>
+  <!-- Vague bas Hero -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,121.36,195.3,103.87,238.91,92.11,281.33,70.92,321.39,56.44Z" fill="#ffffff"></path>
+    </svg>
+  </div>
 </section>
 
 <!-- NOS SERVICES -->
@@ -1008,27 +1053,42 @@
     <h2 class="section-title">Ce que nous faisons</h2>
     
     <div class="services-grid">
+      <!-- Service 1 : Import-Export -->
       <div class="service-card">
-        <div class="service-icon"><i class="ti ti-anchor"></i></div>
+        <div class="service-icon">
+          <img src="service-import-export.png" alt="Import-Export 3D">
+        </div>
         <h3>Import-Export</h3>
         <p>Nous facilitons le commerce international avec un réseau fiable de partenaires et des solutions adaptées.</p>
         <a href="#a-propos" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
       </div>
       
+      <!-- Service 2 : Commerce Général -->
       <div class="service-card">
-        <div class="service-icon"><i class="ti ti-package"></i></div>
+        <div class="service-icon">
+          <img src="service-commerce.png" alt="Commerce Général 3D">
+        </div>
         <h3>Commerce Général</h3>
         <p>Fourniture de produits divers et services pour répondre à tous vos besoins professionnels.</p>
         <a href="#produits" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
       </div>
       
+      <!-- Service 3 : Accompagnement -->
       <div class="service-card">
-        <div class="service-icon"><i class="ti ti-handshake"></i></div>
+        <div class="service-icon">
+          <img src="service-accompagnement.png" alt="Accompagnement 3D">
+        </div>
         <h3>Accompagnement</h3>
         <p>Un accompagnement personnalisé à chaque étape de vos projets commerciaux.</p>
         <a href="#contact" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
       </div>
     </div>
+  </div>
+  <!-- Vague bas Services -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#f4f7fb"></path>
+    </svg>
   </div>
 </section>
 
@@ -1070,6 +1130,12 @@
       </div>
     </div>
   </div>
+  <!-- Vague bas Processus -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="url(#grad-apropos)" fill-opacity="1"></path>
+    </svg>
+  </div>
 </section>
 
 <!-- A PROPOS -->
@@ -1079,6 +1145,12 @@
     <h2 class="section-title">Qui sommes-nous ?</h2>
     <p>CCS est une entreprise spécialisée dans l'import-export et le commerce général. Notre mission est de connecter les marchés, fournir des produits de qualité et bâtir des partenariats durables.</p>
     <a href="#contact" class="btn-white">En savoir plus sur nous</a>
+  </div>
+  <!-- Vague bas A propos -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0 C200,100 400,-20 600,50 C800,120 1000,10 1200,60 L1200,120 L0,120 Z" fill="#ffffff"></path>
+    </svg>
   </div>
 </section>
 
@@ -1105,6 +1177,12 @@
         </div>
       </a>
     </div>
+  </div>
+  <!-- Vague bas Produits -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,30 C300,120 700,-30 1200,50 L1200,120 L0,120 Z" fill="#f4f7fb"></path>
+    </svg>
   </div>
 </section>
 
@@ -1140,6 +1218,12 @@
       </div>
     </div>
   </div>
+  <!-- Vague bas Actualités -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,60 C250,-20 600,100 1200,20 L1200,120 L0,120 Z" fill="#ffffff"></path>
+    </svg>
+  </div>
 </section>
 
 <!-- SECTION 3 : GALERIE / OPÉRATIONS SUR LE TERRAIN -->
@@ -1161,6 +1245,12 @@
         <img src="produits-alimentaires.jpg" alt="Espaces de stockage CCS">
       </div>
     </div>
+  </div>
+  <!-- Vague bas Galerie -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0 C400,100 800,0 1200,80 L1200,120 L0,120 Z" fill="#f4f7fb"></path>
+    </svg>
   </div>
 </section>
 
@@ -1198,6 +1288,12 @@
         </div>
       </div>
     </div>
+  </div>
+  <!-- Vague bas FAQ -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,50 C300,130 900,-20 1200,40 L1200,120 L0,120 Z" fill="#f4f7fb"></path>
+    </svg>
   </div>
 </section>
 
