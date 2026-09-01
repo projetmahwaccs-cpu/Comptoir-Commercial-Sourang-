@@ -6,6 +6,7 @@
 <title>CCS - Comptoir Commercial Sourang | Import-Export &amp; Commerce Général</title>
 <meta name="description" content="CCS, Comptoir Commercial Sourang - Votre partenaire commercial de confiance en Import-Export et Commerce Général.">
 <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap">
 <style>
   :root{
     --navy: #0d2a5c;
@@ -24,6 +25,7 @@
     color: var(--text-dark);
     background: #fff;
     line-height: 1.5;
+    overflow-x: hidden;
   }
 
   a{text-decoration:none;color:inherit;}
@@ -33,68 +35,113 @@
   .container{
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 20px;
   }
 
-  /* HEADER */
+  @media (min-width: 960px) {
+    .container {
+      padding: 0 40px;
+    }
+  }
+
+  /* CLASSES D'ANIMATION JS (MOUVENCE AU SCROLL) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* HEADER & MOBILE MENU */
   header{
+    position: relative;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding: 18px 40px;
+    padding: 15px 20px;
     max-width: 1280px;
     margin: 0 auto;
+    background: #fff;
+    z-index: 1000;
   }
 
   .logo{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:10px;
   }
   .logo img{
-    height: 62px;
+    height: 48px;
     width:auto;
   }
 
-  nav{
-    display:flex;
-    align-items:center;
-    gap: 34px;
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--navy);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    display: none;
+    border-top: 1px solid #eee;
+  }
+
+  nav.active {
+    display: flex;
   }
 
   nav a{
     font-weight:600;
-    font-size:0.98rem;
+    font-size: 1rem;
     color: var(--text-dark);
-    padding-bottom: 6px;
-    position:relative;
+    width: 100%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
     transition: color 0.2s;
   }
 
-  nav a.active, nav a:hover{
+  nav a:hover, nav a.active {
     color: var(--blue);
-  }
-
-  nav a.active::after{
-    content:"";
-    position:absolute;
-    left:0; right:0; bottom:-6px;
-    height:3px;
-    background: var(--blue);
-    border-radius: 2px;
+    border-bottom-color: var(--blue);
   }
 
   .btn-devis{
     background: var(--navy);
     color:#fff;
     font-weight:600;
-    padding: 14px 26px;
-    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    border-radius: 8px;
     white-space:nowrap;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
   }
   .btn-devis:hover{
     background: var(--navy-dark);
+    transform: translateY(-2px);
   }
 
   /* HERO */
@@ -102,8 +149,8 @@
     position: relative;
     display:flex;
     align-items:center;
-    min-height: 620px;
-    padding: 30px 40px;
+    min-height: 500px;
+    padding: 40px 20px;
     overflow: hidden;
   }
 
@@ -121,129 +168,80 @@
     top:0; left:0;
     width:100%;
     height:100%;
-    background: linear-gradient(100deg, rgba(244,247,251,0.95) 0%, rgba(244,247,251,0.85) 38%, rgba(13,42,92,0.35) 100%);
+    background: linear-gradient(180deg, rgba(244,247,251,0.92) 20%, rgba(13,42,92,0.65) 100%);
     z-index: 1;
   }
 
   .hero-text{
     position: relative;
     z-index: 2;
-    flex: 1 1 480px;
-    min-width: 320px;
-    max-width: 1280px;
-    margin: 0 auto;
     width: 100%;
+    text-align: center;
   }
 
   .hero-text h1{
-    font-size: 3.1rem;
-    line-height: 1.15;
+    font-size: 2.1rem;
+    line-height: 1.2;
     color: var(--navy);
     font-weight: 800;
-    margin-bottom: 26px;
+    margin-bottom: 20px;
   }
 
   .hero-text p{
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: var(--text-muted);
-    margin-bottom: 34px;
-    max-width: 480px;
+    margin-bottom: 24px;
+    max-width: 100%;
   }
 
   .btn-services{
     display:inline-flex;
     align-items:center;
-    gap: 12px;
+    justify-content: center;
+    gap: 10px;
     background: var(--navy);
     color:#fff;
     font-weight:600;
-    font-size: 1.05rem;
-    padding: 18px 30px;
+    font-size: 0.95rem;
+    padding: 14px 24px;
     border-radius: 10px;
+    width: 100%;
     transition: background 0.2s, transform 0.2s;
   }
-
-  .btn-services:hover{
-    background: var(--navy-dark);
-    transform: translateX(2px);
+  .btn-services:hover {
+    transform: translateY(-2px);
   }
 
-  /* RESPONSIVE */
-  @media (max-width: 960px){
-    header{
-      flex-wrap:wrap;
-      gap: 16px;
-      padding: 16px 20px;
-    }
-    nav{
-      order: 3;
-      width:100%;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap: 18px;
-    }
-    .hero{
-      flex-direction:column;
-      min-height: 560px;
-      padding: 20px 20px 60px;
-      text-align:center;
-    }
-    .hero-overlay{
-      background: linear-gradient(180deg, rgba(244,247,251,0.9) 30%, rgba(13,42,92,0.55) 100%);
-    }
-    .hero-text{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-    }
-    .hero-text h1{
-      font-size: 2.3rem;
-    }
-    .hero-text p{
-      max-width: 100%;
-    }
-  }
-
-  @media (max-width: 560px){
-    .logo img{height:52px;}
-    .btn-devis{
-      padding: 10px 18px;
-      font-size: 0.9rem;
-    }
-    nav a{font-size:0.88rem;}
-    .hero-text h1{font-size: 1.9rem;}
-  }
-
-  /* SECTION HEADINGS (shared) */
+  /* SECTION HEADINGS */
   .section-tag{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap: 14px;
+    gap: 10px;
     color: var(--blue);
     font-weight:700;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
     text-transform:uppercase;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
   .section-tag::before, .section-tag::after{
     content:"";
-    width: 40px;
+    width: 25px;
     height: 2px;
     background: var(--blue);
     opacity: 0.5;
   }
   .section-title{
     text-align:center;
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     font-weight: 800;
     color: var(--navy);
-    margin-bottom: 50px;
+    margin-bottom: 35px;
   }
 
   section{
-    padding: 90px 40px;
+    padding: 60px 20px;
   }
   section > .container{
     max-width:1280px;
@@ -251,55 +249,151 @@
     padding:0;
   }
 
-  /* SERVICES */
-  #services{
-    background: #fff;
+  /* SERVICES SECTION */
+  #services {
+    position: relative;
+    overflow: hidden;
+    padding: 60px 20px;
   }
+
+  .bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 42, 92, 0.82);
+    z-index: 2;
+  }
+
+  #services .container {
+    position: relative;
+    z-index: 3;
+  }
+
+  #services .section-tag {
+    color: #9fc0f5;
+  }
+  #services .section-tag::before, 
+  #services .section-tag::after {
+    background: #9fc0f5;
+  }
+
+  #services .section-title {
+    color: #ffffff;
+  }
+
   .services-grid{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
+
   .service-card{
-    background: var(--bg-light);
-    border-radius: 0;
-    padding: 40px 32px;
-    text-align:center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .service-card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(13,42,92,0.1);
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
   }
+
   .service-icon{
-    width: 72px;
-    height: 72px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: #e3ecfb;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin: 0 auto 22px;
-    font-size: 1.8rem;
+    margin: 0 auto 18px;
+    font-size: 1.5rem;
     color: var(--navy);
   }
+
   .service-card h3{
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--navy);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
+
   .service-card p{
     color: var(--text-muted);
-    font-size: 0.98rem;
-    margin-bottom: 18px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
   }
+
   .service-link{
     color: var(--blue);
     font-weight:700;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     display:inline-flex;
     align-items:center;
-    gap: 8px;
+    gap: 6px;
+  }
+
+  /* SECTION : CHAÎNE LOGISTIQUE (PROCESSUS) */
+  #processus {
+    background: var(--bg-light);
+  }
+  .process-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .process-step {
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(13,42,92,0.05);
+    position: relative;
+    transition: transform 0.3s;
+  }
+  .process-step:hover {
+    transform: translateY(-5px);
+  }
+  .process-num {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--blue);
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .process-step h4 {
+    color: var(--navy);
+    margin: 15px 0 8px;
+    font-size: 1.1rem;
+  }
+  .process-step p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
   }
 
   /* ABOUT BAND */
@@ -307,7 +401,7 @@
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
     color:#fff;
     text-align:center;
-    padding: 90px 40px;
+    padding: 60px 20px;
   }
   #a-propos .section-tag{
     color: #9fc0f5;
@@ -319,48 +413,23 @@
     color:#fff;
   }
   #a-propos p{
-    max-width: 720px;
-    margin: 0 auto 36px;
+    max-width: 100%;
+    margin: 0 auto 24px;
     color: #cfdcf2;
-    font-size: 1.08rem;
+    font-size: 0.95rem;
   }
   .btn-white{
-    display:inline-block;
+    display:block;
     background:#fff;
     color: var(--navy);
     font-weight:700;
-    padding: 16px 32px;
+    padding: 14px 20px;
     border-radius: 10px;
-    transition: background 0.2s;
+    text-align: center;
+    transition: transform 0.2s;
   }
-  .btn-white:hover{
-    background: #dfe9fa;
-  }
-
-  /* STATS */
-  .stats{
-    background: var(--bg-light);
-    padding: 60px 40px;
-  }
-  .stats-grid{
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    text-align:center;
-  }
-  .stat-icon{
-    font-size: 2rem;
-    color: var(--navy);
-    margin-bottom: 12px;
-  }
-  .stat-number{
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--navy);
-  }
-  .stat-label{
-    color: var(--text-muted);
-    font-size: 0.95rem;
+  .btn-white:hover {
+    transform: translateY(-2px);
   }
 
   /* PRODUITS */
@@ -369,166 +438,161 @@
   }
   .products-grid{
     display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
   .product-card{
     display:block;
-    border-radius: 0;
+    border-radius: 8px;
     overflow:hidden;
     background: #fff;
-    box-shadow: 0 2px 10px rgba(13,42,92,0.08);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(13,42,92,0.08);
     color: inherit;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
-  .product-card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(13,42,92,0.14);
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(13,42,92,0.15);
   }
   .product-thumb{
-    height: 260px;
+    height: 200px;
     background-size: cover;
     background-position: center;
+    transition: transform 0.5s;
+  }
+  .product-card:hover .product-thumb {
+    transform: scale(1.05);
   }
   .product-card-body{
-    padding: 26px 28px 30px;
+    padding: 20px;
   }
   .product-card-body h4{
     color: var(--navy);
-    font-size: 1.3rem;
-    margin-bottom: 12px;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
   }
   .product-card-body p{
     color: var(--text-muted);
-    font-size: 0.98rem;
-    margin-bottom: 16px;
+    font-size: 0.9rem;
+    margin-bottom: 14px;
   }
 
-  /* CTA BANNER */
-  .cta-banner{
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-    border-radius: 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap: 24px;
-    padding: 40px 50px;
-    color:#fff;
-    flex-wrap:wrap;
+  /* SECTION : ACTUALITÉS / INSIGHTS */
+  #actualites {
+    background: var(--bg-light);
   }
-  .cta-left{
-    display:flex;
-    align-items:center;
-    gap: 22px;
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
-  .cta-icon{
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size: 1.5rem;
-    flex-shrink:0;
+  .news-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
   }
-  .cta-left h3{
-    font-size: 1.25rem;
+  .news-card:hover {
+    transform: translateY(-5px);
+  }
+  .news-content {
+    padding: 20px;
+  }
+  .news-date {
+    font-size: 0.75rem;
+    color: var(--blue);
+    font-weight: 700;
+    text-transform: uppercase;
     margin-bottom: 6px;
   }
-  .cta-left p{
-    color:#cfdcf2;
-    font-size: 0.96rem;
-  }
-  .btn-cta{
-    display:inline-flex;
-    align-items:center;
-    gap: 10px;
-    background:#fff;
+  .news-content h4 {
     color: var(--navy);
-    font-weight:700;
-    padding: 15px 28px;
-    border-radius: 10px;
-    white-space:nowrap;
-    transition: background 0.2s;
-  }
-  .btn-cta:hover{
-    background: #dfe9fa;
-  }
-
-  /* FOOTER */
-  footer{
-    background: var(--navy-dark);
-    color: #cfdcf2;
-    padding: 70px 40px 30px;
-  }
-  .footer-grid{
-    display:grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-  }
-  .footer-brand img{
-    height: 56px;
-    margin-bottom: 16px;
-  }
-  .footer-brand p{
-    font-size: 0.92rem;
-    color: #a9bbe0;
-    margin-bottom: 20px;
-    max-width: 280px;
-  }
-  .social-icons{
-    display:flex;
-    gap: 12px;
-  }
-  .social-icons a{
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition: background 0.2s;
-  }
-  .social-icons a:hover{
-    background: var(--blue);
-  }
-  footer h5{
-    color:#fff;
     font-size: 1.05rem;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
   }
-  footer ul li{
+  .news-content p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
     margin-bottom: 12px;
-    font-size: 0.94rem;
-  }
-  footer ul li a:hover{
-    color:#fff;
-  }
-  .footer-contact li{
-    display:flex;
-    align-items:flex-start;
-    gap: 10px;
-  }
-  .footer-bottom{
-    text-align:center;
-    padding-top: 26px;
-    font-size: 0.85rem;
-    color: #8ba1cc;
   }
 
-  /* PARTENAIRES - défilement */
+  /* SECTION : GALERIE / OPÉRATIONS SUR LE TERRAIN */
+  #galerie {
+    background: #fff;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 160px;
+    position: relative;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+
+  /* SECTION : FAQ INTERACTIVE */
+  #faq {
+    background: var(--bg-light);
+  }
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    cursor: pointer;
+  }
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 0.98rem;
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  .faq-item.active .faq-answer {
+    max-height: 150px;
+    padding-top: 10px;
+  }
+  .faq-item.active .ti-chevron-down {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+  }
+
+  /* PARTENAIRES */
   #partenaires{
     background: var(--bg-light);
-    padding: 80px 0;
+    padding: 50px 0;
     overflow:hidden;
   }
   #partenaires .section-tag,
   #partenaires .section-title{
-    padding: 0 40px;
+    padding: 0 20px;
   }
   .logos-marquee{
     position:relative;
@@ -540,104 +604,357 @@
   .logos-track{
     display:flex;
     align-items:center;
-    gap: 70px;
+    gap: 40px;
     width: max-content;
-    animation: scroll-logos 28s linear infinite;
-  }
-  .logos-marquee:hover .logos-track{
-    animation-play-state: paused;
+    animation: scroll-logos 24s linear infinite;
   }
   .logos-track img{
-    height: 48px;
+    height: 36px;
     width:auto;
-    max-width: 160px;
     object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.65;
-    transition: filter 0.25s, opacity 0.25s;
-  }
-  .logos-track img:hover{
-    filter: grayscale(0%);
-    opacity: 1;
   }
   @keyframes scroll-logos{
     from{ transform: translateX(0); }
     to{ transform: translateX(-50%); }
   }
 
+  /* CTA BANNER */
+  .cta-banner{
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    border-radius: 16px;
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 20px;
+    color:#fff;
+    text-align: center;
+  }
+  .cta-left{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .cta-icon{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 1.3rem;
+  }
+  .cta-left h3{
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+  .cta-left p{
+    color:#cfdcf2;
+    font-size: 0.88rem;
+  }
+  .btn-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content: center;
+    gap: 10px;
+    background:#fff;
+    color: var(--navy);
+    font-weight:700;
+    padding: 14px 20px;
+    border-radius: 10px;
+    width: 100%;
+    transition: transform 0.2s;
+  }
+  .btn-cta:hover {
+    transform: translateY(-2px);
+  }
+
   /* CONTACT */
   .contact-grid{
     display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items:stretch;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
   .contact-info{
     display:flex;
     flex-direction:column;
-    gap: 26px;
+    gap: 20px;
   }
   .contact-item{
     display:flex;
     align-items:flex-start;
-    gap: 18px;
+    gap: 14px;
   }
   .contact-icon{
-    width: 52px;
-    height: 52px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: #e3ecfb;
     color: var(--navy);
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     flex-shrink:0;
   }
   .contact-item h4{
     color: var(--navy);
-    font-size: 1.05rem;
-    margin-bottom: 6px;
+    font-size: 1rem;
+    margin-bottom: 4px;
   }
   .contact-item p{
     color: var(--text-muted);
-    font-size: 0.98rem;
-    line-height:1.5;
-  }
-  .contact-item p a{
-    color: var(--text-muted);
-    transition: color 0.2s;
-  }
-  .contact-item p a:hover{
-    color: var(--blue);
+    font-size: 0.9rem;
   }
   .contact-map{
-    border-radius: 16px;
+    border-radius: 12px;
     overflow:hidden;
-    min-height: 340px;
-    box-shadow: 0 8px 24px rgba(13,42,92,0.1);
+    min-height: 280px;
+    box-shadow: 0 6px 18px rgba(13,42,92,0.1);
   }
   .contact-map iframe{
     width:100%;
     height:100%;
-    min-height: 340px;
+    min-height: 280px;
     display:block;
   }
 
-  @media (max-width: 960px){
-    .services-grid{ grid-template-columns: 1fr; }
-    .stats-grid{ grid-template-columns: repeat(2,1fr); gap: 40px 20px; }
-    .products-grid{ grid-template-columns: 1fr; }
-    .footer-grid{ grid-template-columns: 1fr 1fr; }
-    .cta-banner{ justify-content:center; text-align:center; }
-    .cta-left{ flex-direction:column; }
-    .contact-grid{ grid-template-columns: 1fr; }
+  /* FOOTER */
+  footer{
+    background: var(--navy-dark);
+    color: #cfdcf2;
+    padding: 50px 20px 20px;
   }
-  @media (max-width: 560px){
-    section{ padding: 60px 20px; }
-    .section-title{ font-size: 1.7rem; }
-    .products-grid{ grid-template-columns: 1fr; }
-    .footer-grid{ grid-template-columns: 1fr; }
+  .footer-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand img{
+    height: 48px;
+    margin-bottom: 12px;
+  }
+  .footer-brand p{
+    font-size: 0.88rem;
+    color: #a9bbe0;
+    margin-bottom: 16px;
+  }
+  .social-icons{
+    display:flex;
+    gap: 10px;
+  }
+  .social-icons a{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition: background 0.2s;
+  }
+  .social-icons a:hover {
+    background: var(--blue);
+  }
+  footer h5{
+    color:#fff;
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+  footer ul li{
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+  .footer-contact li{
+    display:flex;
+    align-items:flex-start;
+    gap: 8px;
+  }
+  .footer-bottom{
+    text-align:center;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #8ba1cc;
+  }
+
+
+  /* ==========================================================
+     MEDIA QUERIES PC / TABLETTES (>= 960px)
+     ========================================================== */
+  @media (min-width: 960px){
+    header{
+      padding: 18px 40px;
+    }
+    .logo img{
+      height: 62px;
+    }
+    .menu-toggle {
+      display: none;
+    }
+    nav {
+      position: static;
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      width: auto;
+      background: transparent;
+      padding: 0;
+      gap: 24px;
+      box-shadow: none;
+      border-top: none;
+    }
+    nav a {
+      font-size: 0.9rem;
+      border-bottom: none;
+      width: auto;
+      padding-bottom: 4px;
+      position: relative;
+    }
+    nav a.active, nav a:hover{
+      color: var(--blue);
+    }
+    nav a.active::after{
+      content:"";
+      position:absolute;
+      left:0; right:0; bottom:-4px;
+      height:2px;
+      background: var(--blue);
+      border-radius: 2px;
+    }
+    .btn-devis{
+      padding: 14px 26px;
+      font-size: 0.98rem;
+      border-radius: 10px;
+    }
+    .hero{
+      min-height: 620px;
+      padding: 30px 40px;
+      text-align: left;
+    }
+    .hero-overlay{
+      background: linear-gradient(100deg, rgba(244,247,251,0.95) 0%, rgba(244,247,251,0.85) 38%, rgba(13,42,92,0.35) 100%);
+    }
+    .hero-text{
+      max-width: 1280px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .hero-text h1{
+      font-size: 3.1rem;
+    }
+    .hero-text p{
+      max-width: 480px;
+      font-size: 1.15rem;
+    }
+    .btn-services{
+      width: auto;
+      padding: 18px 30px;
+    }
+    section{
+      padding: 90px 40px;
+    }
+    #services {
+      padding: 90px 40px;
+    }
+    .services-grid{
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .service-card{
+      padding: 40px 32px;
+      text-align: center;
+    }
+    .service-icon{
+      width: 72px;
+      height: 72px;
+      font-size: 1.8rem;
+    }
+    .section-tag{
+      font-size: 0.85rem;
+      gap: 14px;
+    }
+    .section-tag::before, .section-tag::after{
+      width: 40px;
+    }
+    .section-title{
+      font-size: 2.2rem;
+      margin-bottom: 50px;
+    }
+    .process-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+    #a-propos{
+      padding: 90px 40px;
+    }
+    #a-propos p{
+      max-width: 720px;
+      font-size: 1.08rem;
+    }
+    .btn-white{
+      display: inline-block;
+      padding: 16px 32px;
+    }
+    .products-grid{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .news-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .gallery-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .gallery-item {
+      height: 220px;
+    }
+    .cta-banner{
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 40px 50px;
+      text-align: left;
+      border-radius: 20px;
+    }
+    .cta-left{
+      flex-direction: row;
+      text-align: left;
+    }
+    .cta-icon{
+      width: 56px;
+      height: 56px;
+      font-size: 1.5rem;
+    }
+    .btn-cta{
+      width: auto;
+      padding: 15px 28px;
+    }
+    footer{
+      padding: 70px 40px 30px;
+    }
+    .footer-grid{
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .contact-grid{
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+  }
+
+  @media (max-width: 959px) and (min-width: 561px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>
 </head>
@@ -648,16 +965,20 @@
     <img src="logo-ccs.png" alt="Logo CCS - Comptoir Commercial Sourang">
   </a>
 
-  <nav>
-    <a href="#accueil" class="active">Accueil</a>
-    <a href="#a-propos">À propos</a>
-    <a href="#services">Nos services</a>
-    <a href="#produits">Nos produits</a>
-    <a href="#partenaires">Nos partenaires</a>
-    <a href="#contact">Contact</a>
+  <nav id="main-nav">
+    <a href="#accueil" class="nav-link">Accueil</a>
+    <a href="#a-propos" class="nav-link">À propos</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#produits" class="nav-link">Produits</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
-  <a href="#contact" class="btn-devis">Demander un devis</a>
+  <div class="header-right">
+    <a href="#contact" class="btn-devis">Demander un devis</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
+      <i class="ti ti-menu-2"></i>
+    </button>
+  </div>
 </header>
 
 <section class="hero" id="accueil">
@@ -665,7 +986,7 @@
     <source src="hero-bg.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
-  <div class="hero-text">
+  <div class="hero-text reveal">
     <h1>Votre Partenaire Commercial de Confiance</h1>
     <p>Import-Export &amp; Commerce Général au service de vos ambitions. Qualité, fiabilité et excellence.</p>
     <a href="#services" class="btn-services">
@@ -677,9 +998,15 @@
 
 <!-- NOS SERVICES -->
 <section id="services">
-  <div class="container">
+  <video class="bg-video" autoplay loop muted playsinline>
+    <source src="Boxes_depositing_slow.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+
+  <div class="container reveal">
     <div class="section-tag">Nos services</div>
     <h2 class="section-title">Ce que nous faisons</h2>
+    
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon"><i class="ti ti-anchor"></i></div>
@@ -687,12 +1014,14 @@
         <p>Nous facilitons le commerce international avec un réseau fiable de partenaires et des solutions adaptées.</p>
         <a href="#a-propos" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
       </div>
+      
       <div class="service-card">
         <div class="service-icon"><i class="ti ti-package"></i></div>
         <h3>Commerce Général</h3>
         <p>Fourniture de produits divers et services pour répondre à tous vos besoins professionnels.</p>
         <a href="#produits" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
       </div>
+      
       <div class="service-card">
         <div class="service-icon"><i class="ti ti-handshake"></i></div>
         <h3>Accompagnement</h3>
@@ -703,43 +1032,59 @@
   </div>
 </section>
 
-<!-- A PROPOS -->
-<section id="a-propos">
-  <div class="section-tag">À propos de CCS</div>
-  <h2 class="section-title">Qui sommes-nous ?</h2>
-  <p>CCS est une entreprise spécialisée dans l'import-export et le commerce général. Notre mission est de connecter les marchés, fournir des produits de qualité et bâtir des partenariats durables.</p>
-  <a href="#contact" class="btn-white">En savoir plus sur nous</a>
-</section>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="container stats-grid">
-    <div class="stat">
-      <div class="stat-icon"><i class="ti ti-medal"></i></div>
-      <div class="stat-number">+10</div>
-      <div class="stat-label">Années d'expérience</div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon"><i class="ti ti-users"></i></div>
-      <div class="stat-number">+200</div>
-      <div class="stat-label">Clients satisfaits</div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon"><i class="ti ti-world"></i></div>
-      <div class="stat-number">+20</div>
-      <div class="stat-label">Pays partenaires</div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon"><i class="ti ti-box"></i></div>
-      <div class="stat-number">+500</div>
-      <div class="stat-label">Produits disponibles</div>
-    </div>
+<!-- BANDE LUMINEUSE : APERÇU DES PRODUITS -->
+<div style="background: linear-gradient(90deg, #0d2a5c, #1b6fd6, #0d2a5c); padding: 18px 20px; text-align: center; color: #fff; box-shadow: inset 0 0 15px rgba(255,255,255,0.2);">
+  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; font-weight: 600; font-size: 0.95rem;">
+    <span style="display: inline-flex; align-items: center; gap: 6px;"><i class="ti ti-sparkles" style="color: #ffd700;"></i> Aperçu des produits disponibles chez CCS :</span>
+    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Produits alimentaires (Riz, Huile, Lait, Épices)</span>
+    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Papier A4 (Smart Copy, Capital, Double A)</span>
+    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Commerce général &amp; Matériel</span>
   </div>
 </div>
 
+<!-- SECTION 1 : PROCESSUS LOGISTIQUE -->
+<section id="processus">
+  <div class="container reveal">
+    <div class="section-tag">Notre méthodologie</div>
+    <h2 class="section-title">La Chaîne Logistique Maîtrisée</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <h4>Sourcing &amp; Commande</h4>
+        <p>Sélection rigoureuse des meilleurs produits et validation des spécifications avec nos partenaires mondiaux.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <h4>Fret &amp; Transport</h4>
+        <p>Gestion sécurisée de l'acheminement maritime et terrestre en collaboration avec les plus grands armateurs.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <h4>Dédouanement</h4>
+        <p>Traitement administratif fluide et rapide pour respecter les réglementations douanières en vigueur.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <h4>Livraison Finale</h4>
+        <p>Acheminement direct de la marchandise vers vos entrepôts dans les délais convenus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section id="a-propos">
+  <div class="container reveal">
+    <div class="section-tag">À propos de CCS</div>
+    <h2 class="section-title">Qui sommes-nous ?</h2>
+    <p>CCS est une entreprise spécialisée dans l'import-export et le commerce général. Notre mission est de connecter les marchés, fournir des produits de qualité et bâtir des partenariats durables.</p>
+    <a href="#contact" class="btn-white">En savoir plus sur nous</a>
+  </div>
+</section>
+
 <!-- PRODUITS -->
 <section id="produits">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-tag">Nos produits</div>
     <h2 class="section-title">Nos Catégories de Produits</h2>
     <div class="products-grid">
@@ -763,10 +1108,105 @@
   </div>
 </section>
 
+<!-- SECTION 2 : ACTUALITÉS / INSIGHTS -->
+<section id="actualites">
+  <div class="container reveal">
+    <div class="section-tag">Veille &amp; Tendances</div>
+    <h2 class="section-title">Actualités du Commerce International</h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-content">
+          <div class="news-date">Juin 2026</div>
+          <h4>Optimisation des flux maritimes en Afrique de l'Ouest</h4>
+          <p>Comment CCS renforce ses accords logistiques pour garantir des délais d'acheminement toujours plus courts.</p>
+          <span class="service-link">Lire la suite <i class="ti ti-arrow-right"></i></span>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-content">
+          <div class="news-date">Mai 2026</div>
+          <h4>Nouvel arrivage de papier A4 certifié</h4>
+          <p>Arrivée imminente de stocks importants de papiers haute performance pour répondre à la demande des professionnels.</p>
+          <span class="service-link">Lire la suite <i class="ti ti-arrow-right"></i></span>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-content">
+          <div class="news-date">Avril 2026</div>
+          <h4>Standards de qualité dans l'agroalimentaire</h4>
+          <p>Les engagements de traçabilité mis en place par CCS pour sécuriser l'exportation des produits de première nécessité.</p>
+          <span class="service-link">Lire la suite <i class="ti ti-arrow-right"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 : GALERIE / OPÉRATIONS SUR LE TERRAIN -->
+<section id="galerie">
+  <div class="container reveal">
+    <div class="section-tag">Immersion</div>
+    <h2 class="section-title">Nos Opérations sur le Terrain</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="produits-alimentaires.jpg" alt="Chargement de conteneurs">
+      </div>
+      <div class="gallery-item">
+        <img src="produits-papier.jpg" alt="Gestion des stocks">
+      </div>
+      <div class="gallery-item">
+        <img src="hero-visual.png" alt="Logistique portuaire">
+      </div>
+      <div class="gallery-item">
+        <img src="produits-alimentaires.jpg" alt="Espaces de stockage CCS">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 : FAQ INTERACTIVE -->
+<section id="faq">
+  <div class="container reveal">
+    <div class="section-tag">Assistance</div>
+    <h2 class="section-title">Questions Fréquentes</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Quels sont vos délais habituels d'import-export ?</span>
+          <i class="ti ti-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Les délais varient selon la provenance et le mode de transport (maritime ou aérien), généralement compris entre 2 et 6 semaines. Contactez-nous pour une estimation précise.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Proposez-vous des services de livraison personnalisés à Dakar ?</span>
+          <i class="ti ti-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Oui, nous assurons la logistique et l'acheminement direct de vos commandes à partir de notre base située à Hann Mariste (SCAT Urbam).
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Comment obtenir un devis détaillé pour une commande en gros ?</span>
+          <i class="ti ti-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Il vous suffit de cliquer sur le bouton "Demander un devis" en haut de page ou de nous joindre directement par téléphone et e-mail.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PARTENAIRES -->
 <section id="partenaires">
-  <div class="section-tag">Nos partenaires</div>
-  <h2 class="section-title">Ils nous font confiance</h2>
+  <div class="container reveal">
+    <div class="section-tag">Nos partenaires</div>
+    <h2 class="section-title">Ils nous font confiance</h2>
+  </div>
   <div class="logos-marquee">
     <div class="logos-track">
       <img src="partner-maersk.png" alt="Maersk">
@@ -776,7 +1216,6 @@
       <img src="partner-mahwa-trading.png" alt="Mahwa Trading SARL">
       <img src="partner-oocl.png" alt="OOCL">
       <img src="partner-sealead.png" alt="SeaLead">
-      <!-- duplication pour un défilement continu -->
       <img src="partner-maersk.png" alt="Maersk">
       <img src="partner-hapag-lloyd.png" alt="Hapag-Lloyd">
       <img src="partner-cma-cgm.png" alt="CMA CGM">
@@ -790,7 +1229,7 @@
 
 <!-- CTA -->
 <section style="padding-top:0;">
-  <div class="container">
+  <div class="container reveal">
     <div class="cta-banner">
       <div class="cta-left">
         <div class="cta-icon"><i class="ti ti-headset"></i></div>
@@ -806,7 +1245,7 @@
 
 <!-- CONTACT -->
 <section id="contact" style="background: var(--bg-light);">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-tag">Nous contacter</div>
     <h2 class="section-title">Où nous trouver</h2>
     <div class="contact-grid">
@@ -894,6 +1333,66 @@
     © 2026 CCS - Comptoir Commercial Sourang. Tous droits réservés.
   </div>
 </footer>
+
+<!-- SCRIPTS JAVASCRIPT (MOUVENCE & INTERACTIVITÉ) -->
+<script>
+  // 1. Gestion du Menu Burger Mobile
+  const menuToggle = document.getElementById('menu-toggle');
+  const mainNav = document.getElementById('main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  menuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+    const icon = menuToggle.querySelector('i');
+    if (mainNav.classList.contains('active')) {
+      icon.classList.remove('ti-menu-2');
+      icon.classList.add('ti-x');
+    } else {
+      icon.classList.remove('ti-x');
+      icon.classList.add('ti-menu-2');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('active');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.remove('ti-x');
+      icon.classList.add('ti-menu-2');
+    });
+  });
+
+  // 2. Animation au défilement (Scroll Reveal)
+  const observerOptions = {
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    observer.observe(el);
+  });
+
+  // 3. FAQ Interactive (Déploiement des réponses)
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      // Fermer les autres
+      faqItems.forEach(other => {
+        if (other !== item) other.classList.remove('active');
+      });
+      // Basculer l'actuel
+      item.classList.toggle('active');
+    });
+  });
+</script>
 
 </body>
 </html>
