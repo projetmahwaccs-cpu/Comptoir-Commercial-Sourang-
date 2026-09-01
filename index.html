@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CCS - Comptoir Commercial Sourang | Import-Export &amp; Commerce Général</title>
-<meta name="description" content="CCS, Comptoir Commercial Sourang - Votre partenaire commercial de confiance en Import-Export et Commerce Général.">
+<title>CCS - Comptoir Commercial Sourang | Représentant Officiel Double A &amp; Import-Export</title>
+<meta name="description" content="CCS, Comptoir Commercial Sourang - Représentant officiel de la marque Double A (Thaïlande) au Sénégal. Votre partenaire en Import-Export et Commerce Général.">
 <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap">
 <style>
@@ -44,7 +44,7 @@
     }
   }
 
-  /* CLASSES D'ANIMATION JS (MOUVENCE AU SCROLL) */
+  /* CLASSES D'ANIMATION JS */
   .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -74,7 +74,7 @@
     gap:10px;
   }
   .logo img{
-    height: 65px; /* Logo agrandi sur mobile */
+    height: 65px;
     width:auto;
   }
 
@@ -250,7 +250,7 @@
     padding:0;
   }
 
-  /* SEPARATEUR VAGUE SVG */
+  /* VAGUES SVG */
   .wave-divider {
     position: absolute;
     bottom: 0;
@@ -265,11 +265,6 @@
     display: block;
     width: calc(100% + 1.3px);
     height: 60px;
-  }
-  .wave-divider.top {
-    top: 0;
-    bottom: auto;
-    transform: rotate(180deg);
   }
 
   /* SERVICES SECTION */
@@ -383,55 +378,6 @@
     gap: 6px;
   }
 
-  /* SECTION : CHAÎNE LOGISTIQUE (PROCESSUS) */
-  #processus {
-    background: var(--bg-light);
-    padding-top: 80px;
-    padding-bottom: 90px;
-  }
-  .process-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .process-step {
-    background: #fff;
-    padding: 25px 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(13,42,92,0.05);
-    position: relative;
-    transition: transform 0.3s;
-  }
-  .process-step:hover {
-    transform: translateY(-5px);
-  }
-  .process-num {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--blue);
-    color: #fff;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    font-weight: 700;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .process-step h4 {
-    color: var(--navy);
-    margin: 15px 0 8px;
-    font-size: 1.1rem;
-  }
-  .process-step p {
-    color: var(--text-muted);
-    font-size: 0.88rem;
-  }
-
   /* ABOUT BAND */
   #a-propos{
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
@@ -466,6 +412,66 @@
   }
   .btn-white:hover {
     transform: translateY(-2px);
+  }
+
+  /* SÉNÉGAL & LIVRAISON 4 COINS */
+  #senegal-livraison {
+    background: var(--bg-light);
+    padding: 80px 20px;
+  }
+  .delivery-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+  .delivery-content h3 {
+    color: var(--navy);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+  .delivery-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  .delivery-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  .delivery-feature-item {
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(13,42,92,0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .delivery-feature-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e3ecfb;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .delivery-feature-item h4 {
+    color: var(--navy);
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+  .delivery-feature-item p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
   }
 
   /* PRODUITS */
@@ -514,7 +520,7 @@
     margin-bottom: 14px;
   }
 
-  /* SECTION : ACTUALITÉS / INSIGHTS */
+  /* ACTUALITÉS */
   #actualites {
     background: var(--bg-light);
     padding-top: 80px;
@@ -555,7 +561,7 @@
     margin-bottom: 12px;
   }
 
-  /* SECTION : GALERIE / OPÉRATIONS SUR LE TERRAIN */
+  /* GALERIE */
   #galerie {
     background: #fff;
     padding-top: 80px;
@@ -581,7 +587,7 @@
     transform: scale(1.1);
   }
 
-  /* SECTION : FAQ INTERACTIVE */
+  /* FAQ */
   #faq {
     background: var(--bg-light);
     padding-top: 80px;
@@ -624,9 +630,109 @@
     transition: transform 0.3s;
   }
 
+  /* SECTION ÉQUIPE */
+  #equipe {
+    position: relative;
+    background: linear-gradient(135deg, #eaf2fb 0%, #d4e5fc 100%);
+    padding: 100px 0 120px 0;
+    overflow: hidden;
+  }
+  
+  .team-wave-top, .team-wave-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+  }
+  .team-wave-top {
+    top: 0;
+    transform: rotate(180deg);
+  }
+  .team-wave-bottom {
+    bottom: 0;
+  }
+  .team-wave-top svg, .team-wave-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 70px;
+  }
+
+  #equipe .container {
+    position: relative;
+    z-index: 5;
+  }
+
+  .team-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
+  }
+
+  .team-track {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: max-content;
+    animation: scroll-team 25s linear infinite;
+  }
+
+  .team-card {
+    background: #ffffff;
+    border-radius: 0;
+    overflow: hidden;
+    width: 240px;
+    box-shadow: 0 6px 20px rgba(13, 42, 92, 0.15);
+    text-align: center;
+    flex-shrink: 0;
+    border: 4px solid #ffffff;
+    outline: 1px solid #dcdcdc;
+    transition: transform 0.3s ease;
+  }
+
+  .team-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .team-photo {
+    height: 230px;
+    width: 100%;
+    object-fit: cover;
+    background-color: #e3ecfb;
+    border-radius: 0;
+  }
+
+  .team-info {
+    padding: 14px 10px;
+    background: #ffffff;
+  }
+
+  .team-info h4 {
+    color: var(--navy);
+    font-size: 0.98rem;
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+
+  .team-info p {
+    color: var(--blue);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  @keyframes scroll-team {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
   /* PARTENAIRES */
   #partenaires{
-    background: var(--bg-light);
+    background: #ffffff;
     padding: 60px 0;
     overflow:hidden;
   }
@@ -822,20 +928,11 @@
     color: #8ba1cc;
   }
 
-
-  /* ==========================================================
-     MEDIA QUERIES PC / TABLETTES (>= 960px)
-     ========================================================== */
+  /* MEDIA QUERIES PC (>= 960px) */
   @media (min-width: 960px){
-    header{
-      padding: 18px 40px;
-    }
-    .logo img{
-      height: 85px;
-    }
-    .menu-toggle {
-      display: none;
-    }
+    header{ padding: 18px 40px; }
+    .logo img{ height: 85px; }
+    .menu-toggle { display: none; }
     nav {
       position: static;
       display: flex !important;
@@ -855,9 +952,7 @@
       padding-bottom: 4px;
       position: relative;
     }
-    nav a.active, nav a:hover{
-      color: var(--blue);
-    }
+    nav a.active, nav a:hover{ color: var(--blue); }
     nav a.active::after{
       content:"";
       position:absolute;
@@ -866,134 +961,43 @@
       background: var(--blue);
       border-radius: 2px;
     }
-    .btn-devis{
-      padding: 14px 26px;
-      font-size: 0.98rem;
-      border-radius: 10px;
-    }
-    .hero{
-      min-height: 620px;
-      padding: 30px 40px;
-      text-align: left;
-    }
+    .btn-devis{ padding: 14px 26px; font-size: 0.98rem; border-radius: 10px; }
+    .hero{ min-height: 620px; padding: 30px 40px; text-align: left; }
     .hero-overlay{
       background: linear-gradient(100deg, rgba(244,247,251,0.95) 0%, rgba(244,247,251,0.85) 38%, rgba(13,42,92,0.35) 100%);
     }
-    .hero-text{
-      max-width: 1280px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .hero-text h1{
-      font-size: 3.1rem;
-    }
-    .hero-text p{
-      max-width: 480px;
-      font-size: 1.15rem;
-    }
-    .btn-services{
-      width: auto;
-      padding: 18px 30px;
-    }
-    section{
-      padding: 90px 40px;
-    }
-    #services {
-      padding: 90px 40px 120px 40px;
-    }
-    .services-grid{
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-    .service-card{
-      padding: 40px 32px;
-      text-align: center;
-    }
-    .service-icon{
-      width: 90px;
-      height: 90px;
-    }
-    .section-tag{
-      font-size: 0.85rem;
-      gap: 14px;
-    }
-    .section-tag::before, .section-tag::after{
-      width: 40px;
-    }
-    .section-title{
-      font-size: 2.2rem;
-      margin-bottom: 50px;
-    }
-    .process-grid {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-    }
-    #a-propos{
-      padding: 100px 40px;
-    }
-    #a-propos p{
-      max-width: 720px;
-      font-size: 1.08rem;
-    }
-    .btn-white{
-      display: inline-block;
-      padding: 16px 32px;
-    }
-    .products-grid{
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-    }
-    .news-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-    .gallery-grid {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-    .gallery-item {
-      height: 220px;
-    }
-    .cta-banner{
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 40px 50px;
-      text-align: left;
-      border-radius: 20px;
-    }
-    .cta-left{
-      flex-direction: row;
-      text-align: left;
-    }
-    .cta-icon{
-      width: 56px;
-      height: 56px;
-      font-size: 1.5rem;
-    }
-    .btn-cta{
-      width: auto;
-      padding: 15px 28px;
-    }
-    footer{
-      padding: 70px 40px 30px;
-    }
-    .footer-grid{
-      grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 40px;
-    }
-    .contact-grid{
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
+    .hero-text{ max-width: 1280px; margin: 0 auto; text-align: left; }
+    .hero-text h1{ font-size: 3.1rem; }
+    .hero-text p{ max-width: 520px; font-size: 1.15rem; }
+    .btn-services{ width: auto; padding: 18px 30px; }
+    section{ padding: 90px 40px; }
+    #services { padding: 90px 40px 120px 40px; }
+    .services-grid{ grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .service-card{ padding: 40px 32px; text-align: center; }
+    .service-icon{ width: 90px; height: 90px; }
+    .section-tag{ font-size: 0.85rem; gap: 14px; }
+    .section-tag::before, .section-tag::after{ width: 40px; }
+    .section-title{ font-size: 2.2rem; margin-bottom: 50px; }
+    .delivery-wrapper { grid-template-columns: 1fr 1fr; gap: 50px; }
+    .delivery-features { grid-template-columns: repeat(2, 1fr); }
+    #a-propos{ padding: 100px 40px; }
+    #a-propos p{ max-width: 760px; font-size: 1.08rem; }
+    .btn-white{ display: inline-block; padding: 16px 32px; }
+    .products-grid{ grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .news-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .gallery-item { height: 220px; }
+    .cta-banner{ flex-direction: row; justify-content: space-between; padding: 40px 50px; text-align: left; border-radius: 20px; }
+    .cta-left{ flex-direction: row; text-align: left; }
+    .cta-icon{ width: 56px; height: 56px; font-size: 1.5rem; }
+    .btn-cta{ width: auto; padding: 15px 28px; }
+    footer{ padding: 70px 40px 30px; }
+    .footer-grid{ grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+    .contact-grid{ grid-template-columns: 1fr 1fr; gap: 50px; }
   }
 
   @media (max-width: 959px) and (min-width: 561px) {
-    .services-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .process-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -1001,7 +1005,7 @@
 
 <header>
   <a href="#accueil" class="logo">
-    <img src="logo-ccs.png" alt="Logo CCS - Comptoir Commercial Sourang">
+    <img src="assets/logo-ccs.png" alt="Logo CCS - Comptoir Commercial Sourang">
   </a>
 
   <nav id="main-nav">
@@ -1021,19 +1025,18 @@
 </header>
 
 <section class="hero" id="accueil">
-  <video class="hero-video" autoplay muted loop playsinline poster="hero-visual.png">
-    <source src="hero-bg.mp4" type="video/mp4">
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-visual.png">
+    <source src="assets/hero-bg.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-text reveal">
-    <h1>Votre Partenaire Commercial de Confiance</h1>
-    <p>Import-Export &amp; Commerce Général au service de vos ambitions. Qualité, fiabilité et excellence.</p>
+    <h1>Représentant Officiel de la marque Double A au Sénégal</h1>
+    <p>Comptoir Commercial Sourang (CCS) : Votre partenaire de référence en Import-Export et Commerce Général. Excellence et fiabilité internationale.</p>
     <a href="#services" class="btn-services">
       Découvrir nos services
       <i class="ti ti-arrow-right"></i>
     </a>
   </div>
-  <!-- Vague bas Hero -->
   <div class="wave-divider">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,121.36,195.3,103.87,238.91,92.11,281.33,70.92,321.39,56.44Z" fill="#ffffff"></path>
@@ -1044,7 +1047,7 @@
 <!-- NOS SERVICES -->
 <section id="services">
   <video class="bg-video" autoplay loop muted playsinline>
-    <source src="Boxes_depositing_slow.mp4" type="video/mp4">
+    <source src="assets/Boxes_depositing_slow.mp4" type="video/mp4">
   </video>
   <div class="video-overlay"></div>
 
@@ -1056,35 +1059,34 @@
       <!-- Service 1 : Import-Export -->
       <div class="service-card">
         <div class="service-icon">
-          <img src="service-import-export.png" alt="Import-Export 3D">
+          <img src="assets/service-import-export.png" alt="Import-Export 3D">
         </div>
         <h3>Import-Export</h3>
-        <p>Nous facilitons le commerce international avec un réseau fiable de partenaires et des solutions adaptées.</p>
+        <p>Nous facilitons le commerce international et assurons l'importation directe de produits de premier choix depuis la Thaïlande et le monde.</p>
         <a href="#a-propos" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
       </div>
       
       <!-- Service 2 : Commerce Général -->
       <div class="service-card">
         <div class="service-icon">
-          <img src="service-commerce.png" alt="Commerce Général 3D">
+          <img src="assets/service-commerce.png" alt="Commerce Général 3D">
         </div>
         <h3>Commerce Général</h3>
-        <p>Fourniture de produits divers et services pour répondre à tous vos besoins professionnels.</p>
+        <p>Distribution en gros et demi-gros de produits alimentaires et bureautiques de haute qualité pour répondre à tous vos besoins professionnels.</p>
         <a href="#produits" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
       </div>
       
       <!-- Service 3 : Accompagnement -->
       <div class="service-card">
         <div class="service-icon">
-          <img src="service-accompagnement.png" alt="Accompagnement 3D">
+          <img src="assets/service-accompagnement.png" alt="Accompagnement 3D">
         </div>
         <h3>Accompagnement</h3>
-        <p>Un accompagnement personnalisé à chaque étape de vos projets commerciaux.</p>
+        <p>Un suivi personnalisé et des partenariats solides garantis à chaque étape de vos approvisionnements et projets commerciaux.</p>
         <a href="#contact" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
       </div>
     </div>
   </div>
-  <!-- Vague bas Services -->
   <div class="wave-divider">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#f4f7fb"></path>
@@ -1092,64 +1094,76 @@
   </div>
 </section>
 
-<!-- BANDE LUMINEUSE : APERÇU DES PRODUITS -->
+<!-- BANDE LUMINEUSE -->
 <div style="background: linear-gradient(90deg, #0d2a5c, #1b6fd6, #0d2a5c); padding: 18px 20px; text-align: center; color: #fff; box-shadow: inset 0 0 15px rgba(255,255,255,0.2);">
   <div class="container" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; font-weight: 600; font-size: 0.95rem;">
-    <span style="display: inline-flex; align-items: center; gap: 6px;"><i class="ti ti-sparkles" style="color: #ffd700;"></i> Aperçu des produits disponibles chez CCS :</span>
-    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Produits alimentaires (Riz, Huile, Lait, Épices)</span>
-    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Papier A4 (Smart Copy, Capital, Double A)</span>
-    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Commerce général &amp; Matériel</span>
+    <span style="display: inline-flex; align-items: center; gap: 6px;"><i class="ti ti-award" style="color: #ffd700;"></i> Exclusivité CCS :</span>
+    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Représentant Officiel Papier Double A (Thaïlande)</span>
+    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Produits Alimentaires de qualité</span>
   </div>
 </div>
-
-<!-- SECTION 1 : PROCESSUS LOGISTIQUE -->
-<section id="processus">
-  <div class="container reveal">
-    <div class="section-tag">Notre méthodologie</div>
-    <h2 class="section-title">La Chaîne Logistique Maîtrisée</h2>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="process-num">1</div>
-        <h4>Sourcing &amp; Commande</h4>
-        <p>Sélection rigoureuse des meilleurs produits et validation des spécifications avec nos partenaires mondiaux.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-num">2</div>
-        <h4>Fret &amp; Transport</h4>
-        <p>Gestion sécurisée de l'acheminement maritime et terrestre en collaboration avec les plus grands armateurs.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-num">3</div>
-        <h4>Dédouanement</h4>
-        <p>Traitement administratif fluide et rapide pour respecter les réglementations douanières en vigueur.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-num">4</div>
-        <h4>Livraison Finale</h4>
-        <p>Acheminement direct de la marchandise vers vos entrepôts dans les délais convenus.</p>
-      </div>
-    </div>
-  </div>
-  <!-- Vague bas Processus -->
-  <div class="wave-divider">
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="url(#grad-apropos)" fill-opacity="1"></path>
-    </svg>
-  </div>
-</section>
 
 <!-- A PROPOS -->
 <section id="a-propos">
   <div class="container reveal">
     <div class="section-tag">À propos de CCS</div>
     <h2 class="section-title">Qui sommes-nous ?</h2>
-    <p>CCS est une entreprise spécialisée dans l'import-export et le commerce général. Notre mission est de connecter les marchés, fournir des produits de qualité et bâtir des partenariats durables.</p>
-    <a href="#contact" class="btn-white">En savoir plus sur nous</a>
+    <p>Basé au Sénégal, le <strong>Comptoir Commercial Sourang (CCS)</strong> est une entreprise d'import-export solidement implantée sur le marché. En tant que <strong>représentant officiel de la marque de papier DOUBLE A en provenance de Thaïlande</strong>, nous garantissons aux professionnels et distributeurs des produits d'une qualité irréprochable, tout en connectant durablement les marchés internationaux aux besoins locaux.</p>
+    <a href="#contact" class="btn-white">Travailler avec nous</a>
   </div>
-  <!-- Vague bas A propos -->
   <div class="wave-divider">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0 C200,100 400,-20 600,50 C800,120 1000,10 1200,60 L1200,120 L0,120 Z" fill="#ffffff"></path>
+      <path d="M0,0 C200,100 400,-20 600,50 C800,120 1000,10 1200,60 L1200,120 L0,120 Z" fill="#f4f7fb"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- SECTION : SÉNÉGAL ET LIVRAISON AUX 4 COINS (Placée ici stratégiquement après "À propos") -->
+<section id="senegal-livraison">
+  <div class="container reveal">
+    <div class="section-tag">Ancrage National &amp; Réseau</div>
+    <h2 class="section-title">Présents partout au Sénégal, au service de nos clients</h2>
+    <div class="delivery-wrapper">
+      <div class="delivery-content">
+        <h3>Au cœur du développement économique du Sénégal</h3>
+        <p>Le Comptoir Commercial Sourang (CCS) est fier de servir une clientèle fidèle répartie dans toutes les régions du Sénégal. De Dakar aux contrées les plus éloignées, nous tissons des liens étroits avec nos partenaires et clients professionnels.</p>
+        <p>Grâce à notre <strong>équipe dynamique de logistique</strong>, nous garantissons des services de livraison qui vont partout dans les 4 coins du pays, assurant la disponibilité constante de nos produits de qualité supérieure là où vous en avez besoin.</p>
+      </div>
+      <div class="delivery-features">
+        <div class="delivery-feature-item">
+          <div class="delivery-feature-icon"><i class="ti ti-map-pin-filled"></i></div>
+          <div>
+            <h4>Toutes les Régions</h4>
+            <p>Une couverture complète du territoire national pour satisfaire tous nos clients.</p>
+          </div>
+        </div>
+        <div class="delivery-feature-item">
+          <div class="delivery-feature-icon"><i class="ti ti-truck-delivery"></i></div>
+          <div>
+            <h4>4 Coins du Sénégal</h4>
+            <p>Des services de livraison rapides et sécurisés jusqu'à vos portes.</p>
+          </div>
+        </div>
+        <div class="delivery-feature-item">
+          <div class="delivery-feature-icon"><i class="ti ti-users-group"></i></div>
+          <div>
+            <h4>Équipe Dynamique</h4>
+            <p>Des professionnels de la logistique engagés et réactifs à votre service.</p>
+          </div>
+        </div>
+        <div class="delivery-feature-item">
+          <div class="delivery-feature-icon"><i class="ti ti-shield-check"></i></div>
+          <div>
+            <h4>Fiabilité Garantie</h4>
+            <p>Un acheminement rigoureux de vos commandes en gros et demi-gros.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#ffffff"></path>
     </svg>
   </div>
 </section>
@@ -1158,27 +1172,26 @@
 <section id="produits">
   <div class="container reveal">
     <div class="section-tag">Nos produits</div>
-    <h2 class="section-title">Nos Catégories de Produits</h2>
+    <h2 class="section-title">Nos Gammes Phares</h2>
     <div class="products-grid">
-      <a href="produits-alimentaires.html" class="product-card">
-        <div class="product-thumb" style="background-image:url('produits-alimentaires.jpg');"></div>
+      <a href="produits-papier.html" class="product-card">
+        <div class="product-thumb" style="background-image:url('assets/produits-papier.jpg');"></div>
         <div class="product-card-body">
-          <h4>Produits Alimentaires</h4>
-          <p>Nous exportons des produits alimentaires de qualité : épices, légumineuses, riz, huile, lait concentré et bien plus.</p>
-          <span class="service-link">Voir plus <i class="ti ti-arrow-right"></i></span>
+          <h4>Papier A4 Double A (Officiel)</h4>
+          <p>En tant que représentant exclusif de la marque thaïlandaise Double A au Sénégal, nous vous offrons le meilleur papier pour une impression fluide, sans bourrage.</p>
+          <span class="service-link">Découvrir l'exclusivité <i class="ti ti-arrow-right"></i></span>
         </div>
       </a>
-      <a href="produits-papier.html" class="product-card">
-        <div class="product-thumb" style="background-image:url('produits-papier.jpg');"></div>
+      <a href="produits-alimentaires.html" class="product-card">
+        <div class="product-thumb" style="background-image:url('assets/produits-alimentaires.jpg');"></div>
         <div class="product-card-body">
-          <h4>Papier A4</h4>
-          <p>Nous sommes importateurs de papier A4 des marques Smart Copy, Capital et Double A.</p>
+          <h4>Produits Alimentaires &amp; Commerce Général</h4>
+          <p>Importation et distribution de denrées alimentaires de première nécessité rigoureusement sélectionnées pour répondre aux attentes du marché.</p>
           <span class="service-link">Voir plus <i class="ti ti-arrow-right"></i></span>
         </div>
       </a>
     </div>
   </div>
-  <!-- Vague bas Produits -->
   <div class="wave-divider">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,30 C300,120 700,-30 1200,50 L1200,120 L0,120 Z" fill="#f4f7fb"></path>
@@ -1186,39 +1199,38 @@
   </div>
 </section>
 
-<!-- SECTION 2 : ACTUALITÉS / INSIGHTS -->
+<!-- ACTUALITÉS -->
 <section id="actualites">
   <div class="container reveal">
-    <div class="section-tag">Veille &amp; Tendances</div>
-    <h2 class="section-title">Actualités du Commerce International</h2>
+    <div class="section-tag">Actualités</div>
+    <h2 class="section-title">Le fil d'information CCS</h2>
     <div class="news-grid">
       <div class="news-card">
         <div class="news-content">
           <div class="news-date">Juin 2026</div>
-          <h4>Optimisation des flux maritimes en Afrique de l'Ouest</h4>
-          <p>Comment CCS renforce ses accords logistiques pour garantir des délais d'acheminement toujours plus courts.</p>
+          <h4>Arrivage massif de conteneurs Double A</h4>
+          <p>Reception directe des nouvelles lignes de production en provenance d'usines partenaires de Thaïlande pour alimenter le marché sénégalais.</p>
           <span class="service-link">Lire la suite <i class="ti ti-arrow-right"></i></span>
         </div>
       </div>
       <div class="news-card">
         <div class="news-content">
           <div class="news-date">Mai 2026</div>
-          <h4>Nouvel arrivage de papier A4 certifié</h4>
-          <p>Arrivée imminente de stocks importants de papiers haute performance pour répondre à la demande des professionnels.</p>
+          <h4>Partenariat et distribution B2B élargie</h4>
+          <p>CCS renforce son réseau de distribution pour faciliter l'accès aux fournitures de bureau sur l'ensemble du territoire national.</p>
           <span class="service-link">Lire la suite <i class="ti ti-arrow-right"></i></span>
         </div>
       </div>
       <div class="news-card">
         <div class="news-content">
           <div class="news-date">Avril 2026</div>
-          <h4>Standards de qualité dans l'agroalimentaire</h4>
-          <p>Les engagements de traçabilité mis en place par CCS pour sécuriser l'exportation des produits de première nécessité.</p>
+          <h4>Logistique optimisée en Afrique de l'Ouest</h4>
+          <p>Mise en place de nouvelles solutions d'acheminement depuis le port de Dakar vers nos entrepôts de Hann Mariste.</p>
           <span class="service-link">Lire la suite <i class="ti ti-arrow-right"></i></span>
         </div>
       </div>
     </div>
   </div>
-  <!-- Vague bas Actualités -->
   <div class="wave-divider">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,60 C250,-20 600,100 1200,20 L1200,120 L0,120 Z" fill="#ffffff"></path>
@@ -1226,27 +1238,26 @@
   </div>
 </section>
 
-<!-- SECTION 3 : GALERIE / OPÉRATIONS SUR LE TERRAIN -->
+<!-- GALERIE -->
 <section id="galerie">
   <div class="container reveal">
     <div class="section-tag">Immersion</div>
     <h2 class="section-title">Nos Opérations sur le Terrain</h2>
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="produits-alimentaires.jpg" alt="Chargement de conteneurs">
+        <img src="assets/produits-papier.jpg" alt="Stockage papier Double A">
       </div>
       <div class="gallery-item">
-        <img src="produits-papier.jpg" alt="Gestion des stocks">
+        <img src="assets/produits-alimentaires.jpg" alt="Produits alimentaires">
       </div>
       <div class="gallery-item">
-        <img src="hero-visual.png" alt="Logistique portuaire">
+        <img src="assets/hero-visual.png" alt="Logistique portuaire">
       </div>
       <div class="gallery-item">
-        <img src="produits-alimentaires.jpg" alt="Espaces de stockage CCS">
+        <img src="assets/produits-papier.jpg" alt="Entrepôts CCS Dakar">
       </div>
     </div>
   </div>
-  <!-- Vague bas Galerie -->
   <div class="wave-divider">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,0 C400,100 800,0 1200,80 L1200,120 L0,120 Z" fill="#f4f7fb"></path>
@@ -1254,7 +1265,7 @@
   </div>
 </section>
 
-<!-- SECTION 4 : FAQ INTERACTIVE -->
+<!-- FAQ -->
 <section id="faq">
   <div class="container reveal">
     <div class="section-tag">Assistance</div>
@@ -1262,37 +1273,118 @@
     <div class="faq-container">
       <div class="faq-item">
         <div class="faq-question">
-          <span>Quels sont vos délais habituels d'import-export ?</span>
+          <span>Êtes-vous le représentant officiel de la marque Double A ?</span>
           <i class="ti ti-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          Les délais varient selon la provenance et le mode de transport (maritime ou aérien), généralement compris entre 2 et 6 semaines. Contactez-nous pour une estimation précise.
+          Oui, CCS (Comptoir Commercial Sourang) est le représentant officiel de la marque de papier Double A en provenance directe de Thaïlande au Sénégal.
         </div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
-          <span>Proposez-vous des services de livraison personnalisés à Dakar ?</span>
+          <span>Proposez-vous de la vente en gros pour les entreprises ?</span>
           <i class="ti ti-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          Oui, nous assurons la logistique et l'acheminement direct de vos commandes à partir de notre base située à Hann Mariste (SCAT Urbam).
+          Absolument. Nous fournissons les entreprises, les librairies et les structures administratives en quantités adaptées à leurs besoins avec des tarifs préférentiels.
         </div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
-          <span>Comment obtenir un devis détaillé pour une commande en gros ?</span>
+          <span>Où se situe votre siège à Dakar ?</span>
           <i class="ti ti-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          Il vous suffit de cliquer sur le bouton "Demander un devis" en haut de page ou de nous joindre directement par téléphone et e-mail.
+          Notre siège et nos points de stockage sont basés à Hann Mariste, SCAT Urbam, en face de Coris Banque à Dakar.
         </div>
       </div>
     </div>
   </div>
-  <!-- Vague bas FAQ -->
   <div class="wave-divider">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,50 C300,130 900,-20 1200,40 L1200,120 L0,120 Z" fill="#f4f7fb"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- SECTION NOTRE ÉQUIPE -->
+<section id="equipe">
+  <div class="team-wave-top">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,121.36,195.3,103.87,238.91,92.11,281.33,70.92,321.39,56.44Z" fill="#ffffff"></path>
+    </svg>
+  </div>
+
+  <div class="container reveal">
+    <div class="section-tag" style="color: var(--blue);">L'Humain au cœur du succès</div>
+    <h2 class="section-title">Notre Équipe</h2>
+  </div>
+
+  <div class="team-marquee">
+    <div class="team-track">
+      <div class="team-card">
+        <img src="assets/equipe-1.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <div class="team-info">
+          <h4>Direction Générale</h4>
+          <p>Management &amp; Stratégie</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="assets/equipe-2.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <div class="team-info">
+          <h4>Service Logistique</h4>
+          <p>Import &amp; Sourcing</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="assets/equipe-3.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <div class="team-info">
+          <h4>Commercial &amp; B2B</h4>
+          <p>Relations Partenaires</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="assets/equipe-4.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <div class="team-info">
+          <h4>Service Douane</h4>
+          <p>Conformité &amp; Transit</p>
+        </div>
+      </div>
+      
+      <div class="team-card">
+        <img src="assets/equipe-1.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <div class="team-info">
+          <h4>Direction Générale</h4>
+          <p>Management &amp; Stratégie</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="assets/equipe-2.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <div class="team-info">
+          <h4>Service Logistique</h4>
+          <p>Import &amp; Sourcing</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="assets/equipe-3.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <div class="team-info">
+          <h4>Commercial &amp; B2B</h4>
+          <p>Relations Partenaires</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="assets/equipe-4.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <div class="team-info">
+          <h4>Service Douane</h4>
+          <p>Conformité &amp; Transit</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-wave-bottom">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#ffffff"></path>
     </svg>
   </div>
 </section>
@@ -1305,20 +1397,20 @@
   </div>
   <div class="logos-marquee">
     <div class="logos-track">
-      <img src="partner-maersk.png" alt="Maersk">
-      <img src="partner-hapag-lloyd.png" alt="Hapag-Lloyd">
-      <img src="partner-cma-cgm.png" alt="CMA CGM">
-      <img src="partner-msc.png" alt="MSC">
-      <img src="partner-mahwa-trading.png" alt="Mahwa Trading SARL">
-      <img src="partner-oocl.png" alt="OOCL">
-      <img src="partner-sealead.png" alt="SeaLead">
-      <img src="partner-maersk.png" alt="Maersk">
-      <img src="partner-hapag-lloyd.png" alt="Hapag-Lloyd">
-      <img src="partner-cma-cgm.png" alt="CMA CGM">
-      <img src="partner-msc.png" alt="MSC">
-      <img src="partner-mahwa-trading.png" alt="Mahwa Trading SARL">
-      <img src="partner-oocl.png" alt="OOCL">
-      <img src="partner-sealead.png" alt="SeaLead">
+      <img src="assets/partner-maersk.png" alt="Maersk">
+      <img src="assets/partner-hapag-lloyd.png" alt="Hapag-Lloyd">
+      <img src="assets/partner-cma-cgm.png" alt="CMA CGM">
+      <img src="assets/partner-msc.png" alt="MSC">
+      <img src="assets/partner-mahwa-trading.png" alt="Mahwa Trading SARL">
+      <img src="assets/partner-oocl.png" alt="OOCL">
+      <img src="assets/partner-sealead.png" alt="SeaLead">
+      <img src="assets/partner-maersk.png" alt="Maersk">
+      <img src="assets/partner-hapag-lloyd.png" alt="Hapag-Lloyd">
+      <img src="assets/partner-cma-cgm.png" alt="CMA CGM">
+      <img src="assets/partner-msc.png" alt="MSC">
+      <img src="assets/partner-mahwa-trading.png" alt="Mahwa Trading SARL">
+      <img src="assets/partner-oocl.png" alt="OOCL">
+      <img src="assets/partner-sealead.png" alt="SeaLead">
     </div>
   </div>
 </section>
@@ -1330,8 +1422,8 @@
       <div class="cta-left">
         <div class="cta-icon"><i class="ti ti-headset"></i></div>
         <div>
-          <h3>Besoin d'un partenaire fiable ?</h3>
-          <p>Contactez-nous dès aujourd'hui pour discuter de vos projets.</p>
+          <h3>Besoin de papier Double A ou de services d'importation ?</h3>
+          <p>Contactez notre équipe dès aujourd'hui pour passer commande.</p>
         </div>
       </div>
       <a href="#contact" class="btn-cta">Nous contacter <i class="ti ti-arrow-right"></i></a>
@@ -1388,8 +1480,8 @@
 <footer>
   <div class="container footer-grid">
     <div class="footer-brand">
-      <img src="logo-ccs.png" alt="Logo CCS">
-      <p>Votre partenaire de confiance dans l'import-export et le commerce général.</p>
+      <img src="assets/logo-ccs.png" alt="Logo CCS">
+      <p>Représentant officiel de la marque Double A (Thaïlande). Votre partenaire de confiance dans l'import-export et le commerce général.</p>
       <div class="social-icons">
         <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
@@ -1430,9 +1522,8 @@
   </div>
 </footer>
 
-<!-- SCRIPTS JAVASCRIPT (MOUVENCE & INTERACTIVITÉ) -->
+<!-- SCRIPTS JAVASCRIPT -->
 <script>
-  // 1. Gestion du Menu Burger Mobile
   const menuToggle = document.getElementById('menu-toggle');
   const mainNav = document.getElementById('main-nav');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -1458,11 +1549,7 @@
     });
   });
 
-  // 2. Animation au défilement (Scroll Reveal)
-  const observerOptions = {
-    threshold: 0.15
-  };
-
+  const observerOptions = { threshold: 0.15 };
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1475,16 +1562,13 @@
     observer.observe(el);
   });
 
-  // 3. FAQ Interactive (Déploiement des réponses)
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     question.addEventListener('click', () => {
-      // Fermer les autres
       faqItems.forEach(other => {
         if (other !== item) other.classList.remove('active');
       });
-      // Basculer l'actuel
       item.classList.toggle('active');
     });
   });
