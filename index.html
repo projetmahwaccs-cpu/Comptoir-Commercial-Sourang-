@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CCS - Comptoir Commercial Sourang | Représentant Officiel Double A & E-commerce</title>
-<meta name="description" content="CCS, Comptoir Commercial Sourang - Représentant officiel de la marque Double A au Sénégal. Commandez en ligne, paiement sécurisé et livraison rapide.">
+<title data-lang-fr="CCS - Comptoir Commercial Sourang | Représentant Officiel Double A & E-commerce" data-lang-en="CCS - Comptoir Commercial Sourang | Official Double A Representative & E-commerce">CCS - Comptoir Commercial Sourang | Représentant Officiel Double A & E-commerce</title>
+<meta name="description" content="CCS, Comptoir Commercial Sourang - Représentant officiel de la marque Double A au Sénégal. Commandez en ligne, paiement sécurisé et livraison rapide." data-lang-fr="CCS, Comptoir Commercial Sourang - Représentant officiel de la marque Double A au Sénégal. Commandez en ligne, paiement sécurisé et livraison rapide." data-lang-en="CCS, Comptoir Commercial Sourang - Official representative of the Double A brand in Senegal. Order online, secure payment and fast delivery.">
 <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap">
 <style>
@@ -220,6 +220,23 @@
   nav a:hover, nav a.active {
     color: var(--blue);
     border-bottom-color: var(--blue);
+  }
+
+  /* STYLE DU SÉLECTEUR DE LANGUE DANS LE MENU */
+  .language-selector select {
+    padding: 8px 12px;
+    border-radius: 0px;
+    background: var(--bg-light);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: var(--border-fine);
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s;
+  }
+  .language-selector select:hover {
+    background: #e3ecfb;
   }
 
   /* BOUTONS AVEC BORDURE POINTUE */
@@ -1335,7 +1352,7 @@
     <i class="ti ti-brand-whatsapp" style="font-size: 1.3rem;"></i> +221 77 699 00 00
   </a>
   <a href="#e-commerce-section" onclick="toggleShopSection()" class="float-btn btn-shop-float" aria-label="Activer la boutique en ligne">
-    <i class="ti ti-shopping-cart" style="font-size: 1.3rem;"></i> Activer la Boutique
+    <i class="ti ti-shopping-cart" style="font-size: 1.3rem;"></i> <span data-lang-fr="Activer la Boutique" data-lang-en="Activate Shop">Activer la Boutique</span>
   </a>
 </div>
 
@@ -1345,16 +1362,23 @@
   </a>
 
   <nav id="main-nav" class="reveal-top">
-    <a href="#accueil" class="nav-link">Accueil</a>
-    <a href="#a-propos" class="nav-link">À propos</a>
-    <a href="#services" class="nav-link">Services</a>
-    <a href="#senegal-livraison" class="nav-link">Sénégal & Livraison</a>
-    <a href="#e-commerce-section" onclick="toggleShopSection()" class="nav-link" style="color:var(--blue); font-weight:800; cursor:pointer;">Boutique & Demande d'info</a>
-    <a href="#contact" class="nav-link">Contact</a>
+    <a href="#accueil" class="nav-link" data-lang-fr="Accueil" data-lang-en="Home">Accueil</a>
+    <a href="#a-propos" class="nav-link" data-lang-fr="À propos" data-lang-en="About">À propos</a>
+    <a href="#services" class="nav-link" data-lang-fr="Services" data-lang-en="Services">Services</a>
+    <a href="#senegal-livraison" class="nav-link" data-lang-fr="Sénégal & Livraison" data-lang-en="Senegal & Delivery">Sénégal & Livraison</a>
+    <a href="#e-commerce-section" onclick="toggleShopSection()" class="nav-link" style="color:var(--blue); font-weight:800; cursor:pointer;" data-lang-fr="Boutique & Demande d'info" data-lang-en="Shop & Inquiry">Boutique & Demande d'info</a>
+    <a href="#contact" class="nav-link" data-lang-fr="Contact" data-lang-en="Contact">Contact</a>
   </nav>
 
   <div class="header-right reveal-top">
-    <a href="#e-commerce-section" onclick="toggleShopSection()" class="btn-devis">Boutique en Ligne</a>
+    <!-- SÉLECTEUR DE LANGUE INTÉGRÉ DANS LE MENU -->
+    <div class="language-selector">
+      <select id="lang-switch" onchange="changeLanguage(this.value)" aria-label="Choix de la langue">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    <a href="#e-commerce-section" onclick="toggleShopSection()" class="btn-devis" data-lang-fr="Boutique en Ligne" data-lang-en="Online Shop">Boutique en Ligne</a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
       <i class="ti ti-menu-2"></i>
     </button>
@@ -1367,10 +1391,10 @@
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-text reveal-left">
-    <h1>Représentant Officiel de la marque Double A au Sénégal</h1>
-    <p>Comptoir Commercial Sourang (CCS) : Votre partenaire de référence en Import-Export, Commerce Général et Demande d'informations produits par WhatsApp.</p>
+    <h1 data-lang-fr="Représentant Officiel de la marque Double A au Sénégal" data-lang-en="Official Representative of the Double A Brand in Senegal">Représentant Officiel de la marque Double A au Sénégal</h1>
+    <p data-lang-fr="Comptoir Commercial Sourang (CCS) : Votre partenaire de référence en Import-Export, Commerce Général et Demande d'informations produits par WhatsApp." data-lang-en="Comptoir Commercial Sourang (CCS): Your benchmark partner in Import-Export, General Trade and Product Information Requests via WhatsApp.">Comptoir Commercial Sourang (CCS) : Votre partenaire de référence en Import-Export, Commerce Général et Demande d'informations produits par WhatsApp.</p>
     <a href="#e-commerce-section" onclick="toggleShopSection()" class="btn-services">
-      Activer la Boutique & Demander une info
+      <span data-lang-fr="Activer la Boutique & Demander une info" data-lang-en="Activate Shop & Request Info">Activer la Boutique & Demander une info</span>
       <i class="ti ti-arrow-right"></i>
     </a>
   </div>
@@ -1389,8 +1413,8 @@
   <div class="video-overlay"></div>
 
   <div class="container">
-    <div class="section-tag reveal-top">Nos services</div>
-    <h2 class="section-title reveal-top">Ce que nous faisons</h2>
+    <div class="section-tag reveal-top" data-lang-fr="Nos services" data-lang-en="Our Services">Nos services</div>
+    <h2 class="section-title reveal-top" data-lang-fr="Ce que nous faisons" data-lang-en="What We Do">Ce que nous faisons</h2>
     
     <div class="section-illustration reveal-bottom">
       <img src="assets/hero-visual.png" alt="Illustration de nos services logistiques et import-export">
@@ -1401,27 +1425,27 @@
         <div class="service-icon">
           <img src="assets/service-import-export.png" alt="Import-Export 3D">
         </div>
-        <h3>Import-Export</h3>
-        <p>Nous facilitons le commerce international et assurons l'importation directe de produits de premier choix depuis la Thaïlande et le monde.</p>
-        <a href="#a-propos" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
+        <h3 data-lang-fr="Import-Export" data-lang-en="Import-Export">Import-Export</h3>
+        <p data-lang-fr="Nous facilitons le commerce international et assurons l'importation directe de produits de premier choix depuis la Thaïlande et le monde." data-lang-en="We facilitate international trade and ensure the direct import of top-choice products from Thailand and the world.">Nous facilitons le commerce international et assurons l'importation directe de produits de premier choix depuis la Thaïlande et le monde.</p>
+        <a href="#a-propos" class="service-link"><span data-lang-fr="En savoir plus" data-lang-en="Learn more">En savoir plus</span> <i class="ti ti-arrow-right"></i></a>
       </div>
       
       <div class="service-card reveal-top">
         <div class="service-icon">
           <img src="assets/service-commerce.png" alt="Commerce Général 3D">
         </div>
-        <h3>Commerce Général</h3>
-        <p>Distribution en gros et demi-gros de produits alimentaires et bureautiques de haute qualité pour répondre à tous vos besoins professionnels.</p>
-        <a href="#e-commerce-section" onclick="toggleShopSection()" class="service-link">Demander des infos <i class="ti ti-arrow-right"></i></a>
+        <h3 data-lang-fr="Commerce Général" data-lang-en="General Trade">Commerce Général</h3>
+        <p data-lang-fr="Distribution en gros et demi-gros de produits alimentaires et bureautiques de haute qualité pour répondre à tous vos besoins professionnels." data-lang-en="Wholesale and semi-wholesale distribution of high-quality food and office products to meet all your professional needs.">Distribution en gros et demi-gros de produits alimentaires et bureautiques de haute qualité pour répondre à tous vos besoins professionnels.</p>
+        <a href="#e-commerce-section" onclick="toggleShopSection()" class="service-link"><span data-lang-fr="Demander des infos" data-lang-en="Request info">Demander des infos</span> <i class="ti ti-arrow-right"></i></a>
       </div>
       
       <div class="service-card reveal-right">
         <div class="service-icon">
           <img src="assets/service-accompagnement.png" alt="Accompagnement 3D">
         </div>
-        <h3>Accompagnement</h3>
-        <p>Un suivi personnalisé et des partenariats solides garantis à chaque étape de vos approvisionnements et projets commerciaux.</p>
-        <a href="#contact" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
+        <h3 data-lang-fr="Accompagnement" data-lang-en="Support">Accompagnement</h3>
+        <p data-lang-fr="Un suivi personnalisé et des partenariats solides garantis à chaque étape de vos approvisionnements et projets commerciaux." data-lang-en="Personalized follow-up and solid partnerships guaranteed at every step of your supplies and commercial projects.">Un suivi personnalisé et des partenariats solides garantis à chaque étape de vos approvisionnements et projets commerciaux.</p>
+        <a href="#contact" class="service-link"><span data-lang-fr="En savoir plus" data-lang-en="Learn more">En savoir plus</span> <i class="ti ti-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -1435,24 +1459,24 @@
 <!-- BANDE LUMINEUSE -->
 <div style="background: linear-gradient(90deg, #0d2a5c, #1b6fd6, #0d2a5c); padding: 18px 20px; text-align: center; color: #fff; border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2);">
   <div class="container reveal-left" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; font-weight: 600; font-size: 0.95rem;">
-    <span style="display: inline-flex; align-items: center; gap: 6px;"><i class="ti ti-award" style="color: #ffd700;"></i> Exclusivité CCS :</span>
-    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 0px; border: 1px solid rgba(255,255,255,0.25); font-size: 0.85rem;">Papier Double A, Smart Copy & Capital Paper</span>
-    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 0px; border: 1px solid rgba(255,255,255,0.25); font-size: 0.85rem;">WhatsApp Assistance : +221 77 699 00 00</span>
+    <span style="display: inline-flex; align-items: center; gap: 6px;"><i class="ti ti-award" style="color: #ffd700;"></i> <span data-lang-fr="Exclusivité CCS :" data-lang-en="CCS Exclusivity:">Exclusivité CCS :</span></span>
+    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 0px; border: 1px solid rgba(255,255,255,0.25); font-size: 0.85rem;" data-lang-fr="Papier Double A, Smart Copy & Capital Paper" data-lang-en="Double A Paper, Smart Copy & Capital Paper">Papier Double A, Smart Copy & Capital Paper</span>
+    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 0px; border: 1px solid rgba(255,255,255,0.25); font-size: 0.85rem;" data-lang-fr="WhatsApp Assistance : +221 77 699 00 00" data-lang-en="WhatsApp Assistance: +221 77 699 00 00">WhatsApp Assistance : +221 77 699 00 00</span>
   </div>
 </div>
 
 <!-- A PROPOS -->
 <section id="a-propos">
   <div class="container">
-    <div class="section-tag reveal-top">À propos de CCS</div>
-    <h2 class="section-title reveal-top">Qui sommes-nous ?</h2>
+    <div class="section-tag reveal-top" data-lang-fr="À propos de CCS" data-lang-en="About CCS">À propos de CCS</div>
+    <h2 class="section-title reveal-top" data-lang-fr="Qui sommes-nous ?" data-lang-en="Who Are We?">Qui sommes-nous ?</h2>
     
     <div class="section-illustration reveal-bottom">
       <img src="assets/produits-papier.jpg" alt="Illustration de présentation CCS">
     </div>
 
-    <p class="reveal-right">Basé au Sénégal, le <strong>Comptoir Commercial Sourang (CCS)</strong> est une entreprise d'import-export solidement implantée sur le marché. En tant que <strong>représentant officiel de la marque de papier DOUBLE A en provenance de Thaïlande</strong>, ainsi que distributeur des gammes <strong>Smart Copy</strong> et <strong>Capital Paper</strong>, nous garantissons aux professionnels et distributeurs des produits d'une qualité irréprochable.</p>
-    <a href="#e-commerce-section" onclick="toggleShopSection()" class="btn-white reveal-left">Activer la boutique</a>
+    <p class="reveal-right" data-lang-fr="Basé au Sénégal, le Comptoir Commercial Sourang (CCS) est une entreprise d'import-export solidement implantée sur le marché. En tant que représentant officiel de la marque de papier DOUBLE A en provenance de Thaïlande, ainsi que distributeur des gammes Smart Copy et Capital Paper, nous garantissons aux professionnels et distributeurs des produits d'une qualité irréprochable." data-lang-en="Based in Senegal, Comptoir Commercial Sourang (CCS) is an import-export company firmly established in the market. As the official representative of the DOUBLE A paper brand from Thailand, as well as a distributor of the Smart Copy and Capital Paper ranges, we guarantee professionals and distributors products of impeccable quality.">Basé au Sénégal, le <strong>Comptoir Commercial Sourang (CCS)</strong> est une entreprise d'import-export solidement implantée sur le marché. En tant que <strong>représentant officiel de la marque de papier DOUBLE A en provenance de Thaïlande</strong>, ainsi que distributeur des gammes <strong>Smart Copy</strong> et <strong>Capital Paper</strong>, nous garantissons aux professionnels et distributeurs des produits d'une qualité irréprochable.</p>
+    <a href="#e-commerce-section" onclick="toggleShopSection()" class="btn-white reveal-left" data-lang-fr="Activer la boutique" data-lang-en="Activate shop">Activer la boutique</a>
   </div>
   <div class="wave-divider">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -1464,8 +1488,8 @@
 <!-- SECTION : SÉNÉGAL ET LIVRAISON AUX 4 COINS -->
 <section id="senegal-livraison">
   <div class="container">
-    <div class="section-tag reveal-top">Ancrage National & Réseau</div>
-    <h2 class="section-title reveal-top">Présents partout au Sénégal, au service de nos clients</h2>
+    <div class="section-tag reveal-top" data-lang-fr="Ancrage National & Réseau" data-lang-en="National Roots & Network">Ancrage National & Réseau</div>
+    <h2 class="section-title reveal-top" data-lang-fr="Présents partout au Sénégal, au service de nos clients" data-lang-en="Present Everywhere in Senegal, Serving Our Customers">Présents partout au Sénégal, au service de nos clients</h2>
     
     <div class="section-illustration reveal-bottom">
       <img src="assets/hero-visual.png" alt="Illustration logistique et couverture du Sénégal">
@@ -1473,37 +1497,37 @@
 
     <div class="delivery-wrapper">
       <div class="delivery-content reveal-left">
-        <h3>Au cœur du développement économique du Sénégal</h3>
-        <p>Le Comptoir Commercial Sourang (CCS) est fier de servir une clientèle fidèle répartie dans toutes les régions du Sénégal. De Dakar aux contrées les plus éloignées, nous tissons des liens étroits avec nos partenaires et clients professionnels.</p>
-        <p>Grâce à notre <strong>équipe dynamique de logistique</strong>, nous garantissons des services de livraison qui vont partout dans les 4 coins du pays, assurant la disponibilité constante de nos produits de qualité supérieure là où vous en avez besoin.</p>
+        <h3 data-lang-fr="Au cœur du développement économique du Sénégal" data-lang-en="At the Heart of Senegal's Economic Development">Au cœur du développement économique du Sénégal</h3>
+        <p data-lang-fr="Le Comptoir Commercial Sourang (CCS) est fier de servir une clientèle fidèle répartie dans toutes les régions du Sénégal. De Dakar aux contrées les plus éloignées, nous tissons des liens étroits avec nos partenaires et clients professionnels." data-lang-en="Comptoir Commercial Sourang (CCS) is proud to serve a loyal customer base spread across all regions of Senegal. From Dakar to the most remote areas, we forge close ties with our partners and professional customers.">Le Comptoir Commercial Sourang (CCS) est fier de servir une clientèle fidèle répartie dans toutes les régions du Sénégal. De Dakar aux contrées les plus éloignées, nous tissons des liens étroits avec nos partenaires et clients professionnels.</p>
+        <p data-lang-fr="Grâce à notre équipe dynamique de logistique, nous garantissons des services de livraison qui vont partout dans les 4 coins du pays, assurant la disponibilité constante de nos produits de qualité supérieure là où vous en avez besoin." data-lang-en="Thanks to our dynamic logistics team, we guarantee delivery services that go everywhere in the 4 corners of the country, ensuring the constant availability of our superior quality products wherever you need them.">Grâce à notre <strong>équipe dynamique de logistique</strong>, nous garantissons des services de livraison qui vont partout dans les 4 coins du pays, assurant la disponibilité constante de nos produits de qualité supérieure là où vous en avez besoin.</p>
       </div>
       <div class="delivery-features reveal-right">
         <div class="delivery-feature-item">
           <div class="delivery-feature-icon"><i class="ti ti-map-pin-filled"></i></div>
           <div>
-            <h4>Toutes les Régions</h4>
-            <p>Une couverture complète du territoire national pour satisfaire tous nos clients.</p>
+            <h4 data-lang-fr="Toutes les Régions" data-lang-en="All Regions">Toutes les Régions</h4>
+            <p data-lang-fr="Une couverture complète du territoire national pour satisfaire tous nos clients." data-lang-en="Complete coverage of the national territory to satisfy all our customers.">Une couverture complète du territoire national pour satisfaire tous nos clients.</p>
           </div>
         </div>
         <div class="delivery-feature-item">
           <div class="delivery-feature-icon"><i class="ti ti-truck-delivery"></i></div>
           <div>
-            <h4>4 Coins du Sénégal</h4>
-            <p>Des services de livraison rapides et sécurisés jusqu'à vos portes.</p>
+            <h4 data-lang-fr="4 Coins du Sénégal" data-lang-en="4 Corners of Senegal">4 Coins du Sénégal</h4>
+            <p data-lang-fr="Des services de livraison rapides et sécurisés jusqu'à vos portes." data-lang-en="Fast and secure delivery services right to your doors.">Des services de livraison rapides et sécurisés jusqu'à vos portes.</p>
           </div>
         </div>
         <div class="delivery-feature-item">
           <div class="delivery-feature-icon"><i class="ti ti-users-group"></i></div>
           <div>
-            <h4>Équipe Dynamique</h4>
-            <p>Des professionnels de la logistique engagés et réactifs à votre service.</p>
+            <h4 data-lang-fr="Équipe Dynamique" data-lang-en="Dynamic Team">Équipe Dynamique</h4>
+            <p data-lang-fr="Des professionnels de la logistique engagés et réactifs à votre service." data-lang-en="Committed and responsive logistics professionals at your service.">Des professionnels de la logistique engagés et réactifs à votre service.</p>
           </div>
         </div>
         <div class="delivery-feature-item">
           <div class="delivery-feature-icon"><i class="ti ti-shield-check"></i></div>
           <div>
-            <h4>Fiabilité Garantie</h4>
-            <p>Un acheminement rigoureux de vos commandes en gros et demi-gros.</p>
+            <h4 data-lang-fr="Fiabilité Garantie" data-lang-en="Guaranteed Reliability">Fiabilité Garantie</h4>
+            <p data-lang-fr="Un acheminement rigoureux de vos commandes en gros et demi-gros." data-lang-en="Rigorous routing of your wholesale and semi-wholesale orders.">Un acheminement rigoureux de vos commandes en gros et demi-gros.</p>
           </div>
         </div>
       </div>
@@ -1519,8 +1543,8 @@
 <!-- SECTION E-COMMERCE : INACTIF PAR DÉFAUT, DEMANDE D'INFORMATIONS VIA WHATSAPP -->
 <section id="e-commerce-section">
   <div class="container">
-    <div class="section-tag reveal-top">Boutique en Ligne & Demande d'Informations</div>
-    <h2 class="section-title reveal-top">Catalogue & Demande de Renseignements par WhatsApp</h2>
+    <div class="section-tag reveal-top" data-lang-fr="Boutique en Ligne & Demande d'Informations" data-lang-en="Online Shop & Information Request">Boutique en Ligne & Demande d'Informations</div>
+    <h2 class="section-title reveal-top" data-lang-fr="Catalogue & Demande de Renseignements par WhatsApp" data-lang-en="Catalog & Inquiry via WhatsApp">Catalogue & Demande de Renseignements par WhatsApp</h2>
 
     <div class="section-illustration reveal-bottom">
       <img src="assets/produits-alimentaires.jpg" alt="Illustration de la boutique en ligne CCS">
@@ -1530,8 +1554,8 @@
       <div class="shop-layout">
         <!-- CATALOGUE PRODUITS (PRODUITS NON DISPONIBLES -> FORMULAIRE DE DEMANDE D'INFOS WHATSAPP) -->
         <div class="shop-catalog">
-          <h3><i class="ti ti-package"></i> Catalogue des Produits (Double A, Smart Copy, Capital Paper)</h3>
-          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;">
+          <h3 data-lang-fr="Catalogue des Produits (Double A, Smart Copy, Capital Paper)" data-lang-en="Product Catalog (Double A, Smart Copy, Capital Paper)"><i class="ti ti-package"></i> Catalogue des Produits (Double A, Smart Copy, Capital Paper)</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;" data-lang-fr="Les stocks en direct et tarifs spécifiques sont gérés sur demande d'information personnalisée. Sélectionnez un produit et remplissez le formulaire ci-contre pour l'envoyer directement par WhatsApp à l'équipe CCS." data-lang-en="Live stocks and specific rates are managed upon personalized information request. Select a product and fill out the form opposite to send it directly via WhatsApp to the CCS team.">
             Les stocks en direct et tarifs spécifiques sont gérés sur demande d'information personnalisée. Sélectionnez un produit et remplissez le formulaire ci-contre pour l'envoyer directement par WhatsApp à l'équipe CCS.
           </p>
           <div class="shop-products-grid">
@@ -1540,19 +1564,19 @@
             <div class="shop-item-card">
               <div class="shop-item-img" style="background-image: url('assets/produits-papier.jpg');"></div>
               <div class="shop-item-details">
-                <h4>Papier A4 Double A (Officiel)</h4>
-                <div class="price">Sur Demande d'Information</div>
+                <h4 data-lang-fr="Papier A4 Double A (Officiel)" data-lang-en="Double A A4 Paper (Official)">Papier A4 Double A (Officiel)</h4>
+                <div class="price" data-lang-fr="Sur Demande d'Information" data-lang-en="Upon Information Request">Sur Demande d'Information</div>
               </div>
               <div class="variant-selector">
-                <label for="variant-papier">Conditionnement / Variante :</label>
+                <label for="variant-papier" data-lang-fr="Conditionnement / Variante :" data-lang-en="Packaging / Variant:">Conditionnement / Variante :</label>
                 <select id="variant-papier" class="product-variant">
-                  <option value="Carton de 5 Ramettes (Standard)">Carton de 5 Ramettes (Standard)</option>
-                  <option value="Palette de 100 Cartons (Gros B2B)">Palette de 100 Cartons (Gros B2B)</option>
-                  <option value="Ramette Unique (Détail)">Ramette Unique (Détail)</option>
+                  <option value="Carton de 5 Ramettes (Standard)" data-lang-fr="Carton de 5 Ramettes (Standard)" data-lang-en="Carton of 5 Reams (Standard)">Carton de 5 Ramettes (Standard)</option>
+                  <option value="Palette de 100 Cartons (Gros B2B)" data-lang-fr="Palette de 100 Cartons (Gros B2B)" data-lang-en="Pallet of 100 Cartons (B2B Wholesale)">Palette de 100 Cartons (Gros B2B)</option>
+                  <option value="Ramette Unique (Détail)" data-lang-fr="Ramette Unique (Détail)" data-lang-en="Single Ream (Retail)">Ramette Unique (Détail)</option>
                 </select>
               </div>
               <button class="btn-add-cart" onclick="selectProductForInquiry('Papier A4 Double A', 'variant-papier')">
-                <i class="ti ti-brand-whatsapp"></i> Demander les infos de ce produit
+                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos de ce produit" data-lang-en="Request info for this product">Demander les infos de ce produit</span>
               </button>
             </div>
 
@@ -1560,19 +1584,19 @@
             <div class="shop-item-card">
               <div class="shop-item-img" style="background-image: url('assets/produits-papier.jpg');"></div>
               <div class="shop-item-details">
-                <h4>Papier Smart Copy A4</h4>
-                <div class="price">Sur Demande d'Information</div>
+                <h4 data-lang-fr="Papier Smart Copy A4" data-lang-en="Smart Copy A4 Paper">Papier Smart Copy A4</h4>
+                <div class="price" data-lang-fr="Sur Demande d'Information" data-lang-en="Upon Information Request">Sur Demande d'Information</div>
               </div>
               <div class="variant-selector">
-                <label for="variant-smartcopy">Conditionnement / Variante :</label>
+                <label for="variant-smartcopy" data-lang-fr="Conditionnement / Variante :" data-lang-en="Packaging / Variant:">Conditionnement / Variante :</label>
                 <select id="variant-smartcopy" class="product-variant">
-                  <option value="Carton de 5 Ramettes (Standard)">Carton de 5 Ramettes (Standard)</option>
-                  <option value="Palette de 100 Cartons (Gros B2B)">Palette de 100 Cartons (Gros B2B)</option>
-                  <option value="Ramette Unique (Détail)">Ramette Unique (Détail)</option>
+                  <option value="Carton de 5 Ramettes (Standard)" data-lang-fr="Carton de 5 Ramettes (Standard)" data-lang-en="Carton of 5 Reams (Standard)">Carton de 5 Ramettes (Standard)</option>
+                  <option value="Palette de 100 Cartons (Gros B2B)" data-lang-fr="Palette de 100 Cartons (Gros B2B)" data-lang-en="Pallet of 100 Cartons (B2B Wholesale)">Palette de 100 Cartons (Gros B2B)</option>
+                  <option value="Ramette Unique (Détail)" data-lang-fr="Ramette Unique (Détail)" data-lang-en="Single Ream (Retail)">Ramette Unique (Détail)</option>
                 </select>
               </div>
               <button class="btn-add-cart" onclick="selectProductForInquiry('Papier Smart Copy A4', 'variant-smartcopy')">
-                <i class="ti ti-brand-whatsapp"></i> Demander les infos de ce produit
+                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos de ce produit" data-lang-en="Request info for this product">Demander les infos de ce produit</span>
               </button>
             </div>
 
@@ -1580,19 +1604,19 @@
             <div class="shop-item-card">
               <div class="shop-item-img" style="background-image: url('assets/produits-papier.jpg');"></div>
               <div class="shop-item-details">
-                <h4>Papier Capital Paper A4</h4>
-                <div class="price">Sur Demande d'Information</div>
+                <h4 data-lang-fr="Papier Capital Paper A4" data-lang-en="Capital Paper A4 Paper">Papier Capital Paper A4</h4>
+                <div class="price" data-lang-fr="Sur Demande d'Information" data-lang-en="Upon Information Request">Sur Demande d'Information</div>
               </div>
               <div class="variant-selector">
-                <label for="variant-capital">Conditionnement / Variante :</label>
+                <label for="variant-capital" data-lang-fr="Conditionnement / Variante :" data-lang-en="Packaging / Variant:">Conditionnement / Variante :</label>
                 <select id="variant-capital" class="product-variant">
-                  <option value="Carton de 5 Ramettes (Standard)">Carton de 5 Ramettes (Standard)</option>
-                  <option value="Palette de 100 Cartons (Gros B2B)">Palette de 100 Cartons (Gros B2B)</option>
-                  <option value="Ramette Unique (Détail)">Ramette Unique (Détail)</option>
+                  <option value="Carton de 5 Ramettes (Standard)" data-lang-fr="Carton de 5 Ramettes (Standard)" data-lang-en="Carton of 5 Reams (Standard)">Carton de 5 Ramettes (Standard)</option>
+                  <option value="Palette de 100 Cartons (Gros B2B)" data-lang-fr="Palette de 100 Cartons (Gros B2B)" data-lang-en="Pallet of 100 Cartons (B2B Wholesale)">Palette de 100 Cartons (Gros B2B)</option>
+                  <option value="Ramette Unique (Détail)" data-lang-fr="Ramette Unique (Détail)" data-lang-en="Single Ream (Retail)">Ramette Unique (Détail)</option>
                 </select>
               </div>
               <button class="btn-add-cart" onclick="selectProductForInquiry('Papier Capital Paper A4', 'variant-capital')">
-                <i class="ti ti-brand-whatsapp"></i> Demander les infos de ce produit
+                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos de ce produit" data-lang-en="Request info for this product">Demander les infos de ce produit</span>
               </button>
             </div>
 
@@ -1600,19 +1624,19 @@
             <div class="shop-item-card">
               <div class="shop-item-img" style="background-image: url('assets/produits-alimentaires.jpg');"></div>
               <div class="shop-item-details">
-                <h4>Produits Alimentaires de Qualité</h4>
-                <div class="price">Sur Demande d'Information</div>
+                <h4 data-lang-fr="Produits Alimentaires de Qualité" data-lang-en="Quality Food Products">Produits Alimentaires de Qualité</h4>
+                <div class="price" data-lang-fr="Sur Demande d'Information" data-lang-en="Upon Information Request">Sur Demande d'Information</div>
               </div>
               <div class="variant-selector">
-                <label for="variant-alim">Conditionnement / Variante :</label>
+                <label for="variant-alim" data-lang-fr="Conditionnement / Variante :" data-lang-en="Packaging / Variant:">Conditionnement / Variante :</label>
                 <select id="variant-alim" class="product-variant">
-                  <option value="Colis Standard (Gros / Demi-Gros)">Colis Standard (Gros / Demi-Gros)</option>
-                  <option value="Grand Conteneur Industriel">Grand Conteneur Industriel</option>
-                  <option value="Format Familial (Détail)">Format Familial (Détail)</option>
+                  <option value="Colis Standard (Gros / Demi-Gros)" data-lang-fr="Colis Standard (Gros / Demi-Gros)" data-lang-en="Standard Package (Wholesale / Semi-Wholesale)">Colis Standard (Gros / Demi-Gros)</option>
+                  <option value="Grand Conteneur Industriel" data-lang-fr="Grand Conteneur Industriel" data-lang-en="Large Industrial Container">Grand Conteneur Industriel</option>
+                  <option value="Format Familial (Détail)" data-lang-fr="Format Familial (Détail)" data-lang-en="Family Size (Retail)">Format Familial (Détail)</option>
                 </select>
               </div>
               <button class="btn-add-cart" onclick="selectProductForInquiry('Produits Alimentaires', 'variant-alim')">
-                <i class="ti ti-brand-whatsapp"></i> Demander les infos de ce produit
+                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos de ce produit" data-lang-en="Request info for this product">Demander les infos de ce produit</span>
               </button>
             </div>
 
@@ -1621,44 +1645,44 @@
 
         <!-- FORMULAIRE DE DEMANDE D'INFORMATIONS VIA WHATSAPP -->
         <div class="shop-cart-box">
-          <h3><i class="ti ti-brand-whatsapp"></i> Envoyer votre Demande d'Infos</h3>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;">
+          <h3 data-lang-fr="Envoyer votre Demande d'Infos" data-lang-en="Send Your Information Request"><i class="ti ti-brand-whatsapp"></i> Envoyer votre Demande d'Infos</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;" data-lang-fr="Le formulaire ci-dessous générera un message instantané vers notre WhatsApp pour obtenir disponibilité et tarifs." data-lang-en="The form below will generate an instant message to our WhatsApp to get availability and rates.">
             Le formulaire ci-dessous générera un message instantané vers notre WhatsApp pour obtenir disponibilité et tarifs.
           </p>
 
           <form class="checkout-form" id="whatsapp-inquiry-form" onsubmit="sendWhatsAppInquiry(event)">
             <div class="form-group">
-              <label for="inquiry-product">Produit sélectionné *</label>
-              <input type="text" id="inquiry-product" readonly value="Veuillez choisir un produit ci-contre" style="background:#f1f5f9; font-weight:600; color:var(--navy);">
+              <label for="inquiry-product" data-lang-fr="Produit sélectionné *" data-lang-en="Selected Product *">Produit sélectionné *</label>
+              <input type="text" id="inquiry-product" readonly value="Veuillez choisir un produit ci-contre" data-lang-fr-val="Veuillez choisir un produit ci-contre" data-lang-en-val="Please choose a product opposite" style="background:#f1f5f9; font-weight:600; color:var(--navy);">
             </div>
 
             <div class="form-group">
-              <label for="inquiry-variant">Option / Variante *</label>
-              <input type="text" id="inquiry-variant" readonly value="Aucune variante sélectionnée" style="background:#f1f5f9; color:var(--text-muted);">
+              <label for="inquiry-variant" data-lang-fr="Option / Variante *" data-lang-en="Option / Variant *">Option / Variante *</label>
+              <input type="text" id="inquiry-variant" readonly value="Aucune variante sélectionnée" data-lang-fr-val="Aucune variante sélectionnée" data-lang-en-val="No variant selected" style="background:#f1f5f9; color:var(--text-muted);">
             </div>
 
             <div class="form-group">
-              <label for="inquiry-name">Votre Nom & Prénom *</label>
+              <label for="inquiry-name" data-lang-fr="Votre Nom & Prénom *" data-lang-en="Your Full Name *">Votre Nom & Prénom *</label>
               <input type="text" id="inquiry-name" required placeholder="Ex: Moussa Diop">
             </div>
 
             <div class="form-group">
-              <label for="inquiry-company">Entreprise (Optionnel)</label>
+              <label for="inquiry-company" data-lang-fr="Entreprise (Optionnel)" data-lang-en="Company (Optional)">Entreprise (Optionnel)</label>
               <input type="text" id="inquiry-company" placeholder="Ex: Librairie Moderne Dakar">
             </div>
 
             <div class="form-group">
-              <label for="inquiry-phone">Votre Numéro WhatsApp *</label>
+              <label for="inquiry-phone" data-lang-fr="Votre Numéro WhatsApp *" data-lang-en="Your WhatsApp Number *">Votre Numéro WhatsApp *</label>
               <input type="tel" id="inquiry-phone" required placeholder="Ex: +221 77 000 00 00">
             </div>
 
             <div class="form-group">
-              <label for="inquiry-message">Précisions sur votre besoin *</label>
+              <label for="inquiry-message" data-lang-fr="Précisions sur votre besoin *" data-lang-en="Details about your need *">Précisions sur votre besoin *</label>
               <textarea id="inquiry-message" rows="3" required placeholder="Ex: Je souhaite connaître la disponibilité en gros pour une livraison à Thiès."></textarea>
             </div>
 
             <button type="submit" class="btn-confirm-order">
-              <i class="ti ti-brand-whatsapp"></i> Envoyer la demande par WhatsApp
+              <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Envoyer la demande par WhatsApp" data-lang-en="Send request via WhatsApp">Envoyer la demande par WhatsApp</span>
             </button>
           </form>
         </div>
@@ -1670,8 +1694,8 @@
 <!-- ACTUALITÉS -->
 <section id="actualites">
   <div class="container">
-    <div class="section-tag reveal-top">Actualités</div>
-    <h2 class="section-title reveal-top">Le fil d'information CCS</h2>
+    <div class="section-tag reveal-top" data-lang-fr="Actualités" data-lang-en="News">Actualités</div>
+    <h2 class="section-title reveal-top" data-lang-fr="Le fil d'information CCS" data-lang-en="The CCS News Feed">Le fil d'information CCS</h2>
 
     <div class="section-illustration reveal-left">
       <img src="assets/produits-papier.jpg" alt="Illustration actualités et arrivages">
@@ -1680,26 +1704,26 @@
     <div class="news-grid">
       <div class="news-card reveal-left">
         <div class="news-content">
-          <div class="news-date">Juin 2026</div>
-          <h4>Arrivage massif de conteneurs Double A, Smart Copy & Capital Paper</h4>
-          <p>Reception directe des nouvelles lignes de production pour alimenter le marché sénégalais avec nos références phares.</p>
-          <span class="service-link">Lire la suite <i class="ti ti-arrow-right"></i></span>
+          <div class="news-date" data-lang-fr="Juin 2026" data-lang-en="June 2026">Juin 2026</div>
+          <h4 data-lang-fr="Arrivage massif de conteneurs Double A, Smart Copy & Capital Paper" data-lang-en="Massive arrival of Double A, Smart Copy & Capital Paper containers">Arrivage massif de conteneurs Double A, Smart Copy & Capital Paper</h4>
+          <p data-lang-fr="Reception directe des nouvelles lignes de production pour alimenter le marché sénégalais avec nos références phares." data-lang-en="Direct reception of new production lines to supply the Senegalese market with our flagship references.">Reception directe des nouvelles lignes de production pour alimenter le marché sénégalais avec nos références phares.</p>
+          <span class="service-link"><span data-lang-fr="Lire la suite" data-lang-en="Read more">Lire la suite</span> <i class="ti ti-arrow-right"></i></span>
         </div>
       </div>
       <div class="news-card reveal-top">
         <div class="news-content">
-          <div class="news-date">Mai 2026</div>
-          <h4>Partenariat et distribution B2B élargie</h4>
-          <p>CCS renforce son réseau de distribution pour faciliter l'accès aux fournitures de bureau sur l'ensemble du territoire national.</p>
-          <span class="service-link">Lire la suite <i class="ti ti-arrow-right"></i></span>
+          <div class="news-date" data-lang-fr="Mai 2026" data-lang-en="May 2026">Mai 2026</div>
+          <h4 data-lang-fr="Partenariat et distribution B2B élargie" data-lang-en="Partnership and expanded B2B distribution">Partenariat et distribution B2B élargie</h4>
+          <p data-lang-fr="CCS renforce son réseau de distribution pour faciliter l'accès aux fournitures de bureau sur l'ensemble du territoire national." data-lang-en="CCS strengthens its distribution network to facilitate access to office supplies throughout the national territory.">CCS renforce son réseau de distribution pour faciliter l'accès aux fournitures de bureau sur l'ensemble du territoire national.</p>
+          <span class="service-link"><span data-lang-fr="Lire la suite" data-lang-en="Read more">Lire la suite</span> <i class="ti ti-arrow-right"></i></span>
         </div>
       </div>
       <div class="news-card reveal-right">
         <div class="news-content">
-          <div class="news-date">Avril 2026</div>
-          <h4>Logistique optimisée en Afrique de l'Ouest</h4>
-          <p>Mise en place de nouvelles solutions d'acheminement depuis le port de Dakar vers nos entrepôts de Hann Mariste.</p>
-          <span class="service-link">Lire la suite <i class="ti ti-arrow-right"></i></span>
+          <div class="news-date" data-lang-fr="Avril 2026" data-lang-en="April 2026">Avril 2026</div>
+          <h4 data-lang-fr="Logistique optimisée en Afrique de l'Ouest" data-lang-en="Optimized logistics in West Africa">Logistique optimisée en Afrique de l'Ouest</h4>
+          <p data-lang-fr="Mise en place de nouvelles solutions d'acheminement depuis le port de Dakar vers nos entrepôts de Hann Mariste." data-lang-en="Implementation of new routing solutions from the port of Dakar to our warehouses in Hann Mariste.">Mise en place de nouvelles solutions d'acheminement depuis le port de Dakar vers nos entrepôts de Hann Mariste.</p>
+          <span class="service-link"><span data-lang-fr="Lire la suite" data-lang-en="Read more">Lire la suite</span> <i class="ti ti-arrow-right"></i></span>
         </div>
       </div>
     </div>
@@ -1714,8 +1738,8 @@
 <!-- GALERIE -->
 <section id="galerie">
   <div class="container">
-    <div class="section-tag reveal-top">Immersion</div>
-    <h2 class="section-title reveal-top">Nos Opérations sur le Terrain</h2>
+    <div class="section-tag reveal-top" data-lang-fr="Immersion" data-lang-en="Immersion">Immersion</div>
+    <h2 class="section-title reveal-top" data-lang-fr="Nos Opérations sur le Terrain" data-lang-en="Our Field Operations">Nos Opérations sur le Terrain</h2>
 
     <div class="section-illustration reveal-bottom">
       <img src="assets/hero-visual.png" alt="Illustration galerie et opérations">
@@ -1738,8 +1762,8 @@
 <!-- FAQ -->
 <section id="faq">
   <div class="container">
-    <div class="section-tag reveal-top">Assistance</div>
-    <h2 class="section-title reveal-top">Questions Fréquentes</h2>
+    <div class="section-tag reveal-top" data-lang-fr="Assistance" data-lang-en="Support">Assistance</div>
+    <h2 class="section-title reveal-top" data-lang-fr="Questions Fréquentes" data-lang-en="Frequently Asked Questions">Questions Fréquentes</h2>
 
     <div class="section-illustration reveal-left">
       <img src="assets/produits-alimentaires.jpg" alt="Illustration assistance et FAQ">
@@ -1748,28 +1772,28 @@
     <div class="faq-container reveal-right">
       <div class="faq-item">
         <div class="faq-question">
-          <span>Quelles sont les marques de papier disponibles en plus de Double A ?</span>
+          <span data-lang-fr="Quelles sont les marques de papier disponibles en plus de Double A ?" data-lang-en="What paper brands are available in addition to Double A?">Quelles sont les marques de papier disponibles en plus de Double A ?</span>
           <i class="ti ti-chevron-down"></i>
         </div>
-        <div class="faq-answer">
+        <div class="faq-answer" data-lang-fr="En plus de la représentation officielle de Double A, nous proposons également les gammes de qualité Smart Copy et Capital Paper sur demande d'information." data-lang-en="In addition to the official representation of Double A, we also offer the quality ranges Smart Copy and Capital Paper upon information request.">
           En plus de la représentation officielle de Double A, nous proposons également les gammes de qualité Smart Copy et Capital Paper sur demande d'information.
         </div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
-          <span>Comment demander des informations sur les produits indisponibles ?</span>
+          <span data-lang-fr="Comment demander des informations sur les produits indisponibles ?" data-lang-en="How to request information on unavailable products?">Comment demander des informations sur les produits indisponibles ?</span>
           <i class="ti ti-chevron-down"></i>
         </div>
-        <div class="faq-answer">
+        <div class="faq-answer" data-lang-fr="Activez la boutique en ligne, choisissez le produit et utilisez le formulaire de demande d'informations pour être mis en relation instantanée via WhatsApp." data-lang-en="Activate the online shop, choose the product and use the information request form to be put in instant contact via WhatsApp.">
           Activez la boutique en ligne, choisissez le produit et utilisez le formulaire de demande d'informations pour être mis en relation instantanée via WhatsApp.
         </div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
-          <span>Comment contacter le service client en cas de besoin ?</span>
+          <span data-lang-fr="Comment contacter le service client en cas de besoin ?" data-lang-en="How to contact customer service if needed?">Comment contacter le service client en cas de besoin ?</span>
           <i class="ti ti-chevron-down"></i>
         </div>
-        <div class="faq-answer">
+        <div class="faq-answer" data-lang-fr="Vous pouvez nous joindre directement via le bouton WhatsApp flottant ou au +221 77 699 00 00 pour toute question relative à vos projets." data-lang-en="You can reach us directly via the floating WhatsApp button or at +221 77 699 00 00 for any questions regarding your projects.">
           Vous pouvez nous joindre directement via le bouton WhatsApp flottant ou au +221 77 699 00 00 pour toute question relative à vos projets.
         </div>
       </div>
@@ -1791,8 +1815,8 @@
   </div>
 
   <div class="container">
-    <div class="section-tag reveal-top" style="color: var(--blue);">L'Humain au cœur du succès</div>
-    <h2 class="section-title reveal-top">Notre Équipe</h2>
+    <div class="section-tag reveal-top" style="color: var(--blue);" data-lang-fr="L'Humain au cœur du succès" data-lang-en="People at the Heart of Success">L'Humain au cœur du succès</div>
+    <h2 class="section-title reveal-top" data-lang-fr="Notre Équipe" data-lang-en="Our Team">Notre Équipe</h2>
 
     <div class="section-illustration reveal-bottom">
       <img src="assets/hero-visual.png" alt="Illustration de l'équipe CCS">
@@ -1804,58 +1828,58 @@
       <div class="team-card">
         <img src="assets/equipe-1.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
-          <h4>Direction Générale</h4>
-          <p>Management & Stratégie</p>
+          <h4 data-lang-fr="Direction Générale" data-lang-en="General Management">Direction Générale</h4>
+          <p data-lang-fr="Management & Stratégie" data-lang-en="Management & Strategy">Management & Stratégie</p>
         </div>
       </div>
       <div class="team-card">
         <img src="assets/equipe-2.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
-          <h4>Service Logistique</h4>
-          <p>Import & Sourcing</p>
+          <h4 data-lang-fr="Service Logistique" data-lang-en="Logistics Department">Service Logistique</h4>
+          <p data-lang-fr="Import & Sourcing" data-lang-en="Import & Sourcing">Import & Sourcing</p>
         </div>
       </div>
       <div class="team-card">
         <img src="assets/equipe-3.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
-          <h4>Commercial & B2B</h4>
-          <p>Relations Partenaires</p>
+          <h4 data-lang-fr="Commercial & B2B" data-lang-en="Sales & B2B">Commercial & B2B</h4>
+          <p data-lang-fr="Relations Partenaires" data-lang-en="Partner Relations">Relations Partenaires</p>
         </div>
       </div>
       <div class="team-card">
         <img src="assets/equipe-4.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
-          <h4>Service Douane</h4>
-          <p>Conformité & Transit</p>
+          <h4 data-lang-fr="Service Douane" data-lang-en="Customs Department">Service Douane</h4>
+          <p data-lang-fr="Conformité & Transit" data-lang-en="Compliance & Transit">Conformité & Transit</p>
         </div>
       </div>
       
       <div class="team-card">
         <img src="assets/equipe-1.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
-          <h4>Direction Générale</h4>
-          <p>Management & Stratégie</p>
+          <h4 data-lang-fr="Direction Générale" data-lang-en="General Management">Direction Générale</h4>
+          <p data-lang-fr="Management & Stratégie" data-lang-en="Management & Strategy">Management & Stratégie</p>
         </div>
       </div>
       <div class="team-card">
         <img src="assets/equipe-2.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
-          <h4>Service Logistique</h4>
-          <p>Import & Sourcing</p>
+          <h4 data-lang-fr="Service Logistique" data-lang-en="Logistics Department">Service Logistique</h4>
+          <p data-lang-fr="Import & Sourcing" data-lang-en="Import & Sourcing">Import & Sourcing</p>
         </div>
       </div>
       <div class="team-card">
         <img src="assets/equipe-3.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
-          <h4>Commercial & B2B</h4>
-          <p>Relations Partenaires</p>
+          <h4 data-lang-fr="Commercial & B2B" data-lang-en="Sales & B2B">Commercial & B2B</h4>
+          <p data-lang-fr="Relations Partenaires" data-lang-en="Partner Relations">Relations Partenaires</p>
         </div>
       </div>
       <div class="team-card">
         <img src="assets/equipe-4.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
-          <h4>Service Douane</h4>
-          <p>Conformité & Transit</p>
+          <h4 data-lang-fr="Service Douane" data-lang-en="Customs Department">Service Douane</h4>
+          <p data-lang-fr="Conformité & Transit" data-lang-en="Compliance & Transit">Conformité & Transit</p>
         </div>
       </div>
     </div>
@@ -1871,8 +1895,8 @@
 <!-- PARTENAIRES -->
 <section id="partenaires">
   <div class="container">
-    <div class="section-tag reveal-top">Nos partenaires</div>
-    <h2 class="section-title reveal-top">Ils nous font confiance</h2>
+    <div class="section-tag reveal-top" data-lang-fr="Nos partenaires" data-lang-en="Our Partners">Nos partenaires</div>
+    <h2 class="section-title reveal-top" data-lang-fr="Ils nous font confiance" data-lang-en="They Trust Us">Ils nous font confiance</h2>
 
     <div class="section-illustration reveal-bottom">
       <img src="assets/produits-papier.jpg" alt="Illustration partenaires maritimes">
@@ -1905,11 +1929,11 @@
       <div class="cta-left">
         <div class="cta-icon"><i class="ti ti-headset"></i></div>
         <div>
-          <h3>Besoin de papier Double A, Smart Copy, Capital Paper ou d'informations sur nos conteneurs ?</h3>
-          <p>Contactez notre équipe dès aujourd'hui ou activez la boutique en ligne. WhatsApp : +221 77 699 00 00</p>
+          <h3 data-lang-fr="Besoin de papier Double A, Smart Copy, Capital Paper ou d'informations sur nos conteneurs ?" data-lang-en="Need Double A paper, Smart Copy, Capital Paper or information about our containers?">Besoin de papier Double A, Smart Copy, Capital Paper ou d'informations sur nos conteneurs ?</h3>
+          <p data-lang-fr="Contactez notre équipe dès aujourd'hui ou activez la boutique en ligne. WhatsApp : +221 77 699 00 00" data-lang-en="Contact our team today or activate the online shop. WhatsApp: +221 77 699 00 00">Contactez notre équipe dès aujourd'hui ou activez la boutique en ligne. WhatsApp : +221 77 699 00 00</p>
         </div>
       </div>
-      <a href="#e-commerce-section" onclick="toggleShopSection()" class="btn-cta">Activer la Boutique <i class="ti ti-arrow-right"></i></a>
+      <a href="#e-commerce-section" onclick="toggleShopSection()" class="btn-cta"><span data-lang-fr="Activer la Boutique" data-lang-en="Activate Shop">Activer la Boutique</span> <i class="ti ti-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -1917,16 +1941,16 @@
 <!-- CONTACT AVEC FORMULAIRE TRANSPARENT TYPE VERRE (GLASSMORPHISM) -->
 <section id="contact">
   <div class="container">
-    <div class="section-tag reveal-top">Nous contacter</div>
-    <h2 class="section-title reveal-top">Où nous trouver & Écrivez-nous</h2>
+    <div class="section-tag reveal-top" data-lang-fr="Nous contacter" data-lang-en="Contact Us">Nous contacter</div>
+    <h2 class="section-title reveal-top" data-lang-fr="Où nous trouver & Écrivez-nous" data-lang-en="Where to Find Us & Write to Us">Où nous trouver & Écrivez-nous</h2>
 
     <div class="contact-grid">
       <div class="contact-info reveal-left">
         <div class="contact-item">
           <div class="contact-icon"><i class="ti ti-map-pin"></i></div>
           <div>
-            <h4>Adresse</h4>
-            <p>Hann Mariste, SCAT Urbam, en face de Coris Banque, Dakar, Sénégal</p>
+            <h4 data-lang-fr="Adresse" data-lang-en="Address">Adresse</h4>
+            <p data-lang-fr="Hann Mariste, SCAT Urbam, en face de Coris Banque, Dakar, Sénégal" data-lang-en="Hann Mariste, SCAT Urbam, opposite Coris Bank, Dakar, Senegal">Hann Mariste, SCAT Urbam, en face de Coris Banque, Dakar, Sénégal</p>
           </div>
         </div>
         <div class="contact-item">
@@ -1939,7 +1963,7 @@
         <div class="contact-item">
           <div class="contact-icon"><i class="ti ti-phone"></i></div>
           <div>
-            <h4>Téléphone & WhatsApp</h4>
+            <h4 data-lang-fr="Téléphone & WhatsApp" data-lang-en="Phone & WhatsApp">Téléphone & WhatsApp</h4>
             <p><a href="https://wa.me/221776990000" target="_blank">+221 77 699 00 00 (WhatsApp)</a></p>
             <p><a href="tel:+221336000000">+221 33 600 00 00</a></p>
           </div>
@@ -1954,26 +1978,26 @@
 
       <!-- FORMULAIRE DE CONTACT TRANSPARENT LIKE GLASS (GLASSMORPHISM) -->
       <form class="contact-form-glass reveal-right" onsubmit="handleGlassContact(event)">
-        <h3><i class="ti ti-message-circle"></i> Formulaire de Contact</h3>
-        <p>Envoyez-nous un message, notre équipe vous répondra rapidement.</p>
+        <h3 data-lang-fr="Formulaire de Contact" data-lang-en="Contact Form"><i class="ti ti-message-circle"></i> Formulaire de Contact</h3>
+        <p data-lang-fr="Envoyez-nous un message, notre équipe vous répondra rapidement." data-lang-en="Send us a message, our team will reply promptly.">Envoyez-nous un message, notre équipe vous répondra rapidement.</p>
         
         <div class="glass-group">
-          <label for="contact-name">Votre Nom *</label>
+          <label for="contact-name" data-lang-fr="Votre Nom *" data-lang-en="Your Name *">Votre Nom *</label>
           <input type="text" id="contact-name" required placeholder="Ex: Aminata Diallo">
         </div>
 
         <div class="glass-group">
-          <label for="contact-email">Votre Email ou Téléphone *</label>
+          <label for="contact-email" data-lang-fr="Votre Email ou Téléphone *" data-lang-en="Your Email or Phone *">Votre Email ou Téléphone *</label>
           <input type="text" id="contact-email" required placeholder="Ex: aminata@email.com / +221...">
         </div>
 
         <div class="glass-group">
-          <label for="contact-msg">Votre Message *</label>
+          <label for="contact-msg" data-lang-fr="Votre Message *" data-lang-en="Your Message *">Votre Message *</label>
           <textarea id="contact-msg" rows="4" required placeholder="Écrivez votre message ici..."></textarea>
         </div>
 
         <button type="submit" class="btn-glass-submit">
-          <i class="ti ti-send"></i> Envoyer le Message
+          <i class="ti ti-send"></i> <span data-lang-fr="Envoyer le Message" data-lang-en="Send Message">Envoyer le Message</span>
         </button>
       </form>
     </div>
@@ -1992,7 +2016,7 @@
   <div class="container footer-grid">
     <div class="footer-brand reveal-left">
       <img src="assets/logo-ccs.png" alt="Logo CCS">
-      <p>Représentant officiel de la marque Double A (Thaïlande) et distributeur des marques Smart Copy & Capital Paper. Votre partenaire de confiance.</p>
+      <p data-lang-fr="Représentant officiel de la marque Double A (Thaïlande) et distributeur des marques Smart Copy & Capital Paper. Votre partenaire de confiance." data-lang-en="Official representative of the Double A brand (Thailand) and distributor of Smart Copy & Capital Paper brands. Your trusted partner.">Représentant officiel de la marque Double A (Thaïlande) et distributeur des marques Smart Copy & Capital Paper. Votre partenaire de confiance.</p>
       <div class="social-icons">
         <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
@@ -2000,40 +2024,73 @@
       </div>
     </div>
     <div class="reveal-top">
-      <h5>Liens rapides</h5>
+      <h5 data-lang-fr="Liens rapides" data-lang-en="Quick Links">Liens rapides</h5>
       <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#a-propos">À propos</a></li>
-        <li><a href="#services">Nos services</a></li>
-        <li><a href="#e-commerce-section" onclick="toggleShopSection()">Boutique & Infos</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#accueil" data-lang-fr="Accueil" data-lang-en="Home">Accueil</a></li>
+        <li><a href="#a-propos" data-lang-fr="À propos" data-lang-en="About">À propos</a></li>
+        <li><a href="#services" data-lang-fr="Nos services" data-lang-en="Our Services">Nos services</a></li>
+        <li><a href="#e-commerce-section" onclick="toggleShopSection()" data-lang-fr="Boutique & Infos" data-lang-en="Shop & Info">Boutique & Infos</a></li>
+        <li><a href="#contact" data-lang-fr="Contact" data-lang-en="Contact">Contact</a></li>
       </ul>
     </div>
     <div class="reveal-top">
-      <h5>Nos services</h5>
+      <h5 data-lang-fr="Nos services" data-lang-en="Our Services">Nos services</h5>
       <ul>
-        <li><a href="#services">Import-Export</a></li>
-        <li><a href="#services">Commerce Général</a></li>
-        <li><a href="#services">Accompagnement</a></li>
+        <li><a href="#services" data-lang-fr="Import-Export" data-lang-en="Import-Export">Import-Export</a></li>
+        <li><a href="#services" data-lang-fr="Commerce Général" data-lang-en="General Trade">Commerce Général</a></li>
+        <li><a href="#services" data-lang-fr="Accompagnement" data-lang-en="Support">Accompagnement</a></li>
       </ul>
     </div>
     <div class="reveal-right">
-      <h5>Contact & WhatsApp</h5>
+      <h5 data-lang-fr="Contact & WhatsApp" data-lang-en="Contact & WhatsApp">Contact & WhatsApp</h5>
       <ul class="footer-contact">
         <li><i class="ti ti-brand-whatsapp"></i> +221 77 699 00 00</li>
         <li><i class="ti ti-phone"></i> +221 33 600 00 00</li>
         <li><i class="ti ti-mail"></i> comptoircommercialsourang@gmail.com</li>
-        <li><i class="ti ti-map-pin"></i> Hann Mariste, SCAT Urbam, Dakar</li>
+        <li data-lang-fr="Hann Mariste, SCAT Urbam, Dakar" data-lang-en="Hann Mariste, SCAT Urbam, Dakar"><i class="ti ti-map-pin"></i> Hann Mariste, SCAT Urbam, Dakar</li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="footer-bottom" data-lang-fr="© 2026 CCS - Comptoir Commercial Sourang. Tous droits réservés." data-lang-en="© 2026 CCS - Comptoir Commercial Sourang. All rights reserved.">
     © 2026 CCS - Comptoir Commercial Sourang. Tous droits réservés.
   </div>
 </footer>
 
 <!-- SCRIPTS JAVASCRIPT -->
 <script>
+  // Fonction de traduction dynamique (Français / Anglais)
+  function changeLanguage(lang) {
+    const elements = document.querySelectorAll('[data-lang-fr]');
+    
+    elements.forEach(el => {
+      if (lang === 'en') {
+        if (el.hasAttribute('data-lang-en-val')) {
+          el.value = el.getAttribute('data-lang-en-val');
+        } else {
+          el.textContent = el.getAttribute('data-lang-en');
+        }
+      } else {
+        if (el.hasAttribute('data-lang-fr-val')) {
+          el.value = el.getAttribute('data-lang-fr-val');
+        } else {
+          el.textContent = el.getAttribute('data-lang-fr');
+        }
+      }
+    });
+
+    localStorage.setItem('preferred-lang', lang);
+  }
+
+  // Chargement de la langue enregistrée ou par défaut (Français)
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('preferred-lang') || 'fr';
+    const langSwitch = document.getElementById('lang-switch');
+    if (langSwitch) {
+      langSwitch.value = savedLang;
+    }
+    changeLanguage(savedLang);
+  });
+
   // Menu mobile
   const menuToggle = document.getElementById('menu-toggle');
   const mainNav = document.getElementById('main-nav');
@@ -2098,8 +2155,15 @@
     const selectEl = document.getElementById(selectId);
     const selectedVariant = selectEl.value;
 
-    document.getElementById('inquiry-product').value = productName;
-    document.getElementById('inquiry-variant').value = selectedVariant;
+    const productInput = document.getElementById('inquiry-product');
+    productInput.value = productName;
+    productInput.setAttribute('data-lang-fr-val', productName);
+    productInput.setAttribute('data-lang-en-val', productName);
+
+    const variantInput = document.getElementById('inquiry-variant');
+    variantInput.value = selectedVariant;
+    variantInput.setAttribute('data-lang-fr-val', selectedVariant);
+    variantInput.setAttribute('data-lang-en-val', selectedVariant);
 
     // Scroll vers le formulaire de demande
     document.getElementById('whatsapp-inquiry-form').scrollIntoView({ behavior: 'smooth' });
