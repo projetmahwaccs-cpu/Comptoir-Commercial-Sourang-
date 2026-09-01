@@ -7,6 +7,7 @@
 <meta name="description" content="CCS, Comptoir Commercial Sourang - Représentant officiel de la marque Double A au Sénégal. Commandez en ligne, paiement sécurisé et livraison rapide." data-lang-fr="CCS, Comptoir Commercial Sourang - Représentant officiel de la marque Double A au Sénégal. Commandez en ligne, paiement sécurisé et livraison rapide." data-lang-en="CCS, Comptoir Commercial Sourang - Official representative of the Double A brand in Senegal. Order online, secure payment and fast delivery.">
 <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   :root{
     --navy: #0d2a5c;
@@ -1932,6 +1933,7 @@
 
 <!-- SCRIPTS JAVASCRIPT -->
 <script>
+
   function changeLanguage(lang) {
     const elements = document.querySelectorAll('[data-lang-fr]');
     elements.forEach(el => {
@@ -2044,6 +2046,26 @@
     alert(`Merci ${name}, votre message a bien été pris en compte.`);
     event.target.reset();
   }
+  // Remplacez par vos clés Supabase (Project Settings > API)
+const SUPABASE_URL = 'https://slkyfphlktoaeyierhmp.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsa3lmcGhsa3RvYWV5aWVyaG1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgyMjU4NzcsImV4cCI6MjEwMzgwMTg3N30.iXtoc3Y_1Z-3yAQhFyz6rlYmBAkCxjBs5w9MJ0qnwbA';
+
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// Fonction appelée lors du clic sur le bouton Google
+async function signInWithGoogle() {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: window.location.origin
+    }
+  });
+
+  if (error) {
+    console.error("Erreur de connexion :", error.message);
+    alert("Erreur : " + error.message);
+  }
+}
 </script>
 </body>
 </html>
