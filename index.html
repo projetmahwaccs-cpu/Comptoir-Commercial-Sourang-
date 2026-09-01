@@ -18,29 +18,34 @@
     --bg-light: #f4f7fb;
     --text-dark: #14213d;
     --text-muted: #4a5875;
-    /* BORDURES POINTUES (0px de rayon) SUR TOUT LE SITE */
     --border-fine: 1px solid rgba(27, 111, 214, 0.2);
     --border-subtle: 1px solid rgba(13, 42, 92, 0.15);
   }
 
+  /* CORRECTIONS GLOBALES RESPONSIVES */
   *{margin:0;padding:0;box-sizing:border-box;}
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /* Empêche tout débordement horizontal sur mobile */
+  }
 
   body{
     font-family: 'Segoe UI', Arial, sans-serif;
     color: var(--text-dark);
     background: #fff;
     line-height: 1.5;
-    overflow-x: hidden;
   }
 
   a{text-decoration:none;color:inherit;}
   ul{list-style:none;}
-  img{max-width:100%;display:block;}
+  img{max-width:100%;height:auto;display:block;}
 
   .container{
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px; /* Padding réduit sur mobile pour maximiser l'espace utile */
   }
 
   @media (min-width: 960px) {
@@ -55,17 +60,17 @@
     transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
-  .reveal-left { transform: translateX(-60px); }
-  .reveal-right { transform: translateX(60px); }
-  .reveal-top { transform: translateY(-60px); }
-  .reveal-bottom { transform: translateY(60px); }
+  .reveal-left { transform: translateX(-30px); }
+  .reveal-right { transform: translateX(30px); }
+  .reveal-top { transform: translateY(-30px); }
+  .reveal-bottom { transform: translateY(30px); }
 
   .reveal-left.active, .reveal-right.active, .reveal-top.active, .reveal-bottom.active {
     opacity: 1;
     transform: translate(0, 0);
   }
 
-  /* STYLE UNIFIÉ POUR LES IMAGES ILLUSTRATIVES AVEC BORDURE POINTUE */
+  /* STYLE UNIFIÉ POUR LES IMAGES ILLUSTRATIVES */
   .section-illustration {
     width: 100%;
     border-radius: 0px;
@@ -73,19 +78,15 @@
     border: var(--border-fine);
     box-shadow: 0 6px 20px rgba(13, 42, 92, 0.05);
     background: #ffffff;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   .section-illustration img {
     width: 100%;
-    height: 240px;
+    height: 200px;
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
-  }
-
-  .section-illustration:hover img {
-    transform: scale(1.03);
   }
 
   @media (min-width: 960px) {
@@ -94,36 +95,40 @@
     }
   }
 
-  /* FLOTTANT E-COMMERCE & WHATSAPP BUTTONS (BORDURES POINTUES) */
+  /* FLOTTANT E-COMMERCE & WHATSAPP BUTTONS (Adaptés mobile) */
   .floating-actions {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 15px;
+    right: 15px;
     z-index: 9999;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
     align-items: flex-end;
   }
 
   .float-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
+    gap: 8px;
+    padding: 10px 14px;
     border-radius: 0px;
     font-weight: 700;
-    font-size: 0.92rem;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    font-size: 0.82rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid rgba(255, 255, 255, 0.4);
     color: #fff;
   }
 
+  @media (min-width: 960px) {
+    .floating-actions { bottom: 25px; right: 25px; gap: 12px; }
+    .float-btn { padding: 12px 20px; font-size: 0.92rem; }
+  }
+
   .float-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
   }
 
   .btn-shop-float {
@@ -137,38 +142,41 @@
 
   @keyframes pulse-glow {
     0% { box-shadow: 0 0 0 0 rgba(27, 111, 214, 0.6); }
-    70% { box-shadow: 0 0 0 15px rgba(27, 111, 214, 0); }
+    70% { box-shadow: 0 0 0 10px rgba(27, 111, 214, 0); }
     100% { box-shadow: 0 0 0 0 rgba(27, 111, 214, 0); }
   }
 
-  /* HEADER & MOBILE MENU */
+  /* HEADER & MOBILE MENU CORRIGÉ */
   header{
     position: relative;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding: 15px 20px;
-    max-width: 1280px;
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    width: 100%;
     background: #fff;
     z-index: 1000;
     border-bottom: var(--border-subtle);
   }
 
   .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   .logo img{
-    height: 65px;
-    width:auto;
+    height: 45px;
+    width: auto;
+  }
+
+  @media (min-width: 960px) {
+    .logo img { height: 85px; }
   }
 
   .header-right {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 8px;
   }
 
   .menu-toggle {
@@ -176,31 +184,29 @@
     border: var(--border-fine);
     border-radius: 0px;
     padding: 6px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: var(--navy);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s;
-  }
-  .menu-toggle:hover {
-    background: var(--bg-light);
   }
 
   nav {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 100vw;
     background: #fff;
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
-    gap: 15px;
+    gap: 12px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     display: none;
     border-top: var(--border-subtle);
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
   }
 
   nav.active {
@@ -208,13 +214,12 @@
   }
 
   nav a{
-    font-weight:600;
-    font-size: 1rem;
+    font-weight: 600;
+    font-size: 0.95rem;
     color: var(--text-dark);
     width: 100%;
     padding-bottom: 8px;
     border-bottom: 1px solid #f0f0f0;
-    transition: color 0.2s;
   }
 
   nav a:hover, nav a.active {
@@ -222,64 +227,58 @@
     border-bottom-color: var(--blue);
   }
 
-  /* STYLE DU SÉLECTEUR DE LANGUE DANS LE MENU */
+  /* SÉLECTEUR DE LANGUE */
   .language-selector select {
-    padding: 8px 12px;
+    padding: 6px 8px;
     border-radius: 0px;
     background: var(--bg-light);
     color: var(--navy);
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     border: var(--border-fine);
-    cursor: pointer;
     outline: none;
-    transition: background 0.2s;
-  }
-  .language-selector select:hover {
-    background: #e3ecfb;
   }
 
-  /* BOUTONS AVEC BORDURE POINTUE */
   .btn-devis{
+    display: none; /* Masqué sur mobile étroit pour gagner de la place, remplacé par le menu/boutons */
     background: var(--navy);
-    color:#fff;
-    font-weight:600;
-    padding: 10px 16px;
-    font-size: 0.85rem;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 12px;
+    font-size: 0.8rem;
     border-radius: 0px;
     border: 1px solid rgba(27, 111, 214, 0.3);
-    white-space:nowrap;
-    transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
   }
-  .btn-devis:hover{
-    background: var(--navy-dark);
-    transform: translateY(-2px);
+
+  @media (min-width: 768px) {
+    .btn-devis { display: inline-block; }
   }
 
   /* HERO */
   .hero{
     position: relative;
-    display:flex;
-    align-items:center;
-    min-height: 500px;
-    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    min-height: 420px;
+    padding: 30px 15px;
     overflow: hidden;
   }
 
   .hero-video{
-    position:absolute;
-    top:0; left:0;
-    width:100%;
-    height:100%;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 0;
   }
 
   .hero-overlay{
-    position:absolute;
-    top:0; left:0;
-    width:100%;
-    height:100%;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(180deg, rgba(244,247,251,0.92) 20%, rgba(13,42,92,0.65) 100%);
     z-index: 1;
   }
@@ -292,75 +291,65 @@
   }
 
   .hero-text h1{
-    font-size: 2.1rem;
-    line-height: 1.2;
+    font-size: 1.6rem;
+    line-height: 1.25;
     color: var(--navy);
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .hero-text p{
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    margin-bottom: 24px;
-    max-width: 100%;
+    margin-bottom: 20px;
   }
 
   .btn-services{
-    display:inline-flex;
-    align-items:center;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     background: var(--navy);
-    color:#fff;
-    font-weight:600;
-    font-size: 0.95rem;
-    padding: 14px 24px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 12px 18px;
     border-radius: 0px;
     border: 1px solid rgba(27, 111, 214, 0.4);
     width: 100%;
-    transition: background 0.2s, transform 0.2s;
-  }
-  .btn-services:hover {
-    transform: translateY(-2px);
   }
 
   /* SECTION HEADINGS */
   .section-tag{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     color: var(--blue);
-    font-weight:700;
-    font-size: 0.75rem;
+    font-weight: 700;
+    font-size: 0.7rem;
     letter-spacing: 1px;
-    text-transform:uppercase;
-    margin-bottom: 10px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
   }
   .section-tag::before, .section-tag::after{
-    content:"";
-    width: 25px;
+    content: "";
+    width: 20px;
     height: 2px;
     background: var(--blue);
     opacity: 0.5;
   }
   .section-title{
-    text-align:center;
-    font-size: 1.7rem;
+    text-align: center;
+    font-size: 1.35rem;
     font-weight: 800;
     color: var(--navy);
-    margin-bottom: 35px;
+    margin-bottom: 25px;
   }
 
   section{
-    padding: 60px 20px;
+    padding: 45px 15px;
     position: relative;
-  }
-  section > .container{
-    max-width:1280px;
-    margin:0 auto;
-    padding:0;
   }
 
   /* VAGUES SVG */
@@ -377,14 +366,18 @@
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 60px;
+    height: 40px;
+  }
+
+  @media (min-width: 960px) {
+    .wave-divider svg { height: 60px; }
   }
 
   /* SERVICES SECTION */
   #services {
     position: relative;
     overflow: hidden;
-    padding: 60px 20px 100px 20px;
+    padding: 45px 15px 80px 15px;
   }
 
   .bg-video {
@@ -402,10 +395,8 @@
 
   .video-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(13, 42, 92, 0.82);
     z-index: 2;
   }
@@ -415,47 +406,34 @@
     z-index: 3;
   }
 
-  #services .section-tag {
-    color: #9fc0f5;
-  }
-  #services .section-tag::before, 
-  #services .section-tag::after {
-    background: #9fc0f5;
-  }
-
-  #services .section-title {
-    color: #ffffff;
-  }
+  #services .section-tag { color: #9fc0f5; }
+  #services .section-tag::before, #services .section-tag::after { background: #9fc0f5; }
+  #services .section-title { color: #ffffff; }
 
   .services-grid{
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
 
   .service-card{
     background: #ffffff;
     border-radius: 0px;
-    padding: 30px 20px;
+    padding: 22px 15px;
     text-align: center;
     border: var(--border-fine);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
   }
 
   .service-icon{
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
     border-radius: 0px;
     background: #e3ecfb;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
     overflow: hidden;
     border: var(--border-fine);
   }
@@ -464,140 +442,125 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-
-  .service-card:hover .service-icon img {
-    transform: scale(1.1);
   }
 
   .service-card h3{
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: var(--navy);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .service-card p{
     color: var(--text-muted);
-    font-size: 0.9rem;
-    margin-bottom: 16px;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
   }
 
   .service-link{
     color: var(--blue);
-    font-weight:700;
-    font-size: 0.9rem;
-    display:inline-flex;
-    align-items:center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
     gap: 6px;
   }
 
   /* ABOUT BAND */
   #a-propos{
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-    color:#fff;
-    text-align:center;
-    padding: 80px 20px;
+    color: #fff;
+    text-align: center;
+    padding: 50px 15px;
     border-top: var(--border-fine);
     border-bottom: var(--border-fine);
   }
-  #a-propos .section-tag{
-    color: #9fc0f5;
-  }
-  #a-propos .section-tag::before, #a-propos .section-tag::after{
-    background: #9fc0f5;
-  }
-  #a-propos .section-title{
-    color:#fff;
-  }
+  #a-propos .section-tag{ color: #9fc0f5; }
+  #a-propos .section-tag::before, #a-propos .section-tag::after{ background: #9fc0f5; }
+  #a-propos .section-title{ color: #fff; }
   #a-propos p{
     max-width: 100%;
-    margin: 0 auto 24px;
+    margin: 0 auto 20px;
     color: #cfdcf2;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   .btn-white{
-    display:block;
-    background:#fff;
+    display: block;
+    background: #fff;
     color: var(--navy);
-    font-weight:700;
-    padding: 14px 20px;
+    font-weight: 700;
+    padding: 12px 18px;
     border-radius: 0px;
     border: 1px solid rgba(255, 255, 255, 0.6);
     text-align: center;
-    transition: transform 0.2s;
-  }
-  .btn-white:hover {
-    transform: translateY(-2px);
   }
 
-  /* SÉNÉGAL & LIVRAISON 4 COINS */
+  /* SÉNÉGAL & LIVRAISON */
   #senegal-livraison {
     background: var(--bg-light);
-    padding: 80px 20px;
+    padding: 50px 15px;
   }
   .delivery-wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
   }
   .delivery-content h3 {
     color: var(--navy);
-    font-size: 1.4rem;
-    margin-bottom: 15px;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
     font-weight: 800;
   }
   .delivery-content p {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 15px;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    line-height: 1.5;
   }
   .delivery-features {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 12px;
+    margin-top: 15px;
   }
   .delivery-feature-item {
     background: #fff;
-    padding: 18px;
+    padding: 14px;
     border-radius: 0px;
     border: var(--border-fine);
     box-shadow: 0 4px 12px rgba(13,42,92,0.03);
     display: flex;
     align-items: flex-start;
-    gap: 14px;
+    gap: 12px;
   }
   .delivery-feature-icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 0px;
     background: #e3ecfb;
     color: var(--blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     flex-shrink: 0;
     border: var(--border-fine);
   }
   .delivery-feature-item h4 {
     color: var(--navy);
-    font-size: 1rem;
-    margin-bottom: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
   }
   .delivery-feature-item p {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     margin-bottom: 0;
   }
 
-  /* E-COMMERCE SECTION INTERACTIVE (MASQUÉE PAR DÉFAUT JUSQU'AU CLIC) */
+  /* E-COMMERCE SECTION INTERACTIVE */
   #e-commerce-section {
     background: #fff;
-    padding: 90px 20px;
-    display: none; /* Inactif par défaut, affiché via clic */
+    padding: 50px 15px;
+    display: none;
   }
   #e-commerce-section.active-shop {
     display: block;
@@ -606,22 +569,22 @@
     background: #f9fbff;
     border: var(--border-fine);
     border-radius: 0px;
-    padding: 25px;
+    padding: 15px;
     box-shadow: 0 10px 30px rgba(13,42,92,0.05);
   }
   .shop-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
   }
   .shop-catalog h3, .shop-cart-box h3 {
     color: var(--navy);
-    font-size: 1.25rem;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
     font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
   }
   .shop-products-grid {
     display: grid;
@@ -631,15 +594,15 @@
   .shop-item-card {
     background: #fff;
     border-radius: 0px;
-    padding: 15px;
+    padding: 12px;
     border: var(--border-fine);
     box-shadow: 0 3px 10px rgba(0,0,0,0.02);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
   .shop-item-img {
-    height: 140px;
+    height: 120px;
     background-size: cover;
     background-position: center;
     border-radius: 0px;
@@ -647,113 +610,101 @@
   }
   .shop-item-details h4 {
     color: var(--navy);
-    font-size: 1.05rem;
+    font-size: 0.98rem;
     margin-bottom: 4px;
   }
   .shop-item-details .price {
     color: var(--blue);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .variant-selector {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    font-size: 0.85rem;
+    gap: 4px;
+    font-size: 0.82rem;
     color: var(--text-muted);
   }
   .variant-selector select {
-    padding: 8px 10px;
+    padding: 8px;
     border-radius: 0px;
     border: var(--border-fine);
     font-size: 0.85rem;
     background: #fff;
-    outline: none;
+    width: 100%;
   }
   .btn-add-cart {
     background: var(--blue);
     color: #fff;
     border: 1px solid rgba(13, 42, 92, 0.2);
-    padding: 9px 14px;
+    padding: 10px;
     border-radius: 0px;
     font-weight: 600;
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    transition: background 0.2s;
-  }
-  .btn-add-cart:hover {
-    background: var(--navy);
+    width: 100%;
   }
 
-  /* DEMANDE D'INFORMATION WHATSAPP POUR PRODUITS INDISPONIBLES */
+  /* FORMULAIRE WHATSAPP SHOP */
   .shop-cart-box {
     background: #fff;
     border-radius: 0px;
-    padding: 20px;
+    padding: 15px;
     border: var(--border-fine);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
   }
   .checkout-form {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
   }
   .form-group {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
   }
   .form-group label {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     font-weight: 700;
     color: var(--navy);
   }
   .form-group input, .form-group select, .form-group textarea {
-    padding: 10px 14px;
+    padding: 10px;
     border-radius: 0px;
     border: var(--border-fine);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     background: #fff;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    border-color: var(--blue);
+    width: 100%;
   }
   .btn-confirm-order {
-    background: #25d366; /* WhatsApp Green pour l'envoi de la demande d'infos */
+    background: #25d366;
     color: #fff;
     border: 1px solid rgba(37, 211, 102, 0.4);
-    padding: 14px;
+    padding: 12px;
     border-radius: 0px;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.92rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    transition: background 0.2s, transform 0.2s;
-    margin-top: 10px;
-  }
-  .btn-confirm-order:hover {
-    background: #1ebe5d;
-    transform: translateY(-2px);
+    gap: 6px;
+    width: 100%;
+    margin-top: 5px;
   }
 
   /* ACTUALITÉS */
   #actualites {
     background: var(--bg-light);
-    padding-top: 80px;
+    padding-top: 50px;
   }
   .news-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
   .news-card {
     background: #fff;
@@ -761,46 +712,42 @@
     border: var(--border-fine);
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    transition: transform 0.3s;
-  }
-  .news-card:hover {
-    transform: translateY(-5px);
   }
   .news-content {
-    padding: 20px;
+    padding: 15px;
   }
   .news-date {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--blue);
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
   .news-content h4 {
     color: var(--navy);
-    font-size: 1.05rem;
-    margin-bottom: 8px;
+    font-size: 0.98rem;
+    margin-bottom: 6px;
   }
   .news-content p {
     color: var(--text-muted);
-    font-size: 0.88rem;
-    margin-bottom: 12px;
+    font-size: 0.84rem;
+    margin-bottom: 10px;
   }
 
   /* GALERIE */
   #galerie {
     background: #fff;
-    padding-top: 80px;
+    padding-top: 50px;
   }
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 10px;
   }
   .gallery-item {
     border-radius: 0px;
     overflow: hidden;
-    height: 160px;
+    height: 130px;
     position: relative;
     border: var(--border-fine);
   }
@@ -808,30 +755,25 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-  .gallery-item:hover img {
-    transform: scale(1.1);
   }
 
   /* FAQ */
   #faq {
     background: var(--bg-light);
-    padding-top: 80px;
+    padding-top: 50px;
   }
   .faq-container {
     max-width: 800px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
   }
   .faq-item {
     background: #fff;
     border-radius: 0px;
     border: var(--border-fine);
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    padding: 15px;
     cursor: pointer;
   }
   .faq-question {
@@ -840,29 +782,29 @@
     align-items: center;
     font-weight: 700;
     color: var(--navy);
-    font-size: 0.98rem;
+    font-size: 0.9rem;
+    gap: 10px;
   }
   .faq-answer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out, padding 0.3s ease;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   .faq-item.active .faq-answer {
-    max-height: 150px;
-    padding-top: 10px;
+    max-height: 200px;
+    padding-top: 8px;
   }
   .faq-item.active .ti-chevron-down {
     transform: rotate(180deg);
-    transition: transform 0.3s;
   }
 
   /* SECTION ÉQUIPE */
   #equipe {
     position: relative;
     background: linear-gradient(135deg, #eaf2fb 0%, #d4e5fc 100%);
-    padding: 100px 0 120px 0;
+    padding: 70px 0 80px 0;
     overflow: hidden;
     border-top: var(--border-fine);
     border-bottom: var(--border-fine);
@@ -870,24 +812,18 @@
   
   .team-wave-top, .team-wave-bottom {
     position: absolute;
-    left: 0;
-    width: 100%;
+    left: 0; width: 100%;
     overflow: hidden;
     line-height: 0;
     z-index: 2;
   }
-  .team-wave-top {
-    top: 0;
-    transform: rotate(180deg);
-  }
-  .team-wave-bottom {
-    bottom: 0;
-  }
+  .team-wave-top { top: 0; transform: rotate(180deg); }
+  .team-wave-bottom { bottom: 0; }
   .team-wave-top svg, .team-wave-bottom svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 70px;
+    height: 40px;
   }
 
   #equipe .container {
@@ -899,7 +835,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin-top: 30px;
+    margin-top: 20px;
     -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
     mask-image: linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
   }
@@ -907,7 +843,7 @@
   .team-track {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 15px;
     width: max-content;
     animation: scroll-team 25s linear infinite;
   }
@@ -916,20 +852,15 @@
     background: #ffffff;
     border-radius: 0px;
     overflow: hidden;
-    width: 240px;
+    width: 200px;
     box-shadow: 0 6px 20px rgba(13, 42, 92, 0.1);
     text-align: center;
     flex-shrink: 0;
     border: var(--border-fine);
-    transition: transform 0.3s ease;
-  }
-
-  .team-card:hover {
-    transform: translateY(-5px);
   }
 
   .team-photo {
-    height: 230px;
+    height: 180px;
     width: 100%;
     object-fit: cover;
     background-color: #e3ecfb;
@@ -937,20 +868,20 @@
   }
 
   .team-info {
-    padding: 14px 10px;
+    padding: 10px;
     background: #ffffff;
   }
 
   .team-info h4 {
     color: var(--navy);
-    font-size: 0.98rem;
-    margin-bottom: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
     font-weight: 700;
   }
 
   .team-info p {
     color: var(--blue);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
   }
 
@@ -962,30 +893,28 @@
   /* PARTENAIRES */
   #partenaires{
     background: #ffffff;
-    padding: 60px 0;
-    overflow:hidden;
+    padding: 45px 0;
+    overflow: hidden;
   }
   #partenaires .section-tag,
   #partenaires .section-title{
-    padding: 0 20px;
+    padding: 0 15px;
   }
   .logos-marquee{
-    position:relative;
-    width:100%;
-    overflow:hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
-    mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+    position: relative;
+    width: 100%;
+    overflow: hidden;
   }
   .logos-track{
-    display:flex;
-    align-items:center;
-    gap: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
     width: max-content;
     animation: scroll-logos 24s linear infinite;
   }
   .logos-track img{
-    height: 36px;
-    width:auto;
+    height: 28px;
+    width: auto;
     object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.65;
@@ -999,68 +928,64 @@
   .cta-banner{
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
     border-radius: 0px;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 30px 20px;
-    color:#fff;
+    gap: 15px;
+    padding: 22px 15px;
+    color: #fff;
     text-align: center;
     border: var(--border-fine);
   }
   .cta-left{
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
   }
   .cta-icon{
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
     border-radius: 0px;
     background: rgba(255,255,255,0.15);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
     border: var(--border-fine);
   }
   .cta-left h3{
-    font-size: 1.1rem;
+    font-size: 1.02rem;
     margin-bottom: 4px;
   }
   .cta-left p{
-    color:#cfdcf2;
-    font-size: 0.88rem;
+    color: #cfdcf2;
+    font-size: 0.82rem;
   }
   .btn-cta{
-    display:inline-flex;
-    align-items:center;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
-    background:#fff;
+    gap: 8px;
+    background: #fff;
     color: var(--navy);
-    font-weight:700;
-    padding: 14px 20px;
+    font-weight: 700;
+    padding: 12px 18px;
     border-radius: 0px;
     border: var(--border-fine);
     width: 100%;
-    transition: transform 0.2s;
-  }
-  .btn-cta:hover {
-    transform: translateY(-2px);
   }
 
-  /* CONTACT SECTION WITH GLASSMORPHISM FORM */
+  /* CONTACT SECTION */
   #contact {
     background: url('hero-visual.png') no-repeat center center/cover;
     position: relative;
-    padding: 80px 20px;
+    padding: 50px 15px;
   }
   #contact::before {
     content: "";
     position: absolute;
-    top:0; left:0; width:100%; height:100%;
-    background: rgba(13, 42, 92, 0.55);
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(13, 42, 92, 0.65);
     z-index: 1;
   }
   #contact .container {
@@ -1072,207 +997,200 @@
   #contact .section-title { color: #fff; }
 
   .contact-grid{
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
   }
   .contact-info{
-    display:flex;
-    flex-direction:column;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
     border: var(--border-fine);
   }
   .contact-item{
-    display:flex;
-    align-items:flex-start;
-    gap: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
   }
   .contact-icon{
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
     border-radius: 0px;
     background: #e3ecfb;
     color: var(--navy);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size: 1.1rem;
-    flex-shrink:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
     border: var(--border-fine);
   }
   .contact-item h4{
     color: var(--navy);
-    font-size: 1rem;
-    margin-bottom: 4px;
+    font-size: 0.92rem;
+    margin-bottom: 2px;
   }
   .contact-item p{
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    word-break: break-word;
   }
 
-  /* CONTACT FORM TRANPARENT LIKE GLASS (GLASSMORPHISM) */
+  /* CONTACT FORM GLASSMORPHISM */
   .contact-form-glass {
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 0px;
-    padding: 35px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
   .contact-form-glass h3 {
     color: #fff;
-    font-size: 1.3rem;
-    margin-bottom: 5px;
+    font-size: 1.15rem;
+    margin-bottom: 2px;
     font-weight: 700;
   }
   .contact-form-glass p {
     color: #e2eeff;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
   }
   .glass-group {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
   }
   .glass-group label {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     color: #fff;
   }
   .glass-group input, .glass-group textarea {
-    padding: 12px 15px;
+    padding: 10px;
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 0px;
     color: #fff;
-    font-size: 0.9rem;
-    outline: none;
-    transition: background 0.3s, border-color 0.3s;
+    font-size: 0.88rem;
+    width: 100%;
   }
   .glass-group input::placeholder, .glass-group textarea::placeholder {
     color: rgba(255, 255, 255, 0.7);
-  }
-  .glass-group input:focus, .glass-group textarea:focus {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: #fff;
   }
   .btn-glass-submit {
     background: #25d366;
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 14px;
+    padding: 12px;
     border-radius: 0px;
     font-weight: 700;
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    transition: background 0.2s, transform 0.2s;
+    gap: 6px;
+    width: 100%;
     margin-top: 5px;
-  }
-  .btn-glass-submit:hover {
-    background: #1ebe5d;
-    transform: translateY(-2px);
   }
 
   /* FOOTER */
   footer{
     background: var(--navy-dark);
     color: #cfdcf2;
-    padding: 50px 20px 20px;
+    padding: 40px 15px 20px;
     border-top: var(--border-fine);
     position: relative;
     overflow: hidden;
   }
 
-  /* FILIGRANES MINIATURES DE CONTENEURS BATEAU AU FOOTER */
   .footer-watermarks {
     position: absolute;
     bottom: 10px;
-    right: 20px;
+    right: 15px;
     display: flex;
-    gap: 15px;
+    gap: 10px;
     opacity: 0.08;
     pointer-events: none;
     z-index: 1;
   }
   .footer-watermarks i {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: #fff;
   }
 
   .footer-grid{
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
-    padding-bottom: 30px;
+    gap: 25px;
+    padding-bottom: 25px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     position: relative;
     z-index: 2;
   }
   .footer-brand img{
-    height: 55px;
-    margin-bottom: 12px;
+    height: 45px;
+    margin-bottom: 10px;
   }
   .footer-brand p{
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: #a9bbe0;
-    margin-bottom: 16px;
-  }
-  .social-icons{
-    display:flex;
-    gap: 10px;
-  }
-  .social-icons a{
-    width: 36px;
-    height: 36px;
-    border-radius: 0px;
-    background: rgba(255,255,255,0.1);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border: var(--border-fine);
-    transition: background 0.2s;
-  }
-  .social-icons a:hover {
-    background: var(--blue);
-  }
-  footer h5{
-    color:#fff;
-    font-size: 1rem;
     margin-bottom: 14px;
   }
-  footer ul li{
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-  }
-  .footer-contact li{
-    display:flex;
-    align-items:flex-start;
+  .social-icons{
+    display: flex;
     gap: 8px;
   }
+  .social-icons a{
+    width: 34px;
+    height: 34px;
+    border-radius: 0px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-fine);
+  }
+  footer h5{
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  footer ul li{
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+  }
+  .footer-contact li{
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    word-break: break-word;
+  }
   .footer-bottom{
-    text-align:center;
-    padding-top: 20px;
-    font-size: 0.8rem;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 0.75rem;
     color: #8ba1cc;
     position: relative;
     z-index: 2;
   }
 
-  /* MEDIA QUERIES PC (>= 960px) */
+  /* MEDIA QUERIES TABLETTE & PC (>= 768px et >= 960px) */
+  @media (min-width: 576px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .shop-products-grid { grid-template-columns: repeat(2, 1fr); }
+    .news-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
   @media (min-width: 960px){
     header{ padding: 18px 40px; }
-    .logo img{ height: 85px; }
     .menu-toggle { display: none; }
     nav {
       position: static;
@@ -1280,11 +1198,13 @@
       flex-direction: row;
       align-items: center;
       width: auto;
+      max-height: none;
       background: transparent;
       padding: 0;
       gap: 24px;
       box-shadow: none;
       border-top: none;
+      overflow-y: visible;
     }
     nav a {
       font-size: 0.9rem;
@@ -1295,14 +1215,12 @@
     }
     nav a.active, nav a:hover{ color: var(--blue); }
     nav a.active::after{
-      content:"";
-      position:absolute;
-      left:0; right:0; bottom:-4px;
-      height:2px;
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -4px;
+      height: 2px;
       background: var(--blue);
-      border-radius: 0px;
     }
-    .btn-devis{ padding: 14px 26px; font-size: 0.98rem; border-radius: 0px; }
     .hero{ min-height: 620px; padding: 30px 40px; text-align: left; }
     .hero-overlay{
       background: linear-gradient(100deg, rgba(244,247,251,0.95) 0%, rgba(244,247,251,0.85) 38%, rgba(13,42,92,0.35) 100%);
@@ -1329,18 +1247,13 @@
     .news-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; }
     .gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
     .gallery-item { height: 220px; }
-    .cta-banner{ flex-direction: row; justify-content: space-between; padding: 40px 50px; text-align: left; border-radius: 0px; }
+    .cta-banner{ flex-direction: row; justify-content: space-between; padding: 40px 50px; text-align: left; }
     .cta-left{ flex-direction: row; text-align: left; }
     .cta-icon{ width: 56px; height: 56px; font-size: 1.5rem; }
     .btn-cta{ width: auto; padding: 15px 28px; }
     footer{ padding: 70px 40px 30px; }
     .footer-grid{ grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
     .contact-grid{ grid-template-columns: 1fr 1fr; gap: 50px; }
-  }
-
-  @media (max-width: 959px) and (min-width: 561px) {
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
-    .shop-products-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -1349,10 +1262,10 @@
 <!-- BOUTONS FLOTTANTS (E-COMMERCE & WHATSAPP) -->
 <div class="floating-actions">
   <a href="https://wa.me/221776990000?text=Bonjour%20CCS,%20j'ai%20besoin%20d'aide%20pour%20commander%20ou%20plus%20d'informations." target="_blank" rel="noopener" class="float-btn btn-whatsapp-float" aria-label="Contact WhatsApp">
-    <i class="ti ti-brand-whatsapp" style="font-size: 1.3rem;"></i> +221 77 699 00 00
+    <i class="ti ti-brand-whatsapp" style="font-size: 1.2rem;"></i> +221 77 699 00 00
   </a>
   <a href="#e-commerce-section" onclick="toggleShopSection()" class="float-btn btn-shop-float" aria-label="Activer la boutique en ligne">
-    <i class="ti ti-shopping-cart" style="font-size: 1.3rem;"></i> <span data-lang-fr="Activer la Boutique" data-lang-en="Activate Shop">Activer la Boutique</span>
+    <i class="ti ti-shopping-cart" style="font-size: 1.2rem;"></i> <span data-lang-fr="Boutique" data-lang-en="Shop">Boutique</span>
   </a>
 </div>
 
@@ -1371,7 +1284,6 @@
   </nav>
 
   <div class="header-right reveal-top">
-    <!-- SÉLECTEUR DE LANGUE INTÉGRÉ DANS LE MENU -->
     <div class="language-selector">
       <select id="lang-switch" onchange="changeLanguage(this.value)" aria-label="Choix de la langue">
         <option value="fr">Français</option>
@@ -1457,11 +1369,11 @@
 </section>
 
 <!-- BANDE LUMINEUSE -->
-<div style="background: linear-gradient(90deg, #0d2a5c, #1b6fd6, #0d2a5c); padding: 18px 20px; text-align: center; color: #fff; border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2);">
-  <div class="container reveal-left" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; font-weight: 600; font-size: 0.95rem;">
+<div style="background: linear-gradient(90deg, #0d2a5c, #1b6fd6, #0d2a5c); padding: 15px; text-align: center; color: #fff; border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2);">
+  <div class="container reveal-left" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; font-weight: 600; font-size: 0.85rem;">
     <span style="display: inline-flex; align-items: center; gap: 6px;"><i class="ti ti-award" style="color: #ffd700;"></i> <span data-lang-fr="Exclusivité CCS :" data-lang-en="CCS Exclusivity:">Exclusivité CCS :</span></span>
-    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 0px; border: 1px solid rgba(255,255,255,0.25); font-size: 0.85rem;" data-lang-fr="Papier Double A, Smart Copy & Capital Paper" data-lang-en="Double A Paper, Smart Copy & Capital Paper">Papier Double A, Smart Copy & Capital Paper</span>
-    <span style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 0px; border: 1px solid rgba(255,255,255,0.25); font-size: 0.85rem;" data-lang-fr="WhatsApp Assistance : +221 77 699 00 00" data-lang-en="WhatsApp Assistance: +221 77 699 00 00">WhatsApp Assistance : +221 77 699 00 00</span>
+    <span style="background: rgba(255,255,255,0.15); padding: 4px 10px; border-radius: 0px; border: 1px solid rgba(255,255,255,0.25);" data-lang-fr="Papier Double A, Smart Copy & Capital Paper" data-lang-en="Double A Paper, Smart Copy & Capital Paper">Papier Double A, Smart Copy & Capital Paper</span>
+    <span style="background: rgba(255,255,255,0.15); padding: 4px 10px; border-radius: 0px; border: 1px solid rgba(255,255,255,0.25);" data-lang-fr="WhatsApp : +221 77 699 00 00" data-lang-en="WhatsApp: +221 77 699 00 00">WhatsApp : +221 77 699 00 00</span>
   </div>
 </div>
 
@@ -1485,7 +1397,7 @@
   </div>
 </section>
 
-<!-- SECTION : SÉNÉGAL ET LIVRAISON AUX 4 COINS -->
+<!-- SECTION : SÉNÉGAL ET LIVRAISON -->
 <section id="senegal-livraison">
   <div class="container">
     <div class="section-tag reveal-top" data-lang-fr="Ancrage National & Réseau" data-lang-en="National Roots & Network">Ancrage National & Réseau</div>
@@ -1506,28 +1418,28 @@
           <div class="delivery-feature-icon"><i class="ti ti-map-pin-filled"></i></div>
           <div>
             <h4 data-lang-fr="Toutes les Régions" data-lang-en="All Regions">Toutes les Régions</h4>
-            <p data-lang-fr="Une couverture complète du territoire national pour satisfaire tous nos clients." data-lang-en="Complete coverage of the national territory to satisfy all our customers.">Une couverture complète du territoire national pour satisfaire tous nos clients.</p>
+            <p data-lang-fr="Une couverture complète du territoire national." data-lang-en="Complete coverage of the national territory.">Une couverture complète du territoire national.</p>
           </div>
         </div>
         <div class="delivery-feature-item">
           <div class="delivery-feature-icon"><i class="ti ti-truck-delivery"></i></div>
           <div>
             <h4 data-lang-fr="4 Coins du Sénégal" data-lang-en="4 Corners of Senegal">4 Coins du Sénégal</h4>
-            <p data-lang-fr="Des services de livraison rapides et sécurisés jusqu'à vos portes." data-lang-en="Fast and secure delivery services right to your doors.">Des services de livraison rapides et sécurisés jusqu'à vos portes.</p>
+            <p data-lang-fr="Livraisons rapides et sécurisées." data-lang-en="Fast and secure deliveries.">Livraisons rapides et sécurisées.</p>
           </div>
         </div>
         <div class="delivery-feature-item">
           <div class="delivery-feature-icon"><i class="ti ti-users-group"></i></div>
           <div>
             <h4 data-lang-fr="Équipe Dynamique" data-lang-en="Dynamic Team">Équipe Dynamique</h4>
-            <p data-lang-fr="Des professionnels de la logistique engagés et réactifs à votre service." data-lang-en="Committed and responsive logistics professionals at your service.">Des professionnels de la logistique engagés et réactifs à votre service.</p>
+            <p data-lang-fr="Professionnels de la logistique engagés." data-lang-en="Committed logistics professionals.">Professionnels de la logistique engagés.</p>
           </div>
         </div>
         <div class="delivery-feature-item">
           <div class="delivery-feature-icon"><i class="ti ti-shield-check"></i></div>
           <div>
             <h4 data-lang-fr="Fiabilité Garantie" data-lang-en="Guaranteed Reliability">Fiabilité Garantie</h4>
-            <p data-lang-fr="Un acheminement rigoureux de vos commandes en gros et demi-gros." data-lang-en="Rigorous routing of your wholesale and semi-wholesale orders.">Un acheminement rigoureux de vos commandes en gros et demi-gros.</p>
+            <p data-lang-fr="Acheminement rigoureux des commandes." data-lang-en="Rigorous order routing.">Acheminement rigoureux des commandes.</p>
           </div>
         </div>
       </div>
@@ -1540,7 +1452,7 @@
   </div>
 </section>
 
-<!-- SECTION E-COMMERCE : INACTIF PAR DÉFAUT, DEMANDE D'INFORMATIONS VIA WHATSAPP -->
+<!-- SECTION E-COMMERCE -->
 <section id="e-commerce-section">
   <div class="container">
     <div class="section-tag reveal-top" data-lang-fr="Boutique en Ligne & Demande d'Informations" data-lang-en="Online Shop & Information Request">Boutique en Ligne & Demande d'Informations</div>
@@ -1552,137 +1464,121 @@
 
     <div class="shop-container reveal-top">
       <div class="shop-layout">
-        <!-- CATALOGUE PRODUITS (PRODUITS NON DISPONIBLES -> FORMULAIRE DE DEMANDE D'INFOS WHATSAPP) -->
         <div class="shop-catalog">
-          <h3 data-lang-fr="Catalogue des Produits (Double A, Smart Copy, Capital Paper)" data-lang-en="Product Catalog (Double A, Smart Copy, Capital Paper)"><i class="ti ti-package"></i> Catalogue des Produits (Double A, Smart Copy, Capital Paper)</h3>
-          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;" data-lang-fr="Les stocks en direct et tarifs spécifiques sont gérés sur demande d'information personnalisée. Sélectionnez un produit et remplissez le formulaire ci-contre pour l'envoyer directement par WhatsApp à l'équipe CCS." data-lang-en="Live stocks and specific rates are managed upon personalized information request. Select a product and fill out the form opposite to send it directly via WhatsApp to the CCS team.">
-            Les stocks en direct et tarifs spécifiques sont gérés sur demande d'information personnalisée. Sélectionnez un produit et remplissez le formulaire ci-contre pour l'envoyer directement par WhatsApp à l'équipe CCS.
+          <h3 data-lang-fr="Catalogue des Produits" data-lang-en="Product Catalog"><i class="ti ti-package"></i> Catalogue des Produits</h3>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:15px;" data-lang-fr="Sélectionnez un produit et remplissez le formulaire pour l'envoyer par WhatsApp." data-lang-en="Select a product and fill out the form to send it via WhatsApp.">
+            Sélectionnez un produit et remplissez le formulaire pour l'envoyer par WhatsApp.
           </p>
           <div class="shop-products-grid">
             
-            <!-- Produit 1 : Papier Double A -->
             <div class="shop-item-card">
               <div class="shop-item-img" style="background-image: url('produits-papier.jpg');"></div>
               <div class="shop-item-details">
-                <h4 data-lang-fr="Papier A4 Double A (Officiel)" data-lang-en="Double A A4 Paper (Official)">Papier A4 Double A (Officiel)</h4>
-                <div class="price" data-lang-fr="Sur Demande d'Information" data-lang-en="Upon Information Request">Sur Demande d'Information</div>
+                <h4 data-lang-fr="Papier A4 Double A" data-lang-en="Double A A4 Paper">Papier A4 Double A</h4>
+                <div class="price" data-lang-fr="Sur Demande" data-lang-en="Upon Request">Sur Demande</div>
               </div>
               <div class="variant-selector">
-                <label for="variant-papier" data-lang-fr="Conditionnement / Variante :" data-lang-en="Packaging / Variant:">Conditionnement / Variante :</label>
+                <label for="variant-papier" data-lang-fr="Variante :" data-lang-en="Variant:">Variante :</label>
                 <select id="variant-papier" class="product-variant">
-                  <option value="Carton de 5 Ramettes (Standard)" data-lang-fr="Carton de 5 Ramettes (Standard)" data-lang-en="Carton of 5 Reams (Standard)">Carton de 5 Ramettes (Standard)</option>
-                  <option value="Palette de 100 Cartons (Gros B2B)" data-lang-fr="Palette de 100 Cartons (Gros B2B)" data-lang-en="Pallet of 100 Cartons (B2B Wholesale)">Palette de 100 Cartons (Gros B2B)</option>
-                  <option value="Ramette Unique (Détail)" data-lang-fr="Ramette Unique (Détail)" data-lang-en="Single Ream (Retail)">Ramette Unique (Détail)</option>
+                  <option value="Carton de 5 Ramettes">Carton de 5 Ramettes</option>
+                  <option value="Palette de 100 Cartons">Palette de 100 Cartons</option>
+                  <option value="Ramette Unique">Ramette Unique</option>
                 </select>
               </div>
               <button class="btn-add-cart" onclick="selectProductForInquiry('Papier A4 Double A', 'variant-papier')">
-                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos de ce produit" data-lang-en="Request info for this product">Demander les infos de ce produit</span>
+                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos" data-lang-en="Request info">Demander les infos</span>
               </button>
             </div>
 
-            <!-- Produit 2 : Smart Copy -->
             <div class="shop-item-card">
               <div class="shop-item-img" style="background-image: url('produits-papier.jpg');"></div>
               <div class="shop-item-details">
                 <h4 data-lang-fr="Papier Smart Copy A4" data-lang-en="Smart Copy A4 Paper">Papier Smart Copy A4</h4>
-                <div class="price" data-lang-fr="Sur Demande d'Information" data-lang-en="Upon Information Request">Sur Demande d'Information</div>
+                <div class="price" data-lang-fr="Sur Demande" data-lang-en="Upon Request">Sur Demande</div>
               </div>
               <div class="variant-selector">
-                <label for="variant-smartcopy" data-lang-fr="Conditionnement / Variante :" data-lang-en="Packaging / Variant:">Conditionnement / Variante :</label>
+                <label for="variant-smartcopy" data-lang-fr="Variante :" data-lang-en="Variant:">Variante :</label>
                 <select id="variant-smartcopy" class="product-variant">
-                  <option value="Carton de 5 Ramettes (Standard)" data-lang-fr="Carton de 5 Ramettes (Standard)" data-lang-en="Carton of 5 Reams (Standard)">Carton de 5 Ramettes (Standard)</option>
-                  <option value="Palette de 100 Cartons (Gros B2B)" data-lang-fr="Palette de 100 Cartons (Gros B2B)" data-lang-en="Pallet of 100 Cartons (B2B Wholesale)">Palette de 100 Cartons (Gros B2B)</option>
-                  <option value="Ramette Unique (Détail)" data-lang-fr="Ramette Unique (Détail)" data-lang-en="Single Ream (Retail)">Ramette Unique (Détail)</option>
+                  <option value="Carton de 5 Ramettes">Carton de 5 Ramettes</option>
+                  <option value="Palette de 100 Cartons">Palette de 100 Cartons</option>
+                  <option value="Ramette Unique">Ramette Unique</option>
                 </select>
               </div>
               <button class="btn-add-cart" onclick="selectProductForInquiry('Papier Smart Copy A4', 'variant-smartcopy')">
-                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos de ce produit" data-lang-en="Request info for this product">Demander les infos de ce produit</span>
+                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos" data-lang-en="Request info">Demander les infos</span>
               </button>
             </div>
 
-            <!-- Produit 3 : Capital Paper -->
             <div class="shop-item-card">
               <div class="shop-item-img" style="background-image: url('produits-papier.jpg');"></div>
               <div class="shop-item-details">
                 <h4 data-lang-fr="Papier Capital Paper A4" data-lang-en="Capital Paper A4 Paper">Papier Capital Paper A4</h4>
-                <div class="price" data-lang-fr="Sur Demande d'Information" data-lang-en="Upon Information Request">Sur Demande d'Information</div>
+                <div class="price" data-lang-fr="Sur Demande" data-lang-en="Upon Request">Sur Demande</div>
               </div>
               <div class="variant-selector">
-                <label for="variant-capital" data-lang-fr="Conditionnement / Variante :" data-lang-en="Packaging / Variant:">Conditionnement / Variante :</label>
+                <label for="variant-capital" data-lang-fr="Variante :" data-lang-en="Variant:">Variante :</label>
                 <select id="variant-capital" class="product-variant">
-                  <option value="Carton de 5 Ramettes (Standard)" data-lang-fr="Carton de 5 Ramettes (Standard)" data-lang-en="Carton of 5 Reams (Standard)">Carton de 5 Ramettes (Standard)</option>
-                  <option value="Palette de 100 Cartons (Gros B2B)" data-lang-fr="Palette de 100 Cartons (Gros B2B)" data-lang-en="Pallet of 100 Cartons (B2B Wholesale)">Palette de 100 Cartons (Gros B2B)</option>
-                  <option value="Ramette Unique (Détail)" data-lang-fr="Ramette Unique (Détail)" data-lang-en="Single Ream (Retail)">Ramette Unique (Détail)</option>
+                  <option value="Carton de 5 Ramettes">Carton de 5 Ramettes</option>
+                  <option value="Palette de 100 Cartons">Palette de 100 Cartons</option>
+                  <option value="Ramette Unique">Ramette Unique</option>
                 </select>
               </div>
               <button class="btn-add-cart" onclick="selectProductForInquiry('Papier Capital Paper A4', 'variant-capital')">
-                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos de ce produit" data-lang-en="Request info for this product">Demander les infos de ce produit</span>
+                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos" data-lang-en="Request info">Demander les infos</span>
               </button>
             </div>
 
-            <!-- Produit 4 : Produits Alimentaires -->
             <div class="shop-item-card">
               <div class="shop-item-img" style="background-image: url('produits-alimentaires.jpg');"></div>
               <div class="shop-item-details">
-                <h4 data-lang-fr="Produits Alimentaires de Qualité" data-lang-en="Quality Food Products">Produits Alimentaires de Qualité</h4>
-                <div class="price" data-lang-fr="Sur Demande d'Information" data-lang-en="Upon Information Request">Sur Demande d'Information</div>
+                <h4 data-lang-fr="Produits Alimentaires" data-lang-en="Quality Food Products">Produits Alimentaires</h4>
+                <div class="price" data-lang-fr="Sur Demande" data-lang-en="Upon Request">Sur Demande</div>
               </div>
               <div class="variant-selector">
-                <label for="variant-alim" data-lang-fr="Conditionnement / Variante :" data-lang-en="Packaging / Variant:">Conditionnement / Variante :</label>
+                <label for="variant-alim" data-lang-fr="Variante :" data-lang-en="Variant:">Variante :</label>
                 <select id="variant-alim" class="product-variant">
-                  <option value="Colis Standard (Gros / Demi-Gros)" data-lang-fr="Colis Standard (Gros / Demi-Gros)" data-lang-en="Standard Package (Wholesale / Semi-Wholesale)">Colis Standard (Gros / Demi-Gros)</option>
-                  <option value="Grand Conteneur Industriel" data-lang-fr="Grand Conteneur Industriel" data-lang-en="Large Industrial Container">Grand Conteneur Industriel</option>
-                  <option value="Format Familial (Détail)" data-lang-fr="Format Familial (Détail)" data-lang-en="Family Size (Retail)">Format Familial (Détail)</option>
+                  <option value="Colis Standard (Gros / Demi-Gros)">Colis Standard</option>
+                  <option value="Grand Conteneur Industriel">Grand Conteneur</option>
+                  <option value="Format Familial">Format Familial</option>
                 </select>
               </div>
               <button class="btn-add-cart" onclick="selectProductForInquiry('Produits Alimentaires', 'variant-alim')">
-                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos de ce produit" data-lang-en="Request info for this product">Demander les infos de ce produit</span>
+                <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Demander les infos" data-lang-en="Request info">Demander les infos</span>
               </button>
             </div>
 
           </div>
         </div>
 
-        <!-- FORMULAIRE DE DEMANDE D'INFORMATIONS VIA WHATSAPP -->
         <div class="shop-cart-box">
-          <h3 data-lang-fr="Envoyer votre Demande d'Infos" data-lang-en="Send Your Information Request"><i class="ti ti-brand-whatsapp"></i> Envoyer votre Demande d'Infos</h3>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;" data-lang-fr="Le formulaire ci-dessous générera un message instantané vers notre WhatsApp pour obtenir disponibilité et tarifs." data-lang-en="The form below will generate an instant message to our WhatsApp to get availability and rates.">
-            Le formulaire ci-dessous générera un message instantané vers notre WhatsApp pour obtenir disponibilité et tarifs.
-          </p>
-
+          <h3 data-lang-fr="Envoyer votre Demande" data-lang-en="Send Your Inquiry"><i class="ti ti-brand-whatsapp"></i> Envoyer votre Demande</h3>
           <form class="checkout-form" id="whatsapp-inquiry-form" onsubmit="sendWhatsAppInquiry(event)">
             <div class="form-group">
-              <label for="inquiry-product" data-lang-fr="Produit sélectionné *" data-lang-en="Selected Product *">Produit sélectionné *</label>
-              <input type="text" id="inquiry-product" readonly value="Veuillez choisir un produit ci-contre" data-lang-fr-val="Veuillez choisir un produit ci-contre" data-lang-en-val="Please choose a product opposite" style="background:#f1f5f9; font-weight:600; color:var(--navy);">
+              <label for="inquiry-product" data-lang-fr="Produit *" data-lang-en="Product *">Produit *</label>
+              <input type="text" id="inquiry-product" readonly value="Choisir un produit ci-contre" style="background:#f1f5f9; font-weight:600; color:var(--navy);">
             </div>
-
             <div class="form-group">
-              <label for="inquiry-variant" data-lang-fr="Option / Variante *" data-lang-en="Option / Variant *">Option / Variante *</label>
-              <input type="text" id="inquiry-variant" readonly value="Aucune variante sélectionnée" data-lang-fr-val="Aucune variante sélectionnée" data-lang-en-val="No variant selected" style="background:#f1f5f9; color:var(--text-muted);">
+              <label for="inquiry-variant" data-lang-fr="Variante *" data-lang-en="Variant *">Variante *</label>
+              <input type="text" id="inquiry-variant" readonly value="Aucune" style="background:#f1f5f9; color:var(--text-muted);">
             </div>
-
             <div class="form-group">
-              <label for="inquiry-name" data-lang-fr="Votre Nom & Prénom *" data-lang-en="Your Full Name *">Votre Nom & Prénom *</label>
+              <label for="inquiry-name" data-lang-fr="Nom & Prénom *" data-lang-en="Full Name *">Nom & Prénom *</label>
               <input type="text" id="inquiry-name" required placeholder="Ex: Moussa Diop">
             </div>
-
             <div class="form-group">
               <label for="inquiry-company" data-lang-fr="Entreprise (Optionnel)" data-lang-en="Company (Optional)">Entreprise (Optionnel)</label>
-              <input type="text" id="inquiry-company" placeholder="Ex: Librairie Moderne Dakar">
+              <input type="text" id="inquiry-company" placeholder="Ex: Librairie Dakar">
             </div>
-
             <div class="form-group">
-              <label for="inquiry-phone" data-lang-fr="Votre Numéro WhatsApp *" data-lang-en="Your WhatsApp Number *">Votre Numéro WhatsApp *</label>
+              <label for="inquiry-phone" data-lang-fr="Numéro WhatsApp *" data-lang-en="WhatsApp Number *">Numéro WhatsApp *</label>
               <input type="tel" id="inquiry-phone" required placeholder="Ex: +221 77 000 00 00">
             </div>
-
             <div class="form-group">
-              <label for="inquiry-message" data-lang-fr="Précisions sur votre besoin *" data-lang-en="Details about your need *">Précisions sur votre besoin *</label>
-              <textarea id="inquiry-message" rows="3" required placeholder="Ex: Je souhaite connaître la disponibilité en gros pour une livraison à Thiès."></textarea>
+              <label for="inquiry-message" data-lang-fr="Précisions *" data-lang-en="Details *">Précisions *</label>
+              <textarea id="inquiry-message" rows="3" required placeholder="Votre message..."></textarea>
             </div>
-
             <button type="submit" class="btn-confirm-order">
-              <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Envoyer la demande par WhatsApp" data-lang-en="Send request via WhatsApp">Envoyer la demande par WhatsApp</span>
+              <i class="ti ti-brand-whatsapp"></i> <span data-lang-fr="Envoyer par WhatsApp" data-lang-en="Send via WhatsApp">Envoyer par WhatsApp</span>
             </button>
           </form>
         </div>
@@ -1705,24 +1601,24 @@
       <div class="news-card reveal-left">
         <div class="news-content">
           <div class="news-date" data-lang-fr="Juin 2026" data-lang-en="June 2026">Juin 2026</div>
-          <h4 data-lang-fr="Arrivage massif de conteneurs Double A, Smart Copy & Capital Paper" data-lang-en="Massive arrival of Double A, Smart Copy & Capital Paper containers">Arrivage massif de conteneurs Double A, Smart Copy & Capital Paper</h4>
-          <p data-lang-fr="Reception directe des nouvelles lignes de production pour alimenter le marché sénégalais avec nos références phares." data-lang-en="Direct reception of new production lines to supply the Senegalese market with our flagship references.">Reception directe des nouvelles lignes de production pour alimenter le marché sénégalais avec nos références phares.</p>
+          <h4 data-lang-fr="Arrivage massif de conteneurs Double A" data-lang-en="Massive arrival of Double A containers">Arrivage massif de conteneurs Double A</h4>
+          <p data-lang-fr="Reception directe des nouvelles lignes pour alimenter le marché sénégalais." data-lang-en="Direct reception of new lines to supply the Senegalese market.">Reception directe des nouvelles lignes pour alimenter le marché sénégalais.</p>
           <span class="service-link"><span data-lang-fr="Lire la suite" data-lang-en="Read more">Lire la suite</span> <i class="ti ti-arrow-right"></i></span>
         </div>
       </div>
       <div class="news-card reveal-top">
         <div class="news-content">
           <div class="news-date" data-lang-fr="Mai 2026" data-lang-en="May 2026">Mai 2026</div>
-          <h4 data-lang-fr="Partenariat et distribution B2B élargie" data-lang-en="Partnership and expanded B2B distribution">Partenariat et distribution B2B élargie</h4>
-          <p data-lang-fr="CCS renforce son réseau de distribution pour faciliter l'accès aux fournitures de bureau sur l'ensemble du territoire national." data-lang-en="CCS strengthens its distribution network to facilitate access to office supplies throughout the national territory.">CCS renforce son réseau de distribution pour faciliter l'accès aux fournitures de bureau sur l'ensemble du territoire national.</p>
+          <h4 data-lang-fr="Partenariat et distribution B2B" data-lang-en="Partnership and B2B distribution">Partenariat et distribution B2B</h4>
+          <p data-lang-fr="CCS renforce son réseau de distribution sur l'ensemble du territoire." data-lang-en="CCS strengthens its distribution network across the territory.">CCS renforce son réseau de distribution sur l'ensemble du territoire.</p>
           <span class="service-link"><span data-lang-fr="Lire la suite" data-lang-en="Read more">Lire la suite</span> <i class="ti ti-arrow-right"></i></span>
         </div>
       </div>
       <div class="news-card reveal-right">
         <div class="news-content">
           <div class="news-date" data-lang-fr="Avril 2026" data-lang-en="April 2026">Avril 2026</div>
-          <h4 data-lang-fr="Logistique optimisée en Afrique de l'Ouest" data-lang-en="Optimized logistics in West Africa">Logistique optimisée en Afrique de l'Ouest</h4>
-          <p data-lang-fr="Mise en place de nouvelles solutions d'acheminement depuis le port de Dakar vers nos entrepôts de Hann Mariste." data-lang-en="Implementation of new routing solutions from the port of Dakar to our warehouses in Hann Mariste.">Mise en place de nouvelles solutions d'acheminement depuis le port de Dakar vers nos entrepôts de Hann Mariste.</p>
+          <h4 data-lang-fr="Logistique optimisée en Afrique" data-lang-en="Optimized logistics in Africa">Logistique optimisée en Afrique</h4>
+          <p data-lang-fr="Mise en place de nouvelles solutions depuis le port de Dakar." data-lang-en="Implementation of new solutions from the port of Dakar.">Mise en place de nouvelles solutions depuis le port de Dakar.</p>
           <span class="service-link"><span data-lang-fr="Lire la suite" data-lang-en="Read more">Lire la suite</span> <i class="ti ti-arrow-right"></i></span>
         </div>
       </div>
@@ -1746,10 +1642,10 @@
     </div>
 
     <div class="gallery-grid">
-      <div class="gallery-item reveal-left"><img src="produits-papier.jpg" alt="Stockage papier Double A"></div>
+      <div class="gallery-item reveal-left"><img src="produits-papier.jpg" alt="Stockage papier"></div>
       <div class="gallery-item reveal-top"><img src="produits-alimentaires.jpg" alt="Produits alimentaires"></div>
-      <div class="gallery-item reveal-top"><img src="hero-visual.png" alt="Logistique portuaire"></div>
-      <div class="gallery-item reveal-right"><img src="produits-papier.jpg" alt="Entrepôts CCS Dakar"></div>
+      <div class="gallery-item reveal-top"><img src="hero-visual.png" alt="Logistique"></div>
+      <div class="gallery-item reveal-right"><img src="produits-papier.jpg" alt="Entrepôts CCS"></div>
     </div>
   </div>
   <div class="wave-divider">
@@ -1766,35 +1662,35 @@
     <h2 class="section-title reveal-top" data-lang-fr="Questions Fréquentes" data-lang-en="Frequently Asked Questions">Questions Fréquentes</h2>
 
     <div class="section-illustration reveal-left">
-      <img src="produits-alimentaires.jpg" alt="Illustration assistance et FAQ">
+      <img src="produits-alimentaires.jpg" alt="Illustration assistance">
     </div>
 
     <div class="faq-container reveal-right">
       <div class="faq-item">
         <div class="faq-question">
-          <span data-lang-fr="Quelles sont les marques de papier disponibles en plus de Double A ?" data-lang-en="What paper brands are available in addition to Double A?">Quelles sont les marques de papier disponibles en plus de Double A ?</span>
+          <span data-lang-fr="Quelles sont les marques de papier disponibles ?" data-lang-en="What paper brands are available?">Quelles sont les marques de papier disponibles ?</span>
           <i class="ti ti-chevron-down"></i>
         </div>
-        <div class="faq-answer" data-lang-fr="En plus de la représentation officielle de Double A, nous proposons également les gammes de qualité Smart Copy et Capital Paper sur demande d'information." data-lang-en="In addition to the official representation of Double A, we also offer the quality ranges Smart Copy and Capital Paper upon information request.">
-          En plus de la représentation officielle de Double A, nous proposons également les gammes de qualité Smart Copy et Capital Paper sur demande d'information.
+        <div class="faq-answer" data-lang-fr="En plus de Double A, nous proposons Smart Copy et Capital Paper." data-lang-en="In addition to Double A, we offer Smart Copy and Capital Paper.">
+          En plus de Double A, nous proposons Smart Copy et Capital Paper.
         </div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
-          <span data-lang-fr="Comment demander des informations sur les produits indisponibles ?" data-lang-en="How to request information on unavailable products?">Comment demander des informations sur les produits indisponibles ?</span>
+          <span data-lang-fr="Comment demander des informations ?" data-lang-en="How to request information?">Comment demander des informations ?</span>
           <i class="ti ti-chevron-down"></i>
         </div>
-        <div class="faq-answer" data-lang-fr="Activez la boutique en ligne, choisissez le produit et utilisez le formulaire de demande d'informations pour être mis en relation instantanée via WhatsApp." data-lang-en="Activate the online shop, choose the product and use the information request form to be put in instant contact via WhatsApp.">
-          Activez la boutique en ligne, choisissez le produit et utilisez le formulaire de demande d'informations pour être mis en relation instantanée via WhatsApp.
+        <div class="faq-answer" data-lang-fr="Activez la boutique en ligne et utilisez le formulaire WhatsApp." data-lang-en="Activate the online shop and use the WhatsApp form.">
+          Activez la boutique en ligne et utilisez le formulaire WhatsApp.
         </div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
-          <span data-lang-fr="Comment contacter le service client en cas de besoin ?" data-lang-en="How to contact customer service if needed?">Comment contacter le service client en cas de besoin ?</span>
+          <span data-lang-fr="Comment contacter le service client ?" data-lang-en="How to contact customer service?">Comment contacter le service client ?</span>
           <i class="ti ti-chevron-down"></i>
         </div>
-        <div class="faq-answer" data-lang-fr="Vous pouvez nous joindre directement via le bouton WhatsApp flottant ou au +221 77 699 00 00 pour toute question relative à vos projets." data-lang-en="You can reach us directly via the floating WhatsApp button or at +221 77 699 00 00 for any questions regarding your projects.">
-          Vous pouvez nous joindre directement via le bouton WhatsApp flottant ou au +221 77 699 00 00 pour toute question relative à vos projets.
+        <div class="faq-answer" data-lang-fr="Via le bouton WhatsApp flottant ou au +221 77 699 00 00." data-lang-en="Via the floating WhatsApp button or at +221 77 699 00 00.">
+          Via le bouton WhatsApp flottant ou au +221 77 699 00 00.
         </div>
       </div>
     </div>
@@ -1806,7 +1702,7 @@
   </div>
 </section>
 
-<!-- SECTION NOTRE ÉQUIPE -->
+<!-- SECTION ÉQUIPE -->
 <section id="equipe">
   <div class="team-wave-top">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -1817,69 +1713,66 @@
   <div class="container">
     <div class="section-tag reveal-top" style="color: var(--blue);" data-lang-fr="L'Humain au cœur du succès" data-lang-en="People at the Heart of Success">L'Humain au cœur du succès</div>
     <h2 class="section-title reveal-top" data-lang-fr="Notre Équipe" data-lang-en="Our Team">Notre Équipe</h2>
-
-    <div class="section-illustration reveal-bottom">
-      <img src="hero-visual.png" alt="Illustration de l'équipe CCS">
-    </div>
   </div>
 
   <div class="team-marquee reveal-left">
     <div class="team-track">
       <div class="team-card">
-        <img src="equipe-1.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <img src="equipe-1.jpg" alt="Direction" class="team-photo">
         <div class="team-info">
-          <h4 data-lang-fr="Direction Générale" data-lang-en="General Management">Direction Générale</h4>
-          <p data-lang-fr="Management & Stratégie" data-lang-en="Management & Strategy">Management & Stratégie</p>
+          <h4 data-lang-fr="Direction Générale" data-lang-en="Management">Direction Générale</h4>
+          <p data-lang-fr="Management" data-lang-en="Management">Management</p>
         </div>
       </div>
       <div class="team-card">
-        <img src="equipe-2.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <img src="equipe-2.jpg" alt="Logistique" class="team-photo">
         <div class="team-info">
-          <h4 data-lang-fr="Service Logistique" data-lang-en="Logistics Department">Service Logistique</h4>
-          <p data-lang-fr="Import & Sourcing" data-lang-en="Import & Sourcing">Import & Sourcing</p>
+          <h4 data-lang-fr="Service Logistique" data-lang-en="Logistics">Service Logistique</h4>
+          <p data-lang-fr="Import & Sourcing" data-lang-en="Sourcing">Import & Sourcing</p>
         </div>
       </div>
       <div class="team-card">
-        <img src="equipe-3.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <img src="equipe-3.jpg" alt="Commercial" class="team-photo">
         <div class="team-info">
-          <h4 data-lang-fr="Commercial & B2B" data-lang-en="Sales & B2B">Commercial & B2B</h4>
-          <p data-lang-fr="Relations Partenaires" data-lang-en="Partner Relations">Relations Partenaires</p>
+          <h4 data-lang-fr="Commercial & B2B" data-lang-en="Sales">Commercial & B2B</h4>
+          <p data-lang-fr="Relations" data-lang-en="Relations">Relations</p>
         </div>
       </div>
       <div class="team-card">
-        <img src="equipe-4.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <img src="equipe-4.jpg" alt="Douane" class="team-photo">
         <div class="team-info">
-          <h4 data-lang-fr="Service Douane" data-lang-en="Customs Department">Service Douane</h4>
-          <p data-lang-fr="Conformité & Transit" data-lang-en="Compliance & Transit">Conformité & Transit</p>
+          <h4 data-lang-fr="Service Douane" data-lang-en="Customs">Service Douane</h4>
+          <p data-lang-fr="Conformité" data-lang-en="Compliance">Conformité</p>
         </div>
       </div>
       
+      <!-- Duplicate pour fluidité du marquee -->
       <div class="team-card">
-        <img src="equipe-1.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <img src="equipe-1.jpg" alt="Direction" class="team-photo">
         <div class="team-info">
-          <h4 data-lang-fr="Direction Générale" data-lang-en="General Management">Direction Générale</h4>
-          <p data-lang-fr="Management & Stratégie" data-lang-en="Management & Strategy">Management & Stratégie</p>
+          <h4 data-lang-fr="Direction Générale" data-lang-en="Management">Direction Générale</h4>
+          <p data-lang-fr="Management" data-lang-en="Management">Management</p>
         </div>
       </div>
       <div class="team-card">
-        <img src="equipe-2.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <img src="equipe-2.jpg" alt="Logistique" class="team-photo">
         <div class="team-info">
-          <h4 data-lang-fr="Service Logistique" data-lang-en="Logistics Department">Service Logistique</h4>
-          <p data-lang-fr="Import & Sourcing" data-lang-en="Import & Sourcing">Import & Sourcing</p>
+          <h4 data-lang-fr="Service Logistique" data-lang-en="Logistics">Service Logistique</h4>
+          <p data-lang-fr="Import & Sourcing" data-lang-en="Sourcing">Import & Sourcing</p>
         </div>
       </div>
       <div class="team-card">
-        <img src="equipe-3.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <img src="equipe-3.jpg" alt="Commercial" class="team-photo">
         <div class="team-info">
-          <h4 data-lang-fr="Commercial & B2B" data-lang-en="Sales & B2B">Commercial & B2B</h4>
-          <p data-lang-fr="Relations Partenaires" data-lang-en="Partner Relations">Relations Partenaires</p>
+          <h4 data-lang-fr="Commercial & B2B" data-lang-en="Sales">Commercial & B2B</h4>
+          <p data-lang-fr="Relations" data-lang-en="Relations">Relations</p>
         </div>
       </div>
       <div class="team-card">
-        <img src="equipe-4.jpg" alt="Membre de l'équipe CCS" class="team-photo">
+        <img src="equipe-4.jpg" alt="Douane" class="team-photo">
         <div class="team-info">
-          <h4 data-lang-fr="Service Douane" data-lang-en="Customs Department">Service Douane</h4>
-          <p data-lang-fr="Conformité & Transit" data-lang-en="Compliance & Transit">Conformité & Transit</p>
+          <h4 data-lang-fr="Service Douane" data-lang-en="Customs">Service Douane</h4>
+          <p data-lang-fr="Conformité" data-lang-en="Compliance">Conformité</p>
         </div>
       </div>
     </div>
@@ -1897,10 +1790,6 @@
   <div class="container">
     <div class="section-tag reveal-top" data-lang-fr="Nos partenaires" data-lang-en="Our Partners">Nos partenaires</div>
     <h2 class="section-title reveal-top" data-lang-fr="Ils nous font confiance" data-lang-en="They Trust Us">Ils nous font confiance</h2>
-
-    <div class="section-illustration reveal-bottom">
-      <img src="produits-papier.jpg" alt="Illustration partenaires maritimes">
-    </div>
   </div>
   <div class="logos-marquee reveal-left">
     <div class="logos-track">
@@ -1908,14 +1797,14 @@
       <img src="partner-hapag-lloyd.png" alt="Hapag-Lloyd">
       <img src="partner-cma-cgm.png" alt="CMA CGM">
       <img src="partner-msc.png" alt="MSC">
-      <img src="partner-mahwa-trading.png" alt="Mahwa Trading SARL">
+      <img src="partner-mahwa-trading.png" alt="Mahwa Trading">
       <img src="partner-oocl.png" alt="OOCL">
       <img src="partner-sealead.png" alt="SeaLead">
       <img src="partner-maersk.png" alt="Maersk">
       <img src="partner-hapag-lloyd.png" alt="Hapag-Lloyd">
       <img src="partner-cma-cgm.png" alt="CMA CGM">
       <img src="partner-msc.png" alt="MSC">
-      <img src="partner-mahwa-trading.png" alt="Mahwa Trading SARL">
+      <img src="partner-mahwa-trading.png" alt="Mahwa Trading">
       <img src="partner-oocl.png" alt="OOCL">
       <img src="partner-sealead.png" alt="SeaLead">
     </div>
@@ -1929,8 +1818,8 @@
       <div class="cta-left">
         <div class="cta-icon"><i class="ti ti-headset"></i></div>
         <div>
-          <h3 data-lang-fr="Besoin de papier Double A, Smart Copy, Capital Paper ou d'informations sur nos conteneurs ?" data-lang-en="Need Double A paper, Smart Copy, Capital Paper or information about our containers?">Besoin de papier Double A, Smart Copy, Capital Paper ou d'informations sur nos conteneurs ?</h3>
-          <p data-lang-fr="Contactez notre équipe dès aujourd'hui ou activez la boutique en ligne. WhatsApp : +221 77 699 00 00" data-lang-en="Contact our team today or activate the online shop. WhatsApp: +221 77 699 00 00">Contactez notre équipe dès aujourd'hui ou activez la boutique en ligne. WhatsApp : +221 77 699 00 00</p>
+          <h3 data-lang-fr="Besoin de papier Double A ou d'infos ?" data-lang-en="Need Double A paper or info?">Besoin de papier Double A ou d'infos ?</h3>
+          <p data-lang-fr="WhatsApp : +221 77 699 00 00" data-lang-en="WhatsApp: +221 77 699 00 00">WhatsApp : +221 77 699 00 00</p>
         </div>
       </div>
       <a href="#e-commerce-section" onclick="toggleShopSection()" class="btn-cta"><span data-lang-fr="Activer la Boutique" data-lang-en="Activate Shop">Activer la Boutique</span> <i class="ti ti-arrow-right"></i></a>
@@ -1938,7 +1827,7 @@
   </div>
 </section>
 
-<!-- CONTACT AVEC FORMULAIRE TRANSPARENT TYPE VERRE (GLASSMORPHISM) -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="section-tag reveal-top" data-lang-fr="Nous contacter" data-lang-en="Contact Us">Nous contacter</div>
@@ -1950,7 +1839,7 @@
           <div class="contact-icon"><i class="ti ti-map-pin"></i></div>
           <div>
             <h4 data-lang-fr="Adresse" data-lang-en="Address">Adresse</h4>
-            <p data-lang-fr="Hann Mariste, SCAT Urbam, en face de Coris Banque, Dakar, Sénégal" data-lang-en="Hann Mariste, SCAT Urbam, opposite Coris Bank, Dakar, Senegal">Hann Mariste, SCAT Urbam, en face de Coris Banque, Dakar, Sénégal</p>
+            <p data-lang-fr="Hann Mariste, SCAT Urbam, en face de Coris Banque, Dakar" data-lang-en="Hann Mariste, SCAT Urbam, opposite Coris Bank, Dakar">Hann Mariste, SCAT Urbam, en face de Coris Banque, Dakar</p>
           </div>
         </div>
         <div class="contact-item">
@@ -1965,10 +1854,9 @@
           <div>
             <h4 data-lang-fr="Téléphone & WhatsApp" data-lang-en="Phone & WhatsApp">Téléphone & WhatsApp</h4>
             <p><a href="https://wa.me/221776990000" target="_blank">+221 77 699 00 00 (WhatsApp)</a></p>
-            <p><a href="tel:+221336000000">+221 33 600 00 00</a></p>
           </div>
         </div>
-        <div style="margin-top: 10px; border-radius:0px; overflow:hidden; border: var(--border-fine); height: 200px;">
+        <div style="margin-top: 5px; border-radius:0px; overflow:hidden; border: var(--border-fine); height: 160px;">
           <iframe
             src="https://maps.google.com/maps?q=Hann+Mariste+Dakar&t=&z=13&ie=UTF8&iwloc=&output=embed"
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation CCS">
@@ -1976,47 +1864,44 @@
         </div>
       </div>
 
-      <!-- FORMULAIRE DE CONTACT TRANSPARENT LIKE GLASS (GLASSMORPHISM) -->
       <form class="contact-form-glass reveal-right" onsubmit="handleGlassContact(event)">
-        <h3 data-lang-fr="Formulaire de Contact" data-lang-en="Contact Form"><i class="ti ti-message-circle"></i> Formulaire de Contact</h3>
-        <p data-lang-fr="Envoyez-nous un message, notre équipe vous répondra rapidement." data-lang-en="Send us a message, our team will reply promptly.">Envoyez-nous un message, notre équipe vous répondra rapidement.</p>
+        <h3 data-lang-fr="Formulaire de Contact" data-lang-en="Contact Form"><i class="ti ti-message-circle"></i> Contact</h3>
+        <p data-lang-fr="Envoyez-nous un message." data-lang-en="Send us a message.">Envoyez-nous un message.</p>
         
         <div class="glass-group">
-          <label for="contact-name" data-lang-fr="Votre Nom *" data-lang-en="Your Name *">Votre Nom *</label>
+          <label for="contact-name" data-lang-fr="Nom *" data-lang-en="Name *">Nom *</label>
           <input type="text" id="contact-name" required placeholder="Ex: Aminata Diallo">
         </div>
 
         <div class="glass-group">
-          <label for="contact-email" data-lang-fr="Votre Email ou Téléphone *" data-lang-en="Your Email or Phone *">Votre Email ou Téléphone *</label>
-          <input type="text" id="contact-email" required placeholder="Ex: aminata@email.com / +221...">
+          <label for="contact-email" data-lang-fr="Email ou Téléphone *" data-lang-en="Email or Phone *">Email ou Téléphone *</label>
+          <input type="text" id="contact-email" required placeholder="Ex: aminata@email.com">
         </div>
 
         <div class="glass-group">
-          <label for="contact-msg" data-lang-fr="Votre Message *" data-lang-en="Your Message *">Votre Message *</label>
-          <textarea id="contact-msg" rows="4" required placeholder="Écrivez votre message ici..."></textarea>
+          <label for="contact-msg" data-lang-fr="Message *" data-lang-en="Message *">Message *</label>
+          <textarea id="contact-msg" rows="3" required placeholder="Votre message..."></textarea>
         </div>
 
         <button type="submit" class="btn-glass-submit">
-          <i class="ti ti-send"></i> <span data-lang-fr="Envoyer le Message" data-lang-en="Send Message">Envoyer le Message</span>
+          <i class="ti ti-send"></i> <span data-lang-fr="Envoyer" data-lang-en="Send">Envoyer</span>
         </button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER AVEC FILIGRANES MINIATURES DE CONTENEURS BATEAU -->
+<!-- FOOTER -->
 <footer>
-  <!-- FILIGRANES CONTENEURS BATEAU EN MINIATURE -->
   <div class="footer-watermarks">
     <i class="ti ti-ship"></i>
     <i class="ti ti-container"></i>
-    <i class="ti ti-ship"></i>
   </div>
 
   <div class="container footer-grid">
     <div class="footer-brand reveal-left">
       <img src="logo-ccs.png" alt="Logo CCS">
-      <p data-lang-fr="Représentant officiel de la marque Double A (Thaïlande) et distributeur des marques Smart Copy & Capital Paper. Votre partenaire de confiance." data-lang-en="Official representative of the Double A brand (Thailand) and distributor of Smart Copy & Capital Paper brands. Your trusted partner.">Représentant officiel de la marque Double A (Thaïlande) et distributeur des marques Smart Copy & Capital Paper. Votre partenaire de confiance.</p>
+      <p data-lang-fr="Représentant officiel de la marque Double A (Thaïlande)." data-lang-en="Official representative of the Double A brand (Thailand).">Représentant officiel de la marque Double A (Thaïlande).</p>
       <div class="social-icons">
         <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
@@ -2028,40 +1913,27 @@
       <ul>
         <li><a href="#accueil" data-lang-fr="Accueil" data-lang-en="Home">Accueil</a></li>
         <li><a href="#a-propos" data-lang-fr="À propos" data-lang-en="About">À propos</a></li>
-        <li><a href="#services" data-lang-fr="Nos services" data-lang-en="Our Services">Nos services</a></li>
-        <li><a href="#e-commerce-section" onclick="toggleShopSection()" data-lang-fr="Boutique & Infos" data-lang-en="Shop & Info">Boutique & Infos</a></li>
+        <li><a href="#services" data-lang-fr="Services" data-lang-en="Services">Services</a></li>
         <li><a href="#contact" data-lang-fr="Contact" data-lang-en="Contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="reveal-top">
-      <h5 data-lang-fr="Nos services" data-lang-en="Our Services">Nos services</h5>
-      <ul>
-        <li><a href="#services" data-lang-fr="Import-Export" data-lang-en="Import-Export">Import-Export</a></li>
-        <li><a href="#services" data-lang-fr="Commerce Général" data-lang-en="General Trade">Commerce Général</a></li>
-        <li><a href="#services" data-lang-fr="Accompagnement" data-lang-en="Support">Accompagnement</a></li>
       </ul>
     </div>
     <div class="reveal-right">
       <h5 data-lang-fr="Contact & WhatsApp" data-lang-en="Contact & WhatsApp">Contact & WhatsApp</h5>
       <ul class="footer-contact">
         <li><i class="ti ti-brand-whatsapp"></i> +221 77 699 00 00</li>
-        <li><i class="ti ti-phone"></i> +221 33 600 00 00</li>
         <li><i class="ti ti-mail"></i> comptoircommercialsourang@gmail.com</li>
-        <li data-lang-fr="Hann Mariste, SCAT Urbam, Dakar" data-lang-en="Hann Mariste, SCAT Urbam, Dakar"><i class="ti ti-map-pin"></i> Hann Mariste, SCAT Urbam, Dakar</li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom" data-lang-fr="© 2026 CCS - Comptoir Commercial Sourang. Tous droits réservés." data-lang-en="© 2026 CCS - Comptoir Commercial Sourang. All rights reserved.">
-    © 2026 CCS - Comptoir Commercial Sourang. Tous droits réservés.
+  <div class="footer-bottom" data-lang-fr="© 2026 CCS. Tous droits réservés." data-lang-en="© 2026 CCS. All rights reserved.">
+    © 2026 CCS. Tous droits réservés.
   </div>
 </footer>
 
 <!-- SCRIPTS JAVASCRIPT -->
 <script>
-  // Fonction de traduction dynamique (Français / Anglais)
   function changeLanguage(lang) {
     const elements = document.querySelectorAll('[data-lang-fr]');
-    
     elements.forEach(el => {
       if (lang === 'en') {
         if (el.hasAttribute('data-lang-en-val')) {
@@ -2077,21 +1949,16 @@
         }
       }
     });
-
     localStorage.setItem('preferred-lang', lang);
   }
 
-  // Chargement de la langue enregistrée ou par défaut (Français)
   window.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferred-lang') || 'fr';
     const langSwitch = document.getElementById('lang-switch');
-    if (langSwitch) {
-      langSwitch.value = savedLang;
-    }
+    if (langSwitch) { langSwitch.value = savedLang; }
     changeLanguage(savedLang);
   });
 
-  // Menu mobile
   const menuToggle = document.getElementById('menu-toggle');
   const mainNav = document.getElementById('main-nav');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -2117,13 +1984,10 @@
     });
   });
 
-  // Intersection Observer pour les animations au scroll
   const observerOptions = { threshold: 0.12 };
-  const observer = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
+      if (entry.isIntersecting) { entry.target.classList.add('active'); }
     });
   }, observerOptions);
 
@@ -2131,45 +1995,33 @@
     observer.observe(el);
   });
 
-  // FAQ Accordion
   const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
+  faqItems.Item = faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     question.addEventListener('click', () => {
-      faqItems.forEach(other => {
-        if (other !== item) other.classList.remove('active');
-      });
+      faqItems.forEach(other => { if (other !== item) other.classList.remove('active'); });
       item.classList.toggle('active');
     });
   });
 
-  // ACTIVATION DE LA SECTION E-COMMERCE PAR CLIC BOUTON
   function toggleShopSection() {
     const shopSection = document.getElementById('e-commerce-section');
-    shopSection.classList.add('active-shop');
-    shopSection.scrollIntoView({ behavior: 'smooth' });
+    shopSection.classList.toggle('active-shop');
+    if (shopSection.classList.contains('active-shop')) {
+      shopSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
-  // SÉLECTION PRODUIT POUR LA DEMANDE D'INFORMATION WHATSAPP
-  function selectProductForInquiry(productName, selectId) {
-    const selectEl = document.getElementById(selectId);
-    const selectedVariant = selectEl.value;
-
-    const productInput = document.getElementById('inquiry-product');
-    productInput.value = productName;
-    productInput.setAttribute('data-lang-fr-val', productName);
-    productInput.setAttribute('data-lang-en-val', productName);
-
-    const variantInput = document.getElementById('inquiry-variant');
-    variantInput.value = selectedVariant;
-    variantInput.setAttribute('data-lang-fr-val', selectedVariant);
-    variantInput.setAttribute('data-lang-en-val', selectedVariant);
-
-    // Scroll vers le formulaire de demande
+  function selectProductForInquiry(productName, variantId) {
+    const variantSelect = document.getElementById(variantId);
+    const selectedVariant = variantSelect ? variantSelect.value : 'Standard';
+    document.getElementById('inquiry-product').value = productName;
+    document.getElementById('inquiry-variant').value = selectedVariant;
+    const shopSection = document.getElementById('e-commerce-section');
+    shopSection.classList.add('active-shop');
     document.getElementById('whatsapp-inquiry-form').scrollIntoView({ behavior: 'smooth' });
   }
 
-  // ENVOI DE LA DEMANDE D'INFOS VIA WHATSAPP
   function sendWhatsAppInquiry(event) {
     event.preventDefault();
     const product = document.getElementById('inquiry-product').value;
@@ -2177,36 +2029,21 @@
     const name = document.getElementById('inquiry-name').value;
     const company = document.getElementById('inquiry-company').value;
     const phone = document.getElementById('inquiry-phone').value;
-    const msg = document.getElementById('inquiry-message').value;
+    const message = document.getElementById('inquiry-message').value;
 
-    let whatsappText = `Bonjour CCS, je souhaite obtenir des informations sur un produit :%0a` +
-                       `- Produit : ${product}%0a` +
-                       `- Variante : ${variant}%0a` +
-                       `- Nom : ${name}%0a` +
-                       `- Entreprise : ${company || 'N/A'}%0a` +
-                       `- Téléphone : ${phone}%0a` +
-                       `- Message : ${msg}`;
+    let whatsappText = `Bonjour CCS, je souhaite obtenir des informations :\n\n- Produit : ${product}\n- Variante : ${variant}\n- Nom : ${name}`;
+    if(company) whatsappText += `\n- Entreprise : ${company}`;
+    whatsappText += `\n- Téléphone : ${phone}\n- Message : ${message}`;
 
-    let whatsappUrl = `https://wa.me/221776990000?text=${whatsappText}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(`https://wa.me/221776990000?text=${encodeURIComponent(whatsappText)}`, '_blank');
   }
 
-  // TRAITEMENT DU FORMULAIRE DE CONTACT GLASSMORPHISM
   function handleGlassContact(event) {
     event.preventDefault();
     const name = document.getElementById('contact-name').value;
-    const contactInfo = document.getElementById('contact-email').value;
-    const msg = document.getElementById('contact-msg').value;
-
-    let whatsappText = `Bonjour CCS, nouveau message depuis le formulaire de contact du site :%0a` +
-                       `- Nom : ${name}%0a` +
-                       `- Contact : ${contactInfo}%0a` +
-                       `- Message : ${msg}`;
-
-    let whatsappUrl = `https://wa.me/221776990000?text=${whatsappText}`;
-    window.open(whatsappUrl, '_blank');
+    alert(`Merci ${name}, votre message a bien été pris en compte.`);
+    event.target.reset();
   }
 </script>
-
 </body>
 </html>
