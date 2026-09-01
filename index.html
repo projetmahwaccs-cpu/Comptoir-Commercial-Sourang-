@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CCS - Comptoir Commercial Sourang | Représentant Officiel Double A &amp; Import-Export</title>
+<title>CCS - Comptoir Commercial Sourang | Représentant Officiel Double A & Import-Export</title>
 <meta name="description" content="CCS, Comptoir Commercial Sourang - Représentant officiel de la marque Double A (Thaïlande) au Sénégal. Votre partenaire en Import-Export et Commerce Général.">
 <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap">
@@ -16,6 +16,7 @@
     --bg-light: #f4f7fb;
     --text-dark: #14213d;
     --text-muted: #4a5875;
+    --border-fine: 1px solid rgba(27, 111, 214, 0.18);
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -53,6 +54,35 @@
   .reveal.active {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* STYLE UNIFIÉ POUR LES IMAGES ILLUSTRATIVES AVEC BORDURE FINE */
+  .section-illustration {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: var(--border-fine);
+    box-shadow: 0 6px 20px rgba(13, 42, 92, 0.06);
+    background: #ffffff;
+    margin-bottom: 30px;
+  }
+
+  .section-illustration img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .section-illustration:hover img {
+    transform: scale(1.03);
+  }
+
+  @media (min-width: 960px) {
+    .section-illustration img {
+      height: 320px;
+    }
   }
 
   /* HEADER & MOBILE MENU */
@@ -576,6 +606,7 @@
     overflow: hidden;
     height: 160px;
     position: relative;
+    border: var(--border-fine);
   }
   .gallery-item img {
     width: 100%;
@@ -690,8 +721,7 @@
     box-shadow: 0 6px 20px rgba(13, 42, 92, 0.15);
     text-align: center;
     flex-shrink: 0;
-    border: 4px solid #ffffff;
-    outline: 1px solid #dcdcdc;
+    border: var(--border-fine);
     transition: transform 0.3s ease;
   }
 
@@ -776,6 +806,7 @@
     padding: 30px 20px;
     color:#fff;
     text-align: center;
+    border: var(--border-fine);
   }
   .cta-left{
     display:flex;
@@ -860,6 +891,7 @@
     overflow:hidden;
     min-height: 280px;
     box-shadow: 0 6px 18px rgba(13,42,92,0.1);
+    border: var(--border-fine);
   }
   .contact-map iframe{
     width:100%;
@@ -1012,6 +1044,7 @@
     <a href="#accueil" class="nav-link">Accueil</a>
     <a href="#a-propos" class="nav-link">À propos</a>
     <a href="#services" class="nav-link">Services</a>
+    <a href="#senegal-livraison" class="nav-link">Sénégal & Livraison</a>
     <a href="#produits" class="nav-link">Produits</a>
     <a href="#contact" class="nav-link">Contact</a>
   </nav>
@@ -1044,7 +1077,6 @@
   </div>
 </section>
 
-<!-- NOS SERVICES -->
 <section id="services">
   <video class="bg-video" autoplay loop muted playsinline>
     <source src="assets/Boxes_depositing_slow.mp4" type="video/mp4">
@@ -1055,8 +1087,11 @@
     <div class="section-tag">Nos services</div>
     <h2 class="section-title">Ce que nous faisons</h2>
     
+    <div class="section-illustration">
+      <img src="assets/hero-visual.png" alt="Illustration de nos services logistiques et import-export">
+    </div>
+
     <div class="services-grid">
-      <!-- Service 1 : Import-Export -->
       <div class="service-card">
         <div class="service-icon">
           <img src="assets/service-import-export.png" alt="Import-Export 3D">
@@ -1066,7 +1101,6 @@
         <a href="#a-propos" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
       </div>
       
-      <!-- Service 2 : Commerce Général -->
       <div class="service-card">
         <div class="service-icon">
           <img src="assets/service-commerce.png" alt="Commerce Général 3D">
@@ -1076,7 +1110,6 @@
         <a href="#produits" class="service-link">En savoir plus <i class="ti ti-arrow-right"></i></a>
       </div>
       
-      <!-- Service 3 : Accompagnement -->
       <div class="service-card">
         <div class="service-icon">
           <img src="assets/service-accompagnement.png" alt="Accompagnement 3D">
@@ -1094,7 +1127,6 @@
   </div>
 </section>
 
-<!-- BANDE LUMINEUSE -->
 <div style="background: linear-gradient(90deg, #0d2a5c, #1b6fd6, #0d2a5c); padding: 18px 20px; text-align: center; color: #fff; box-shadow: inset 0 0 15px rgba(255,255,255,0.2);">
   <div class="container" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; font-weight: 600; font-size: 0.95rem;">
     <span style="display: inline-flex; align-items: center; gap: 6px;"><i class="ti ti-award" style="color: #ffd700;"></i> Exclusivité CCS :</span>
@@ -1103,11 +1135,15 @@
   </div>
 </div>
 
-<!-- A PROPOS -->
 <section id="a-propos">
   <div class="container reveal">
     <div class="section-tag">À propos de CCS</div>
     <h2 class="section-title">Qui sommes-nous ?</h2>
+    
+    <div class="section-illustration">
+      <img src="assets/produits-papier.jpg" alt="Illustration de présentation CCS">
+    </div>
+
     <p>Basé au Sénégal, le <strong>Comptoir Commercial Sourang (CCS)</strong> est une entreprise d'import-export solidement implantée sur le marché. En tant que <strong>représentant officiel de la marque de papier DOUBLE A en provenance de Thaïlande</strong>, nous garantissons aux professionnels et distributeurs des produits d'une qualité irréprochable, tout en connectant durablement les marchés internationaux aux besoins locaux.</p>
     <a href="#contact" class="btn-white">Travailler avec nous</a>
   </div>
@@ -1118,11 +1154,15 @@
   </div>
 </section>
 
-<!-- SECTION : SÉNÉGAL ET LIVRAISON AUX 4 COINS (Placée ici stratégiquement après "À propos") -->
 <section id="senegal-livraison">
   <div class="container reveal">
-    <div class="section-tag">Ancrage National &amp; Réseau</div>
+    <div class="section-tag">Ancrage National & Réseau</div>
     <h2 class="section-title">Présents partout au Sénégal, au service de nos clients</h2>
+    
+    <div class="section-illustration">
+      <img src="assets/hero-visual.png" alt="Illustration logistique et couverture du Sénégal">
+    </div>
+
     <div class="delivery-wrapper">
       <div class="delivery-content">
         <h3>Au cœur du développement économique du Sénégal</h3>
@@ -1168,11 +1208,15 @@
   </div>
 </section>
 
-<!-- PRODUITS -->
 <section id="produits">
   <div class="container reveal">
     <div class="section-tag">Nos produits</div>
     <h2 class="section-title">Nos Gammes Phares</h2>
+
+    <div class="section-illustration">
+      <img src="assets/produits-alimentaires.jpg" alt="Illustration de nos gammes de produits">
+    </div>
+
     <div class="products-grid">
       <a href="produits-papier.html" class="product-card">
         <div class="product-thumb" style="background-image:url('assets/produits-papier.jpg');"></div>
@@ -1185,7 +1229,7 @@
       <a href="produits-alimentaires.html" class="product-card">
         <div class="product-thumb" style="background-image:url('assets/produits-alimentaires.jpg');"></div>
         <div class="product-card-body">
-          <h4>Produits Alimentaires &amp; Commerce Général</h4>
+          <h4>Produits Alimentaires & Commerce Général</h4>
           <p>Importation et distribution de denrées alimentaires de première nécessité rigoureusement sélectionnées pour répondre aux attentes du marché.</p>
           <span class="service-link">Voir plus <i class="ti ti-arrow-right"></i></span>
         </div>
@@ -1199,11 +1243,15 @@
   </div>
 </section>
 
-<!-- ACTUALITÉS -->
 <section id="actualites">
   <div class="container reveal">
     <div class="section-tag">Actualités</div>
     <h2 class="section-title">Le fil d'information CCS</h2>
+
+    <div class="section-illustration">
+      <img src="assets/produits-papier.jpg" alt="Illustration actualités et arrivages">
+    </div>
+
     <div class="news-grid">
       <div class="news-card">
         <div class="news-content">
@@ -1238,11 +1286,15 @@
   </div>
 </section>
 
-<!-- GALERIE -->
 <section id="galerie">
   <div class="container reveal">
     <div class="section-tag">Immersion</div>
     <h2 class="section-title">Nos Opérations sur le Terrain</h2>
+
+    <div class="section-illustration">
+      <img src="assets/hero-visual.png" alt="Illustration galerie et opérations">
+    </div>
+
     <div class="gallery-grid">
       <div class="gallery-item">
         <img src="assets/produits-papier.jpg" alt="Stockage papier Double A">
@@ -1265,11 +1317,15 @@
   </div>
 </section>
 
-<!-- FAQ -->
 <section id="faq">
   <div class="container reveal">
     <div class="section-tag">Assistance</div>
     <h2 class="section-title">Questions Fréquentes</h2>
+
+    <div class="section-illustration">
+      <img src="assets/produits-alimentaires.jpg" alt="Illustration assistance et FAQ">
+    </div>
+
     <div class="faq-container">
       <div class="faq-item">
         <div class="faq-question">
@@ -1307,7 +1363,6 @@
   </div>
 </section>
 
-<!-- SECTION NOTRE ÉQUIPE -->
 <section id="equipe">
   <div class="team-wave-top">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -1318,6 +1373,10 @@
   <div class="container reveal">
     <div class="section-tag" style="color: var(--blue);">L'Humain au cœur du succès</div>
     <h2 class="section-title">Notre Équipe</h2>
+
+    <div class="section-illustration">
+      <img src="assets/hero-visual.png" alt="Illustration de l'équipe CCS">
+    </div>
   </div>
 
   <div class="team-marquee">
@@ -1326,20 +1385,20 @@
         <img src="assets/equipe-1.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
           <h4>Direction Générale</h4>
-          <p>Management &amp; Stratégie</p>
+          <p>Management & Stratégie</p>
         </div>
       </div>
       <div class="team-card">
         <img src="assets/equipe-2.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
           <h4>Service Logistique</h4>
-          <p>Import &amp; Sourcing</p>
+          <p>Import & Sourcing</p>
         </div>
       </div>
       <div class="team-card">
         <img src="assets/equipe-3.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
-          <h4>Commercial &amp; B2B</h4>
+          <h4>Commercial & B2B</h4>
           <p>Relations Partenaires</p>
         </div>
       </div>
@@ -1347,7 +1406,7 @@
         <img src="assets/equipe-4.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
           <h4>Service Douane</h4>
-          <p>Conformité &amp; Transit</p>
+          <p>Conformité & Transit</p>
         </div>
       </div>
       
@@ -1355,20 +1414,20 @@
         <img src="assets/equipe-1.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
           <h4>Direction Générale</h4>
-          <p>Management &amp; Stratégie</p>
+          <p>Management & Stratégie</p>
         </div>
       </div>
       <div class="team-card">
         <img src="assets/equipe-2.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
           <h4>Service Logistique</h4>
-          <p>Import &amp; Sourcing</p>
+          <p>Import & Sourcing</p>
         </div>
       </div>
       <div class="team-card">
         <img src="assets/equipe-3.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
-          <h4>Commercial &amp; B2B</h4>
+          <h4>Commercial & B2B</h4>
           <p>Relations Partenaires</p>
         </div>
       </div>
@@ -1376,7 +1435,7 @@
         <img src="assets/equipe-4.jpg" alt="Membre de l'équipe CCS" class="team-photo">
         <div class="team-info">
           <h4>Service Douane</h4>
-          <p>Conformité &amp; Transit</p>
+          <p>Conformité & Transit</p>
         </div>
       </div>
     </div>
@@ -1389,11 +1448,14 @@
   </div>
 </section>
 
-<!-- PARTENAIRES -->
 <section id="partenaires">
   <div class="container reveal">
     <div class="section-tag">Nos partenaires</div>
     <h2 class="section-title">Ils nous font confiance</h2>
+
+    <div class="section-illustration">
+      <img src="assets/produits-papier.jpg" alt="Illustration partenaires maritimes">
+    </div>
   </div>
   <div class="logos-marquee">
     <div class="logos-track">
@@ -1415,7 +1477,6 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section style="padding-top:0;">
   <div class="container reveal">
     <div class="cta-banner">
@@ -1431,11 +1492,15 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" style="background: var(--bg-light);">
   <div class="container reveal">
     <div class="section-tag">Nous contacter</div>
     <h2 class="section-title">Où nous trouver</h2>
+
+    <div class="section-illustration">
+      <img src="assets/hero-visual.png" alt="Illustration contact et localisation">
+    </div>
+
     <div class="contact-grid">
       <div class="contact-info">
         <div class="contact-item">
@@ -1476,103 +1541,8 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container footer-grid">
     <div class="footer-brand">
       <img src="assets/logo-ccs.png" alt="Logo CCS">
-      <p>Représentant officiel de la marque Double A (Thaïlande). Votre partenaire de confiance dans l'import-export et le commerce général.</p>
-      <div class="social-icons">
-        <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
-        <a href="https://wa.me/221774976364" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
-      </div>
-    </div>
-    <div>
-      <h5>Liens rapides</h5>
-      <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#a-propos">À propos</a></li>
-        <li><a href="#services">Nos services</a></li>
-        <li><a href="#produits">Nos produits</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Nos services</h5>
-      <ul>
-        <li><a href="#services">Import-Export</a></li>
-        <li><a href="#services">Commerce Général</a></li>
-        <li><a href="#services">Accompagnement</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Contact</h5>
-      <ul class="footer-contact">
-        <li><i class="ti ti-phone"></i> +221 77 699 00 00</li>
-        <li><i class="ti ti-phone"></i> +221 33 600 00 00</li>
-        <li><i class="ti ti-phone"></i> +221 77 622 00 00</li>
-        <li><i class="ti ti-mail"></i> comptoircommercialsourang@gmail.com</li>
-        <li><i class="ti ti-map-pin"></i> Hann Mariste, SCAT Urbam, en face de Coris Banque, Dakar</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2026 CCS - Comptoir Commercial Sourang. Tous droits réservés.
-  </div>
-</footer>
-
-<!-- SCRIPTS JAVASCRIPT -->
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const mainNav = document.getElementById('main-nav');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  menuToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
-    const icon = menuToggle.querySelector('i');
-    if (mainNav.classList.contains('active')) {
-      icon.classList.remove('ti-menu-2');
-      icon.classList.add('ti-x');
-    } else {
-      icon.classList.remove('ti-x');
-      icon.classList.add('ti-menu-2');
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mainNav.classList.remove('active');
-      const icon = menuToggle.querySelector('i');
-      icon.classList.remove('ti-x');
-      icon.classList.add('ti-menu-2');
-    });
-  });
-
-  const observerOptions = { threshold: 0.15 };
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.reveal').forEach(el => {
-    observer.observe(el);
-  });
-
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      faqItems.forEach(other => {
-        if (other !== item) other.classList.remove('active');
-      });
-      item.classList.toggle('active');
-    });
-  });
-</script>
-
-</body>
-</html>
+      <p>Représentant officiel de la marque Double A (Thaïlande). Votre partenaire de
